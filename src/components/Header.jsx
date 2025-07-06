@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import './../styles/Header.css';
 import { FaGithub, FaCode, FaLinkedin } from 'react-icons/fa';
-import { GiEnergySword } from "react-icons/gi";
+import logo from './../assets/LastChampion.svg';
 
 const Header = () => {
   return (
@@ -10,7 +10,7 @@ const Header = () => {
         <nav className="social_menu">
 
           <div className='social_logo'>
-            <GiEnergySword size={15} /> LastChampion
+            <img src={ logo } />
           </div>
 
           <div className='social_media'>

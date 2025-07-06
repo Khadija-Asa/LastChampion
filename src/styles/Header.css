@@ -21,6 +21,10 @@
   width: 80%;
 }
 
+.social_logo img {
+  width: 130px;
+}
+
 .social_media {
   padding: .7rem 1rem .2rem 1rem;
   margin: 1rem 1rem .5rem 0;  
