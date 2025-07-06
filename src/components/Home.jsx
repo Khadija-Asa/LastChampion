@@ -1,9 +1,12 @@
-import { Link } from "react-router-dom";
 import './../styles/Home.css';
+import './../styles/main.css';
+import Header from './Header';
 
 const Home = () => {
   return (
-    <div>home</div>
+    <>
+    <Header/>    
+    </>   
   )
 }
 

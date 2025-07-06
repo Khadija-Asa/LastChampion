@@ -1,0 +1,86 @@
+/* Colors */
+:root {
+  --White: #F2F9FE;
+  --Black: #111729;
+}
+
+/* font */
+@font-face {
+  font-family: 'Haldenweg';
+  src: url(./../fonts/haldenweg/Haldenweg.otf);
+}
+
+@font-face {
+  font-family: 'Coolvetica';
+  src: url(./../fonts/coolvetica/theone.otf);
+}
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'],
+a, li, ul {
+  list-style: none;
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+html, body {
+  overflow: hidden;
+}
+
+/* Set core body defaults */
+body {
+  background-image: url(./../assets/chrome.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  font-family: 'Coolvetica';
+  text-rendering: optimizeSpeed;
+  width: 100vw;
+  height: 100vh;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  cursor: pointer;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+   scroll-behavior: smooth;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: smooth !important;
+  }
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
