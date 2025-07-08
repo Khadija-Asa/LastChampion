@@ -3,7 +3,7 @@ import './../styles/Header.css';
 import { FaGithub, FaCode, FaLinkedin } from 'react-icons/fa';
 import logo from './../assets/LastChampion.svg';
 
-const Header = () => {
+const Header = () => { ;
   return (
       <header className='navbar_menu'>
 
@@ -30,26 +30,31 @@ const Header = () => {
         <nav className="links_menu">
           <li>
             <Link to="/">
+              <span class="blink">_</span>
               home 
             </Link>
           </li>
           <li>
             <Link to="/animes">
+              <span class="blink">_</span>
               anime
             </Link>
           </li>
           <li>
             <Link to="/pokemons">
+              <span class="blink">_</span>
               pokemon
             </Link>
           </li>
           <li>
             <Link to="/streamers">
-              streamers
+              <span class="blink">_</span>
+              hero
             </Link>
           </li>
           <li>
             <Link to="/yu-gi-oh">
+              <span class="blink">_</span>
               yu-gi-oh
             </Link>
           </li>

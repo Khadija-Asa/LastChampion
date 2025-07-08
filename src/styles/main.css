@@ -6,13 +6,8 @@
 
 /* font */
 @font-face {
-  font-family: 'Haldenweg';
-  src: url(./../fonts/haldenweg/Haldenweg.otf);
-}
-
-@font-face {
-  font-family: 'Coolvetica';
-  src: url(./../fonts/coolvetica/theone.otf);
+  font-family: 'Bravo';
+  src: url(../fonts/vcr/SUPER-VCR_MONO.ttf) format('truetype');
 }
 
 /* Box sizing rules */
@@ -50,7 +45,6 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  font-family: 'Coolvetica';
   text-rendering: optimizeSpeed;
   width: 100vw;
   height: 100vh;

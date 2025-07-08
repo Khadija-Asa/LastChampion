@@ -1,7 +1,7 @@
 .links_menu,
 .social_logo,
 .social_media {
-  background-color: white;
+  background-color: var(--White);
   border-radius: 5px;
   display: flex;
   align-items: center;
@@ -15,9 +15,9 @@
 }
 
 .social_logo {
-  padding: .7rem 1rem .3rem 1rem;
+  padding: .3rem 1rem;
   margin: 1rem .5rem .5rem 1rem;  
-  background-color: white;
+  background-color: var(--White);
   width: 80%;
 }
 
@@ -28,19 +28,19 @@
 .social_media {
   padding: .7rem 1rem .2rem 1rem;
   margin: 1rem 1rem .5rem 0;  
-  background-color: black;
+  background-color: var(--Black);
   width: 20%;
-  color: white;
+  color: var(--White);
   justify-content: space-evenly;
 }
 
 .social_media a {
-  color: white;
+  color: var(--White);
 }
 
 /* menu */
 .links_menu {  
-  padding: 1.3rem 1rem .8rem 1rem;
+  padding: 1rem 1rem .7rem 1rem;
   margin: 0 1rem;
   justify-content: space-between;
 }
@@ -51,5 +51,23 @@
 }
 
 .links_menu li a {
-  color: black;
+  color: var(--Black);
+  font-family: 'Bravo';
+  font-size: clamp(0.8rem, 0.5714rem + 0.3571vw, 1rem);
+}
+
+.blink {
+  animation: blink 1.3s infinite;
+}
+
+@keyframes blink { 
+  0% { 
+    opacity:0; 
+  }
+  50% { 
+    opacity:1; 
+  } 
+  100% { 
+    opacity:0; 
+  }
 }

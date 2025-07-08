@@ -5,7 +5,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Home from './components/Home';
 import Animes from './components/Animes';
 import Pokemons from './components/Pokemons';
-import Streamers from './components/Streamers';
+import Heros from './components/Heros';
 import Yugioh from './components/Yugioh';
 
 const router = createBrowserRouter([
@@ -22,8 +22,8 @@ const router = createBrowserRouter([
     element: <Pokemons /> 
   },
   { 
-    path: '/streamers', 
-    element: <Streamers /> 
+    path: '/heros', 
+    element: <Heros /> 
   },
   { 
     path: '/yu-gi-oh', 
