@@ -12,11 +12,12 @@
 /* social */
 .social_menu {
   display: flex;
+  margin-bottom: .3rem;
 }
 
 .social_logo {
   padding: .3rem 1rem;
-  margin: 1rem .5rem .5rem 1rem;  
+  margin-right: .30rem;
   background-color: var(--White);
   width: 80%;
 }
@@ -27,7 +28,6 @@
 
 .social_media {
   padding: .7rem 1rem .2rem 1rem;
-  margin: 1rem 1rem .5rem 0;  
   background-color: var(--Black);
   width: 20%;
   color: var(--White);
@@ -41,7 +41,6 @@
 /* menu */
 .links_menu {  
   padding: 1rem 1rem .7rem 1rem;
-  margin: 0 1rem;
   justify-content: space-between;
 }
 
@@ -52,22 +51,6 @@
 
 .links_menu li a {
   color: var(--Black);
-  font-family: 'Bravo';
+  font-family: 'VCR';
   font-size: clamp(0.8rem, 0.5714rem + 0.3571vw, 1rem);
-}
-
-.blink {
-  animation: blink 1.3s infinite;
-}
-
-@keyframes blink { 
-  0% { 
-    opacity:0; 
-  }
-  50% { 
-    opacity:1; 
-  } 
-  100% { 
-    opacity:0; 
-  }
 }

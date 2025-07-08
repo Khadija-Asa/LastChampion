@@ -1,12 +1,12 @@
 /* Colors */
 :root {
   --White: #F2F9FE;
-  --Black: #111729;
+  --Black: #080808;
 }
 
 /* font */
 @font-face {
-  font-family: 'Bravo';
+  font-family: 'VCR';
   src: url(../fonts/vcr/SUPER-VCR_MONO.ttf) format('truetype');
 }
 
@@ -41,13 +41,14 @@ html, body {
 
 /* Set core body defaults */
 body {
-  background-image: url(./../assets/chrome.jpeg);
+  background-image: url(./../assets/chrome.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   text-rendering: optimizeSpeed;
   width: 100vw;
   height: 100vh;
+  padding: .5rem ;
 }
 
 /* Inherit fonts for inputs and buttons */
@@ -77,4 +78,21 @@ select {
 
 ::-webkit-scrollbar {
   display: none;
+}
+
+/* Global animations */
+.blink {
+  animation: blink 1.3s infinite;
+}
+
+@keyframes blink { 
+  0% { 
+    opacity:0; 
+  }
+  50% { 
+    opacity:1; 
+  } 
+  100% { 
+    opacity:0; 
+  }
 }
