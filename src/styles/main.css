@@ -10,6 +10,11 @@
   src: url(../fonts/vcr/SUPER-VCR_MONO.ttf) format('truetype');
 }
 
+@font-face {
+  font-family: 'Gameboy';
+  src: url(../fonts/Gameboy/GameBoy.ttf) format('truetype');
+}
+
 /* Box sizing rules */
 *,
 *::before,
@@ -49,6 +54,7 @@ body {
   width: 100vw;
   height: 100vh;
   padding: .5rem ;
+  font-family: 'VCR';
 }
 
 /* Inherit fonts for inputs and buttons */

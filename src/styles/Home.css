@@ -1,16 +1,23 @@
-h1 {
-  font-size: clamp(10rem, 4.2857rem + 8.9286vw, 15rem);
-  color: var(--White);
-  font-family: 'VCR';
+.home_container {
   position: absolute;
   bottom: 1rem;
+  color: var(--White);
+}
+
+h1 {
+  font-size: clamp(10rem, 4.2857rem + 8.9286vw, 15rem);
   text-shadow: 0 0 100px var(--Black), 0 0 100px var(--Black), 0 0 150px var(--Black);
+}
+
+h2 {
+  width: max-content;
+  padding: .7rem 1.3rem;
+  font-size: clamp(0.8rem, 0.5714rem + 0.3571vw, 1rem);
 }
 
 .flip_container {
   perspective: 600px;
   display: inline-block;
-
 }
 
 .flip_letter {

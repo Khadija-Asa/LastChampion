@@ -2,7 +2,6 @@
 .social_logo,
 .social_media {
   background-color: var(--White);
-  border-radius: 5px;
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -42,7 +41,7 @@
 
 /* menu */
 .links_menu {  
-  padding: 1rem 1rem .7rem 1rem;
+  padding: 1rem;
   justify-content: space-between;
   width: 0;
   overflow: hidden;
@@ -60,7 +59,6 @@
 
 .links_menu li a {
   color: var(--Black);
-  font-family: 'VCR';
   font-size: clamp(0.8rem, 0.5714rem + 0.3571vw, 1rem);
 }
 
