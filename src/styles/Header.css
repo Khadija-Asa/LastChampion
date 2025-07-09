@@ -20,6 +20,8 @@
   margin-right: .30rem;
   background-color: var(--White);
   width: 80%;
+  overflow: hidden;
+  animation: expandNavbar 2s ease-out forwards;
 }
 
 .social_logo img {
@@ -42,15 +44,41 @@
 .links_menu {  
   padding: 1rem 1rem .7rem 1rem;
   justify-content: space-between;
+  width: 0;
+  overflow: hidden;
+  animation: expandNavbar 2s ease-in-out forwards;
+  white-space: nowrap;
 }
 
 .links_menu li {
   text-transform: uppercase;
   font-weight: 900;
+  opacity: 0;
+  animation: fadeInMenu 0.3s ease-out forwards;
+  animation-delay: 1s;
 }
 
 .links_menu li a {
   color: var(--Black);
   font-family: 'VCR';
   font-size: clamp(0.8rem, 0.5714rem + 0.3571vw, 1rem);
+}
+
+/* animation */
+@keyframes expandNavbar {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes fadeInMenu {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
