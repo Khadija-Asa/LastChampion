@@ -1,0 +1,62 @@
+.tournament_wrapper {
+  text-align: center;
+  color: var(--White);
+}
+
+h3 {
+  font-size: 1rem;
+}
+
+.grid {
+  color: black;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.card {
+  background-color: var(--White);
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  width: 180px;
+  height: 180px;
+  cursor: pointer;
+  transition: transform 0.2s, border 0.2s;
+  padding: 10px;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card.selected {
+  border: 3px solid red;
+}
+
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.start_button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.battle_stage .duel {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 30px;
+}
+
+.winner_screen img {
+  margin-top: 20px;
+  width: 200px;
+  height: auto;
+}

@@ -1,9 +1,14 @@
-import React from 'react'
+import React from "react";
+import { yugiohList } from "../datas/yugiohData";
+import Tournament from "./Tournament";
 
 const Yugioh = () => {
   return (
-    <div>Yugioh</div>
+    <>
+      <Tournament title="Choose your 8 favorites Yu-Gi-Oh's cards" data={yugiohList} />;
+    </>
   )
-}
+    
+};
 
-export default Yugioh
+export default Yugioh;

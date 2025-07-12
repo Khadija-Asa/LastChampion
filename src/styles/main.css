@@ -40,9 +40,9 @@ html:focus-within {
   scroll-behavior: smooth;
 }
 
-html, body {
+/* html, body {
   overflow: hidden;
-}
+} */
 
 /* Set core body defaults */
 body {

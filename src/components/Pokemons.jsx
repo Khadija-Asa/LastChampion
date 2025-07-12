@@ -1,9 +1,13 @@
-import React from 'react'
+import React from "react";
+import { pokemonList } from "../datas/pokemonsData";
+import Tournament from "./Tournament";
 
-const Pokemons = () => {
+const Pokemon = () => {
   return (
-    <div>Pokemons</div>
+    <>
+      <Tournament title="Choose your 8 favorites Pokemons" data={pokemonList} />;
+    </>
   )
-}
+};
 
-export default Pokemons
+export default Pokemon;

@@ -47,9 +47,9 @@ const Header = () => { ;
             </Link>
           </li>
           <li>
-            <Link to="/streamers">
+            <Link to="/heroes">
               <span class="blink">_</span>
-              hero
+              heroe
             </Link>
           </li>
           <li>
