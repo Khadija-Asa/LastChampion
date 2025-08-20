@@ -15,6 +15,11 @@
   src: url(../fonts/Gameboy/GameBoy.ttf) format('truetype');
 }
 
+@font-face {
+  font-family: 'Coolvetica';
+  src: url(../fonts/Coolvetica/Coolvetica.otf) format('truetype');
+}
+
 /* Box sizing rules */
 *,
 *::before,
@@ -42,7 +47,7 @@ html:focus-within {
 
 /* Set core body defaults */
 body {
-  font-family: 'VCR';
+  font-family: 'Coolvetica';
 }
 
 /* Inherit fonts for inputs and buttons */

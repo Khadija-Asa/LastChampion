@@ -2,7 +2,6 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './../styles/Header.css';
 import { FaGithub, FaCode, FaLinkedin } from 'react-icons/fa';
-import logo from './../assets/LastChampion.svg';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -12,9 +11,9 @@ const Header = () => {
 
   return (
     <header className="navbar_menu">
+      
       <nav className="social_menu">
-        <div className="social_logo">
-          <button
+        <button
           className={`burger_menu ${isMenuOpen ? 'open' : ''}`}
           onClick={toggleMenu}
           aria-label="Toggle menu">
@@ -23,10 +22,11 @@ const Header = () => {
           <span className="burger_bar"></span>
         </button>
 
-          <img src={logo} alt="LastChampion logo" />
+        <div className="menu_logo">
+          LastChampion
         </div>
 
-        <div className="social_media">
+        {/* <div className="social_media">
           <a href="https://khadija-asa.github.io/web_developer/" target="_blank" rel="noopener noreferrer">
             <FaCode size={20} />
           </a>
@@ -36,52 +36,67 @@ const Header = () => {
           <a href="https://www.linkedin.com/in/khadidja-ait-si-ali/" target="_blank" rel="noopener noreferrer">
             <FaLinkedin size={20} />
           </a>
-        </div>        
+        </div>         */}
       </nav>
 
       <nav>
         <ul className={`links_menu ${isMenuOpen ? 'open' : ''}`}>
-          <li className='menu_logo'>
-            <img src={logo} alt="LastChampion logo" />
-          </li>
           {[
-            { to: "/",
-              label: "home",
-              word: "home" 
-              },
-            { to: "/animes", 
-              label: "anime", 
-              word: "anime" 
+            {
+              label: "Champion versus",
+              items: [
+                { to: "/pokemons", label: "Pokemon", word: "pokemon" },
+                { to: "/animes", label: "Anime", word: "anime" },
+                { to: "/lol", label: "LoL Champions", word: "lol champions" },
+                { to: "/streetfighter", label: "StreetFighter", word: "streetfighter" },
+                { to: "/yu-gi-oh", label: "Yu-Gi-Oh", word: "yu-gi-oh" },
+                { to: "/valorant", label: "Valorant", word: "valorant" },
+              ]
             },
-            { to: "/pokemons", 
-              label: "pokemon", 
-              word: "pokemon" 
+            {
+              label: "Heroes",
+              items: [
+                { to: "/superheroes", label: "Superheroes", word: "superheroes" },
+                { to: "/manga", label: "Manga", word: "manga" },
+                { to: "/movies", label: "Movies", word: "movies" },
+                { to: "/antagonist", label: "Antagonist", word: "antagonist" },
+              ]
             },
-            { to: "/heroes", 
-              label: "heroes", 
-              word: "heroes" 
-            },
-            { to: "/yu-gi-oh", 
-              label: "yu-gi-oh", 
-              word: "yu-gi-oh" 
-            },
-          ].map(({ to, label, word }) => (
-            <li key={label}>
-              <Link to={to} className="hover_link" onClick={closeMenu}>
-                <span className="blink">_</span>
-                <span className="word_wrapper">
-                  <span className="base_word">{word}</span>
-                  <span className="animated_word">
-                    {word.split("").map((letter, i) => (
-                      <span className="letter" key={i}>{letter}</span>
-                    ))}
-                  </span>
-                </span>
-              </Link>
+            {
+              label: "Video Games & E-Sport",
+              items: [
+                { to: "/game-consoles", label: "Game consoles", word: "game consoles" },
+                { to: "/video-games", label: "Video Games", word: "video games" },
+                { to: "/retro-games", label: "Retro Games", word: "retrogames" },
+                { to: "/e-sport-teams", label: "E-sport Teams", word: "e-sport teams" },
+                { to: "/e-sport-players", label: "E-sport players", word: "e-sport players" },
+              ]
+            }
+          ].map((section) => (
+            <li key={section.label} className="menu_section">
+              <span className="section_title">{section.label}</span>
+              <ul className="submenu">
+                {section.items.map(({ to, label, word }) => (
+                  <li key={label}>
+                    <Link to={to} className="hover_link" onClick={closeMenu}>
+                      {/* <span className="blink">_</span> */}
+                      <span className="word_wrapper">
+                        <span className="base_word">{word}</span>
+                        <span className="animated_word">
+                          {word.split("").map((letter, i) => (
+                            <span className="letter" key={i}>{letter}</span>
+                          ))}
+                        </span>
+                      </span>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
             </li>
           ))}
         </ul>
       </nav>
+
     </header>
   );
 };

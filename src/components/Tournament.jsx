@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import { Link } from 'react-router-dom';
+import gsap from "gsap";
 import "./../styles/Tournament.css";
 import TiltCard from "./TiltCard";
 import "./../styles/Themes.css";
@@ -11,6 +12,8 @@ const shuffleArray = (array) => {
   return [...array].sort(() => 0.5 - Math.random());
 };
 
+const basePath = import.meta.env.BASE_URL;
+
 const Tournament = ({ title, data }) => {
   const [step, setStep] = useState("selection");
   const [selected, setSelected] = useState([]);
@@ -20,10 +23,12 @@ const Tournament = ({ title, data }) => {
   const [duelIndex, setDuelIndex] = useState(0);
   const startButtonRef = useRef(null);
   const [flash, setFlash] = useState(false);
-  const selectSound = useRef(new Audio("/sounds/select.mp3"));
-  const removeSound = useRef(new Audio("/sounds/remove.mp3"));
-  const startSound = useRef(new Audio("/sounds/whoosh.mp3"));
-  const victorySound = useRef(new Audio("/sounds/victory.mp3"));
+  const selectSound = useRef(new Audio(`${basePath}sounds/select.mp3`));
+  const removeSound = useRef(new Audio(`${basePath}sounds/remove.mp3`));
+  const startSound = useRef(new Audio(`${basePath}sounds/whoosh.mp3`));
+  const victorySound = useRef(new Audio(`${basePath}sounds/victory.mp3`));
+  const audioRef = useRef(null);
+  const suspensMusic = useRef(new Audio(`${basePath}sounds/tension.mp3`));
   const themeClass = data[0]?.theme ? `theme_${data[0].theme}` : "";
 
   // HANDLE SOUNDS
@@ -35,6 +40,7 @@ const Tournament = ({ title, data }) => {
         removeSound.current.pause();
         removeSound.current.currentTime = 0;
         removeSound.current.playbackRate = 1.5;
+        removeSound.current.volume = 0.3;
         removeSound.current.play();
       }
     } else if (selected.length < 8) {
@@ -46,6 +52,7 @@ const Tournament = ({ title, data }) => {
           startSound.current.pause();
           startSound.current.currentTime = 0;
           startSound.current.playbackRate = 2;
+          startSound.current.volume = 0.3;
           startSound.current.play();
         }
       } else {
@@ -53,6 +60,7 @@ const Tournament = ({ title, data }) => {
           selectSound.current.pause();
           selectSound.current.currentTime = 0;
           selectSound.current.playbackRate = 1;
+          selectSound.current.volume = 0.3;
           selectSound.current.play();
         }
       }
@@ -60,10 +68,32 @@ const Tournament = ({ title, data }) => {
   };
 
   useEffect(() => {
+  if (step === "battle") {
+    if (!audioRef.current) {
+      audioRef.current = suspensMusic.current;
+      audioRef.current.loop = true;
+      audioRef.current.volume = 0.1;
+    }
+    audioRef.current.play().catch(() => {
+    });
+  }
+
+  return () => {
+    if (audioRef.current) {
+      audioRef.current.pause();
+      audioRef.current.currentTime = 0;
+      audioRef.current = null;
+    }
+  };
+}, [step]);
+
+
+  useEffect(() => {
   if (step === "winner" && victorySound.current) {
     victorySound.current.pause();
     victorySound.current.currentTime = 0;
     victorySound.current.playbackRate = 1.5;
+    victorySound.current.volume = 0.1;
     victorySound.current.play();
   }
 }, [step]);
@@ -193,6 +223,7 @@ const Tournament = ({ title, data }) => {
         </>
       )}
 
+      {/* DUEL VERSUS */}
       {step === "battle" && round.length > 0 && (
         <div className={`battle_wrapper ${themeClass}`}>
           <h4>Choose your winner</h4>
@@ -206,25 +237,50 @@ const Tournament = ({ title, data }) => {
           <DuelMessage text={getDuelText()} />
 
           {/* DUEL */}
+          {round[0] && round[0].length === 2 && (
           <div className="duel_wrapper">
-            {round[0].map((champion) => (
-              <div
-                key={champion.id}
-                className="card_duel"
-                onClick={() => handleVote(champion)}>
+            {/* LEFT CARD */}
+            <div
+              className="card_duel"
+              onClick={() => handleVote(round[0][0])}
+              role="button"
+              tabIndex={0}
+              onKeyDown={(e) => { if (e.key === "Enter") handleVote(round[0][0]); }}
+            >
+              <img
+                className="duel_zoom"
+                src={round[0][0].image}
+                alt={round[0][0].name}
+              />
+              <p>{round[0][0].name}</p>
+            </div>
 
-                <img className="duel_zoom" src={champion.image} alt={champion.name} />
+            <div className="vs_text">VS</div>
 
-                <p>{champion.name}</p>
-              </div>
-            ))}
+            {/* RIGHT CARD */}
+            <div
+              className="card_duel"
+              onClick={() => handleVote(round[0][1])}
+              role="button"
+              tabIndex={0}
+              onKeyDown={(e) => { if (e.key === "Enter") handleVote(round[0][1]); }}
+            >
+              <img
+                className="duel_zoom"
+                src={round[0][1].image}
+                alt={round[0][1].name}
+              />
+              <p>{round[0][1].name}</p>
+            </div>
           </div>
+        )}
         </div>
       )}
 
       {/* WINNER */}
       {step === "winner" && winner && (
         <div className="winner_wrapper">
+
           <h5>
             <span className="blink">{winner.name}</span>
             &nbsp;is the Champion !
