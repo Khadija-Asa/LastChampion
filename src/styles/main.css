@@ -2,6 +2,8 @@
 :root {
   --White: #F2F9FE;
   --Black: #080808;
+  --Gray: #353839;
+  --Red: #7F001E;
 }
 
 /* font */
@@ -47,7 +49,7 @@ html:focus-within {
 
 /* Set core body defaults */
 body {
-  font-family: 'Coolvetica';
+  font-family: 'VCR';
 }
 
 /* Inherit fonts for inputs and buttons */

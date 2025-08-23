@@ -11,8 +11,12 @@ const Header = () => {
 
   return (
     <header className="navbar_menu">
-      
       <nav className="social_menu">
+
+        <div className="menu_logo">
+          LastChampion
+        </div>
+
         <button
           className={`burger_menu ${isMenuOpen ? 'open' : ''}`}
           onClick={toggleMenu}
@@ -21,22 +25,6 @@ const Header = () => {
           <span className="burger_bar"></span>
           <span className="burger_bar"></span>
         </button>
-
-        <div className="menu_logo">
-          LastChampion
-        </div>
-
-        {/* <div className="social_media">
-          <a href="https://khadija-asa.github.io/web_developer/" target="_blank" rel="noopener noreferrer">
-            <FaCode size={20} />
-          </a>
-          <a href="https://github.com/Khadija-Asa" target="_blank" rel="noopener noreferrer">
-            <FaGithub size={20} />
-          </a>
-          <a href="https://www.linkedin.com/in/khadidja-ait-si-ali/" target="_blank" rel="noopener noreferrer">
-            <FaLinkedin size={20} />
-          </a>
-        </div>         */}
       </nav>
 
       <nav>
@@ -50,16 +38,16 @@ const Header = () => {
                 { to: "/lol", label: "LoL Champions", word: "lol champions" },
                 { to: "/streetfighter", label: "StreetFighter", word: "streetfighter" },
                 { to: "/yu-gi-oh", label: "Yu-Gi-Oh", word: "yu-gi-oh" },
-                { to: "/valorant", label: "Valorant", word: "valorant" },
               ]
             },
             {
-              label: "Heroes",
+              label: "Heroes & Characters",
               items: [
-                { to: "/superheroes", label: "Superheroes", word: "superheroes" },
-                { to: "/manga", label: "Manga", word: "manga" },
-                { to: "/movies", label: "Movies", word: "movies" },
-                { to: "/antagonist", label: "Antagonist", word: "antagonist" },
+                { to: "/heroes", label: "Superheroes", word: "superheroes" },
+                { to: "/manga", label: "Manga", word: "manga" }, 
+                { to: "/characters", label: "Characters", word: "characters" },
+                { to: "/antagonists", label: "Antagonist", word: "antagonist" },
+                { to: "/antagonist", label: "tobedefined", word: "tobedefined" },
               ]
             },
             {
@@ -79,7 +67,6 @@ const Header = () => {
                 {section.items.map(({ to, label, word }) => (
                   <li key={label}>
                     <Link to={to} className="hover_link" onClick={closeMenu}>
-                      {/* <span className="blink">_</span> */}
                       <span className="word_wrapper">
                         <span className="base_word">{word}</span>
                         <span className="animated_word">
@@ -96,7 +83,6 @@ const Header = () => {
           ))}
         </ul>
       </nav>
-
     </header>
   );
 };
