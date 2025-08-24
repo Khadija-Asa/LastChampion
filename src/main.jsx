@@ -39,7 +39,6 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-// Remplace createBrowserRouter par HashRouter + Routes + Route
 import { HashRouter, Routes, Route } from 'react-router-dom';
 
 import Home from './components/Home';
@@ -47,6 +46,8 @@ import Animes from './components/Animes';
 import Pokemons from './components/Pokemons';
 import Heroes from './components/Heroes';
 import Yugioh from './components/Yugioh';
+import Lol from './components/Lol';
+import Villains from './components/Villains';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
@@ -57,6 +58,8 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route path="/pokemons" element={<Pokemons />} />
         <Route path="/heroes" element={<Heroes />} />
         <Route path="/yu-gi-oh" element={<Yugioh />} />
+        <Route path="/lol" element={<Lol />} />
+        <Route path="/villains" element={<Villains />} />
       </Routes>
     </HashRouter>
   </React.StrictMode>

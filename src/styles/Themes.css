@@ -5,6 +5,9 @@
   background-position: center;
   min-height: 100vh;
 }
+.theme_animes .image_wrapper {
+  aspect-ratio: 3 / 4;
+}
 
 .theme_pokemon {
   background-image: url('../assets/gauze-05.jpeg');
@@ -12,6 +15,15 @@
   background-repeat: no-repeat;
   background-position: center;
   min-height: 100vh;
+}
+.theme_pokemon .image_wrapper {
+  aspect-ratio: 1 / 1;
+}
+.theme_pokemon .card_duel img {
+  object-fit: contain;
+}
+.theme_pokemon .winner_wrapper img {
+  object-fit: contain;
 }
 
 .theme_heroes {
@@ -21,6 +33,9 @@
   background-position: center;
   min-height: 100vh;
 }
+.theme_heroes .image_wrapper {
+  aspect-ratio: 3 / 4;
+}
 
 .theme_yugioh {
   background-image: url('../assets/gauze-05.jpeg');
@@ -29,27 +44,28 @@
   background-position: center;
   min-height: 100vh;
 }
-
-.theme_animes .image_wrapper {
-  aspect-ratio: 3 / 4;
-}
-
-.theme_pokemon .image_wrapper {
-  aspect-ratio: 1 / 1;
-}
-
-.theme_heroes .image_wrapper {
-  aspect-ratio: 3 / 4;
-}
-
 .theme_yugioh .image_wrapper {
   aspect-ratio: 2 / 3;
 }
 
-.theme_pokemon .card_duel img {
-  object-fit: contain;
+.theme_lol {
+  background-image: url('../assets/gauze-03.jpeg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  min-height: 100vh;
+}
+.theme_lol .image_wrapper {
+  aspect-ratio: 2 / 3;
 }
 
-.theme_pokemon .winner_wrapper img {
-  object-fit: contain;
+.theme_villains {
+  background-image: url('../assets/gauze-05.jpeg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  min-height: 100vh;
+}
+.theme_villains .image_wrapper {
+  aspect-ratio: 2 / 3;
 }
