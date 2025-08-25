@@ -56,8 +56,8 @@ const Header = () => {
                 { to: "/game-consoles", label: "Game consoles", word: "game consoles" },
                 { to: "/video-games", label: "Video Games", word: "video games" },
                 { to: "/retro-games", label: "Retro Games", word: "retrogames" },
-                { to: "/e-sport-teams", label: "E-sport Teams", word: "e-sport teams" },
-                { to: "/e-sport-players", label: "E-sport players", word: "e-sport players" },
+                { to: "/esport-teams", label: "E-sport Teams", word: "e-sport teams" },
+                { to: "/esport-players", label: "E-sport players", word: "e-sport players" },
               ]
             }
           ].map((section) => (
