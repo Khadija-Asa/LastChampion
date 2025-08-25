@@ -11,6 +11,7 @@ import Lol from './components/Lol';
 import Villains from './components/Villains';
 import Streetfighter from './components/Streetfighter';
 import Esport from './components/Esport';
+import Players from './components/Players';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
@@ -25,6 +26,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route path="/villains" element={<Villains />} />
         <Route path="/streetfighter" element={<Streetfighter />} />
         <Route path="/esport-teams" element={<Esport />} />
+        <Route path="/esport-players" element={<Players />} />
       </Routes>
     </HashRouter>
   </React.StrictMode>
