@@ -114,3 +114,14 @@
   object-fit: contain;
   background: rgba(255, 255, 255, 0.129);
 }
+
+.theme_videogames {
+  background-image: url('../assets/gauze-08.jpeg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  min-height: 100vh;
+}
+.theme_videogames .image_wrapper {
+  aspect-ratio: 2 / 3;
+}
