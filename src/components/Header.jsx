@@ -47,7 +47,7 @@ const Header = () => {
                 { to: "/manga", label: "Manga", word: "manga" }, 
                 { to: "/characters", label: "Characters", word: "characters" },
                 { to: "/villains", label: "Villains", word: "villains" },
-                { to: "/antagonist", label: "tobedefined", word: "tobedefined" },
+                { to: "/cartoon-heroes", label: "cartoon heroes", word: "cartoon heroes" },
               ]
             },
             {

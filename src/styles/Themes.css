@@ -169,3 +169,18 @@
 .theme_retro .image_wrapper {
   aspect-ratio: 2 / 3;
 }
+
+.theme_cartoons {
+  background-image: url('../assets/gauze-05.jpeg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  min-height: 100vh;
+}
+.theme_cartoons .image_wrapper {
+  aspect-ratio: 2 / 3;
+}
+.theme_cartoons img {
+  object-fit: contain;
+  padding: 10px;
+}

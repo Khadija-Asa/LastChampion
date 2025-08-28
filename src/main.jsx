@@ -17,6 +17,7 @@ import Consoles from './components/Consoles';
 import Characters from './components/Characters';
 import Manga from './components/Manga';
 import Retro from './components/Retro';
+import Cartoons from './components/Cartoons';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
@@ -37,6 +38,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route path="/characters" element={<Characters />} />
         <Route path="/manga" element={<Manga />} />
         <Route path="/retro-games" element={<Retro />} />
+        <Route path="/cartoon-heroes" element={<Cartoons />} />
       </Routes>
     </HashRouter>
   </React.StrictMode>
