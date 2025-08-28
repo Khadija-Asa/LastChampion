@@ -55,7 +55,7 @@ const Header = () => {
               items: [
                 { to: "/game-consoles", label: "Game consoles", word: "game consoles" },
                 { to: "/video-games", label: "Video Games", word: "video games" },
-                { to: "/retro-games", label: "Retro Games", word: "retrogames" },
+                { to: "/retro-games", label: "Retro Games", word: "retro games" },
                 { to: "/esport-teams", label: "E-sport Teams", word: "e-sport teams" },
                 { to: "/esport-players", label: "E-sport players", word: "e-sport players" },
               ]
