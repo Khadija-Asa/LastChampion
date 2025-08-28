@@ -147,3 +147,14 @@
 .theme_characters .image_wrapper {
   aspect-ratio: 2 / 3;
 }
+
+.theme_manga {
+  background-image: url('../assets/gauze-03.jpeg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  min-height: 100vh;
+}
+.theme_manga .image_wrapper {
+  aspect-ratio: 2 / 3;
+}
