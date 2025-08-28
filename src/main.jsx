@@ -14,6 +14,7 @@ import Esport from './components/Esport';
 import Players from './components/Players';
 import Videogames from './components/Videogames';
 import Consoles from './components/Consoles';
+import Characters from './components/Characters';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
@@ -31,6 +32,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route path="/esport-players" element={<Players />} />
         <Route path="/video-games" element={<Videogames />} />
         <Route path="/game-consoles" element={<Consoles />} />
+        <Route path="/characters" element={<Characters />} />
       </Routes>
     </HashRouter>
   </React.StrictMode>
