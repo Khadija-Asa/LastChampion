@@ -1,82 +1,101 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import gsap from "gsap";
 import './../styles/Home.css';
 import './../styles/main.css';
 import './../styles/Header.css';
 import Header from './Header';
 
-const Home = () => {
-  // const [isLoading, setIsLoading] = useState(true);
+export default function Home() {
+  const [isLoading, setIsLoading] = useState(true);
 
-  // useEffect(() => {
-  //   if (isLoading) {
-  //     const tl = gsap.timeline({
-  //       onComplete: () => setIsLoading(false),
-  //     });
+  const lastRef = useRef(null);
+  const championRef = useRef(null);
+  const imageRef = useRef(null);
 
-  //     tl.to(".loader-text", {
-  //       opacity: 1,
-  //       y: -20,
-  //       duration: 0.8,
-  //       ease: "power3.out",
-  //     })
-  //       .to(".loader-bar", {
-  //         width: "100%",
-  //         duration: 2,
-  //         ease: "power4.inOut",
-  //       }, "-=0.5")
-  //       .to(".preloader", {
-  //         y: "-100%",
-  //         duration: 1,
-  //         ease: "power4.inOut",
-  //       });
-  //   }
-  // }, [isLoading]);
+  // loader
+  useEffect(() => {
+    if (isLoading) {
+      const tl = gsap.timeline({
+        onComplete: () => setIsLoading(false),
+      });
 
-  // if (isLoading) {
-  //   return (
-  //     <div className="preloader">
-  //       <h1 className="loader-text">LastChampion</h1>
-  //       <div className="loader-bar"></div>
-  //     </div>
-  //   );
-  // }
+      tl.to(".loader_text", {
+        opacity: 1,
+        y: -20,
+        duration: 0.8,
+        ease: "power3.out",
+      })
+        .to(".loader_bar", {
+          width: "100%",
+          duration: 0.8,
+          ease: "power4.inOut",
+        }, "-=0.5")
+        .to(".preloader", {
+          y: "-100%",
+          duration: 0.8,
+          ease: "power4.inOut",
+        });
+    }
+  }, [isLoading]);
+
+  useEffect(() => {
+    if (!isLoading) {
+      const tl = gsap.timeline({ defaults: { ease: "expoScale(0.5,7,none)", duration: 1 } });
+
+      // Image
+      tl.fromTo(
+        imageRef.current,
+        { scale: 0, opacity: 0 },
+        { scale: 1, opacity: 1, duration: 1.2 }
+      );
+
+      // Last
+      tl.fromTo(
+        lastRef.current,
+        { y: "-100%", scale: 0.3, opacity: 0 },
+        { y: 0, scale: 1, opacity: 1 },
+        "-=1"
+      );
+
+      // Champion
+      tl.fromTo(
+        championRef.current,
+        { y: "100%", scale: 0.3, opacity: 0 },
+        { y: 0, scale: 1, opacity: 1 },
+        "-=0.8"
+      );
+    }
+  }, [isLoading]);
+
+  if (isLoading) {
+    return (
+      <div className="preloader">
+        <span className="loader_text">Only one can remain, who's gonna win ?</span>
+        <div className="loader_bar"></div>
+      </div>
+    );
+  }
 
   return (
     <section className="home_container">
-
       <Header/>
 
-      <div className='home'>
+      <div className="home">
+        <h1 className="title_container">
+          <span ref={lastRef} className="word last">last</span>
 
-        <p>
-          Only one can remain — Who will earn your vote ?
-        </p>
-
-        <h1 className='flip_container'>
-          <div>
-            <span className="flip_letter">l</span>
-            <span className="flip_letter">a</span>
-            <span className="flip_letter">s</span>
-            <span className="flip_letter">t</span>
+          <div className="image-wrapper">
+            <img
+              ref={imageRef}
+              className="center-image"
+              src="https://wallpapers.com/images/hd/ash-ketchum-pokemon-trainer-pose-8qvwplhdpl9aecuu.jpg" 
+              alt="Sacha"
+            />
           </div>
 
-          <div>
-            <span className="flip_letter">c</span>
-            <span className="flip_letter">h</span>
-            <span className="flip_letter">a</span>
-            <span className="flip_letter">m</span>
-            <span className="flip_letter">p</span>
-            <span className="flip_letter">i</span>
-            <span className="flip_letter">o</span>
-            <span className="flip_letter">n</span>
-          </div>
+          <span ref={championRef} className="word champion">champion</span>
         </h1>
-
-      </div>  
-
+      </div>
     </section>
-  )
+  );
 }
-
-export default Home

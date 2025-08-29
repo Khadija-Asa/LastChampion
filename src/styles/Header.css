@@ -1,5 +1,7 @@
 header {
   padding: .5rem 1rem;
+  position: absolute;
+  width: 100vw;
 }
 
 .social_menu {
