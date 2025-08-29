@@ -19,6 +19,12 @@
   color: var(--White);
 }
 
+@media (max-width: 425px) {
+  .home h1 {
+    margin-top: -5rem;
+  }
+}
+
 .title_container {
   font-size: clamp(3rem, 0.6rem + 12vw, 15rem);
   display: flex;
