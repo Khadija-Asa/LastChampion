@@ -25,13 +25,15 @@ header {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 20px;
-  height: 10px;
+  width: 40px;
+  height: 28px;
   background: none;
-  border: none;
+  border: 1px solid var(--Gray);
   cursor: pointer;
   z-index: 1001;
   transition: all 0.3s ease;
+  align-items: center;
+  padding: 8px;
 }
 
 .burger_bar {
@@ -40,6 +42,7 @@ header {
   background-color: var(--White);
   transition: all 0.3s ease;
 }
+
 
 .burger_menu.open .burger_bar:nth-child(1) {
   transform: translateY(5px) rotate(45deg);
