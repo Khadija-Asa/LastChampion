@@ -28,6 +28,7 @@
   font-weight: bold;
   text-transform: uppercase;
   position: relative;
+  gap: clamp(1.5rem, 1.4rem + 0.5vw, 2rem);
 }
 
 .home h1 {
@@ -102,6 +103,38 @@
   50% { transform: translate(2px, -2px); }
   75% { transform: translate(-1px, 1px); }
   100% { transform: translate(0, 0); }
+}
+
+/* social media */
+.home_media {
+  position: absolute;
+  bottom: .5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  gap: .5rem;
+}
+
+.home_media a {
+  color: var(--White);
+  border: 1px solid var(--Gray);
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.home_media a:hover {
+  color: var(--Black);
+  background-color: var(--White);
+}
+
+@media (min-width: 768px) {
+  .home_media {
+  right: 1rem;
+  bottom: .5rem;
+  }
 }
 
 /* preloader */

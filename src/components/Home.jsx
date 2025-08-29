@@ -4,6 +4,11 @@ import './../styles/Home.css';
 import './../styles/main.css';
 import './../styles/Header.css';
 import Header from './Header';
+import { FaCode } from "react-icons/fa6";
+import { MdPhone } from "react-icons/md";
+import { FaLinkedinIn } from "react-icons/fa";
+import { IoMail } from "react-icons/io5";
+
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
@@ -38,6 +43,28 @@ export default function Home() {
     }
   }, [isLoading]);
 
+  // social media
+  useEffect(() => {
+    if (!isLoading) {
+      const tl = gsap.timeline({ delay: 1, ease: "power3.out" });
+
+      tl.from(".social-link", {
+        y: 50,
+        opacity: 0,
+        scale: 0.5,
+        stagger: 0.2,
+        duration: 0.8
+      })
+      .to(".social-link", {
+        rotation: 360,
+        duration: 1,
+        ease: "back.out(1.7)"
+      }, "-=0.5"
+    );
+    }
+  }, [isLoading]);
+
+  // title
   useEffect(() => {
     if (!isLoading) {
       const tl = gsap.timeline({ defaults: { ease: "expoScale(0.5,7,none)", duration: 1 } });
@@ -95,7 +122,15 @@ export default function Home() {
 
           <span ref={championRef} className="word champion">champion</span>
         </h1>
+
+        <div className="home_media">
+          <a className="social-link" href="mailto:khadidja.aitsiali@gmail.com" target="_blank"><IoMail size={12}/></a>
+          <a className="social-link" href="tel:+33614720566" target="_blank"><MdPhone size={12}/></a>
+          <a className="social-link" href="https://www.linkedin.com/in/khadidja-ait-si-ali/" target="_blank"><FaLinkedinIn size={12}/></a>
+          <a className="social-link" href="https://khadija-asa.github.io/web_developer/" target="_blank"><FaCode size={12}/></a>
+        </div>
       </div>
+
     </section>
   );
 }

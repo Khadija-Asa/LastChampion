@@ -20,6 +20,10 @@ header {
   z-index: 1001;
 }
 
+.menu_logo a {
+  color: var(--White);
+}
+
 /* Burger menu */
 .burger_menu {
   display: flex;

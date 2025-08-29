@@ -14,7 +14,7 @@ const Header = () => {
       <nav className="social_menu">
 
         <div className="menu_logo">
-          LastChampion
+          <a className='logo-title' href="#">LastChampion</a>
         </div>
 
         <button
