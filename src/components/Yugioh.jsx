@@ -5,7 +5,7 @@ import Tournament from "./Tournament";
 const Yugioh = () => {
   return (
     <div className="theme_yugioh">
-      <Tournament title="Choose your 8 favorites Yu-Gi-Oh's cards" data={yugiohList} />;
+      <Tournament title="Choose your 8 favorites Yu-Gi-Oh's cards" data={yugiohList} />
     </div>
   )
     

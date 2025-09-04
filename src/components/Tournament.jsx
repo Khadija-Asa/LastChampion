@@ -67,25 +67,25 @@ const Tournament = ({ title, data }) => {
     }
   };
 
-  useEffect(() => {
-  if (step === "battle") {
-    if (!audioRef.current) {
-      audioRef.current = suspensMusic.current;
-      audioRef.current.loop = true;
-      audioRef.current.volume = 0.1;
-    }
-    audioRef.current.play().catch(() => {
-    });
-  }
+  // useEffect(() => {
+  // if (step === "battle") {
+  //   if (!audioRef.current) {
+  //     audioRef.current = suspensMusic.current;
+  //     audioRef.current.loop = true;
+  //     audioRef.current.volume = 0.1;
+  //   }
+  //   audioRef.current.play().catch(() => {
+  //   });
+  // }
 
-  return () => {
-    if (audioRef.current) {
-      audioRef.current.pause();
-      audioRef.current.currentTime = 0;
-      audioRef.current = null;
-    }
-  };
-}, [step]);
+//   return () => {
+//     if (audioRef.current) {
+//       audioRef.current.pause();
+//       audioRef.current.currentTime = 0;
+//       audioRef.current = null;
+//     }
+//   };
+// }, [step]);
 
 
   useEffect(() => {
@@ -236,6 +236,22 @@ const Tournament = ({ title, data }) => {
           {/* DUEL MESSAGE */}
           <DuelMessage text={getDuelText()} />
 
+          {/* BACKGROUND GIANT IMAGES */}
+          {round[0] && round[0].length === 2 && (
+            <div className="bg_card_wrapper">
+              <img
+                className="bg_card bg_card_left"
+                src={round[0][0].image}
+                alt={round[0][0].name}
+              />
+              <img
+                className="bg_card bg_card_right"
+                src={round[0][1].image}
+                alt={round[0][1].name}
+              />
+            </div>
+          )}
+
           {/* DUEL */}
           {round[0] && round[0].length === 2 && (
           <div className="duel_wrapper">
@@ -280,10 +296,10 @@ const Tournament = ({ title, data }) => {
       {/* WINNER */}
       {step === "winner" && winner && (
         <div className="winner_wrapper">
+          <img className="bg_card" src={winner.image} alt={`${winner.name}`} />
 
           <h5>
-            <span className="blink">{winner.name}</span>
-            &nbsp;is the Champion !
+            <span className="blink">{winner.name} </span> is the Champion ! 
           </h5>
 
           <img className="duel_zoom" src={winner.image} alt={winner.name} />
@@ -291,10 +307,9 @@ const Tournament = ({ title, data }) => {
           <button className="back_button">
             <Link to='/'> <span className="blink"><FaLongArrowAltLeft /></span>PLAY AGAIN</Link>
           </button>
-          
-        </div>
-        
+        </div>  
       )}
+      
     </div>
   );
 };

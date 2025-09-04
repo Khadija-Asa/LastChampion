@@ -5,7 +5,7 @@ import Tournament from "./Tournament";
 const Consoles = () => {
   return (
     <div className="theme_consoles">
-      <Tournament title="Choose your 8 favorites Game Consoles" data={consolesList} />;
+      <Tournament title="Choose your 8 favorites Game Consoles" data={consolesList} />
     </div>
   )
     

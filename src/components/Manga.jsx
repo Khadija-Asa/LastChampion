@@ -5,7 +5,7 @@ import Tournament from "./Tournament";
 const Manga = () => {
   return (
     <div className="theme_manga">
-      <Tournament title="Choose your 8 favorites Manga" data={mangaList} />;
+      <Tournament title="Choose your 8 favorites Manga" data={mangaList} />
     </div>
   )
     

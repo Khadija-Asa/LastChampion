@@ -5,7 +5,7 @@ import Tournament from "./Tournament";
 const Pokemon = () => {
   return (
     <div className="theme_pokemon">
-      <Tournament title="Choose your 8 favorites Pokemons" data={pokemonList} />;
+      <Tournament title="Choose your 8 favorites Pokemons" data={pokemonList} />
     </div>
   )
 };

@@ -5,7 +5,7 @@ import Tournament from "./Tournament";
 const Villains = () => {
   return (
     <div className="theme_villains">
-      <Tournament title="Choose your 8 favorites villains" data={villainsList} />;
+      <Tournament title="Choose your 8 favorites villains" data={villainsList} />
     </div>
   )
     

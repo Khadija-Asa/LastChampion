@@ -4,10 +4,9 @@ import Tournament from "./Tournament";
 const Cartoons = () => {
   return (
     <div className="theme_cartoons">
-      <Tournament title="Choose your 8 favorites Cartoons Characters" data={cartoonsList} />;
+      <Tournament title="Choose your 8 favorites Cartoons Characters" data={cartoonsList} />
     </div>
   )
-    
 };
 
 export default Cartoons;
