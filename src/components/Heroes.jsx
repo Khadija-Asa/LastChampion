@@ -7,8 +7,7 @@ const Heroes = () => {
     <div className="theme_heroes">
       <Tournament title="Choose your 8 favorites Super-heroes" data={heroesList} />
     </div>
-  )
-    
+  )  
 };
 
 export default Heroes;

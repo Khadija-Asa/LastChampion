@@ -30,6 +30,7 @@ const Tournament = ({ title, data }) => {
   const audioRef = useRef(null);
   const suspensMusic = useRef(new Audio(`${basePath}sounds/tension.mp3`));
   const themeClass = data[0]?.theme ? `theme_${data[0].theme}` : "";
+  const backgroundRef = useRef(null);
 
   // HANDLE SOUNDS
   const handleSelect = (champion) => {
@@ -195,13 +196,20 @@ const Tournament = ({ title, data }) => {
               <div
                 key={item.id}
                 className="card_wrapper"
-                style={{ animationDelay: `${index * 100}ms` }}>
+                style={{ animationDelay: `${index * 100}ms` }}
+              >
                 <TiltCard
                   className={`card card_glass ${selected.includes(item) ? "selected" : ""}`}
-                  onClick={() => handleSelect(item)}>
+                  onClick={() => handleSelect(item)}
+                >
                   <div className="card_content">
                     <div className="image_wrapper">
-                      <img src={item.image} alt={item.name} className="card_img" />
+                      <img
+                        src={item.image}
+                        alt={item.name}
+                        className="card_img loading"
+                        onLoad={(e) => e.target.classList.remove("loading")}
+                      />
                     </div>
                     <br />
                     <p className="card_name">{item.name}</p>

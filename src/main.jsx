@@ -26,7 +26,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route path="/" element={<Home />} />
         <Route path="/animes" element={<Animes />} />
         <Route path="/pokemons" element={<Pokemons />} />
-        <Route path="/heroes" element={<Heroes />} />
+        <Route path="/super-heroes" element={<Heroes />} />
         <Route path="/yu-gi-oh" element={<Yugioh />} />
         <Route path="/lol" element={<Lol />} />
         <Route path="/villains" element={<Villains />} />
