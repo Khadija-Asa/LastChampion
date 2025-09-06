@@ -1,24 +1,24 @@
-.theme_animes {
-  /* background-image: url('../assets/gauze-03.jpeg');
+.theme {
+  background-image: url('../assets/theme_bg.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  min-height: 100vh; */
-  background: #536976;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to right, #292E49, #536976);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to right, #292E49, #536976); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-min-height: 100vh;
+  min-height: 100vh;
+  padding-bottom: 5rem;
+ }
+
+ @media (max-width: 767px) {
+  .theme {
+    background-color: var(--Black);
+  }
 }
-.theme_animes .image_wrapper {
+
+ /* ANIME */
+ .theme_animes .image_wrapper {
   aspect-ratio: 3 / 4;
 }
 
-.theme_pokemon {
-  background: #0f0c29;
-  background: -webkit-linear-gradient(to right, #24243e, #302b63, #0f0c29);
-  background: linear-gradient(to right, #24243e, #302b63, #0f0c29);
-  min-height: 100vh;
-}
+/* POKEMON */
 .theme_pokemon .image_wrapper {
   aspect-ratio: 1 / 1;
 }
@@ -29,64 +29,32 @@ min-height: 100vh;
   object-fit: contain;
 }
 
-.theme_heroes {
-  background: #232526;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to right, #414345, #232526);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to right, #414345, #232526); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
-}
+/* HEROES */
 .theme_heroes .image_wrapper {
   aspect-ratio: 3 / 4;
 }
 
-.theme_yugioh {
-  background-image: url('../assets/gauze-05.jpeg');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  min-height: 100vh;
-}
+/* YU GI OH */
 .theme_yugioh .image_wrapper {
   aspect-ratio: 2 / 3;
 }
 
-.theme_lol {
-  background-image: url('../assets/gauze-03.jpeg');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  min-height: 100vh;
-}
+/* LOL */
 .theme_lol .image_wrapper {
   aspect-ratio: 2 / 3;
 }
 
-.theme_villains {
-  background: #c31432;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to left, #240b36, #c31432);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to left, #240b36, #c31432); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */  
-  min-height: 100vh;
-}
+/* VILLAINS */
 .theme_villains .image_wrapper {
   aspect-ratio: 2 / 3;
 }
 
-.theme_streetfighter {
-  background-image: url('../assets/gauze-05.jpeg');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  min-height: 100vh;
-}
+/* STREETFIGHTER */
 .theme_streetfighter .image_wrapper {
   aspect-ratio: 2 / 3;
 }
 
-.theme_esport {
-  background: #16222A;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #3A6073, #16222A);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #3A6073, #16222A); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-}
+/* ESPORT TEAM */
 .theme_esport .image_wrapper {
   aspect-ratio: 1 / 1;
 }
@@ -95,83 +63,43 @@ background: linear-gradient(to right, #414345, #232526); /* W3C, IE 10+/ Edge, F
 }
 .theme_esport img {
   object-fit: contain;
-  /* background: rgba(255, 255, 255, 0.129); */
   padding: 10px;
 }
 
-.theme_players {
-  background-image: url('../assets/gauze-05.jpeg');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  min-height: 100vh;
-}
+/* ESPORT PLAYERS */
 .theme_players .image_wrapper {
   aspect-ratio: 1 / 1;
 }
 .theme_players img {
   object-fit: contain;
-  /* background: rgba(255, 255, 255, 0.129); */
 }
 
-.theme_videogames {
-  background-image: url('../assets/gauze-08.jpeg');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  min-height: 100vh;
-}
+/* VIDEO GAMES */
 .theme_videogames .image_wrapper {
   aspect-ratio: 2 / 3;
 }
 
-.theme_consoles {
-  background-image: url('../assets/gauze-08.jpeg');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  min-height: 100vh;
-}
+/* CONSOLES */
 .theme_consoles .image_wrapper {
   aspect-ratio: 1 / 1;
 }
 
-.theme_characters {
-background: #0F2027;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to right, #2C5364, #203A43, #0F2027); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
-}
+/* CHARACTERS */
 .theme_characters .image_wrapper {
   aspect-ratio: 2 / 3;
 }
 
-.theme_manga {
-  background: #8E0E00;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #1F1C18, #8E0E00);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #1F1C18, #8E0E00); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-}
+/* MANGA */
 .theme_manga .image_wrapper {
   aspect-ratio: 3 / 4;
 }
 
-.theme_retro {
-  background: #C04848;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #480048, #C04848);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #480048, #C04848); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  min-height: 100vh;
-}
+/* RETRO GAMES */
 .theme_retro .image_wrapper {
   aspect-ratio: 2 / 3;
 }
 
-
-.theme_cartoons {
-  background: #870000;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #190A05, #870000);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #190A05, #870000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  min-height: 100vh;
-}
+/* CARTOONS */
 .theme_cartoons .image_wrapper {
   aspect-ratio: 3 / 4;
 }
