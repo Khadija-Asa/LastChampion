@@ -1,15 +1,18 @@
 .theme {
-  background-image: url('../assets/theme_bg.jpg');
+  background: url('../assets/theme_bg.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   min-height: 100vh;
-  padding-bottom: 5rem;
  }
 
- @media (max-width: 767px) {
+@media (max-width: 767px) {
   .theme {
-    background-color: var(--Black);
+    background: var(--Black);
+    background-position: bottom;
+  }
+  .theme .image_wrapper {
+    aspect-ratio: 1 / 1 !important;
   }
 }
 

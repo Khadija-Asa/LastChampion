@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react";
+import { useRef, useEffect } from "react";
 import VanillaTilt from "vanilla-tilt";
 
 const TiltCard = ({ children, options, className = "", ...props }) => {
@@ -8,9 +8,10 @@ const TiltCard = ({ children, options, className = "", ...props }) => {
     if (tiltRef.current) {
       VanillaTilt.init(tiltRef.current, options || {
         max: 20,
-        speed: 100,
+        speed: 500,
         glare: true,
-        "max-glare": 1,
+        transition: true,
+        "max-glare": 0.1,
       });
     }
     return () => tiltRef.current?.vanillaTilt?.destroy();

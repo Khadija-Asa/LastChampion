@@ -7,11 +7,13 @@ import "./../styles/Themes.css";
 import ChampionMessage from "./ChampionMessage";
 import DuelMessage from "./DuelMessage";
 import { FaLongArrowAltLeft } from "react-icons/fa";
+import vs from "../assets/versus_white.svg";
 
 const shuffleArray = (array) => {
   return [...array].sort(() => 0.5 - Math.random());
 };
 
+// URL IMG PUBLIC
 const basePath = import.meta.env.BASE_URL;
 
 const Tournament = ({ title, data }) => {
@@ -68,27 +70,28 @@ const Tournament = ({ title, data }) => {
     }
   };
 
-  // useEffect(() => {
-  // if (step === "battle") {
-  //   if (!audioRef.current) {
-  //     audioRef.current = suspensMusic.current;
-  //     audioRef.current.loop = true;
-  //     audioRef.current.volume = 0.1;
-  //   }
-  //   audioRef.current.play().catch(() => {
-  //   });
-  // }
+  // SOUND BATTLE
+  useEffect(() => {
+  if (step === "battle") {
+    if (!audioRef.current) {
+      audioRef.current = suspensMusic.current;
+      audioRef.current.loop = true;
+      audioRef.current.volume = 0.1;
+    }
+    audioRef.current.play().catch(() => {
+    });
+  }
 
-//   return () => {
-//     if (audioRef.current) {
-//       audioRef.current.pause();
-//       audioRef.current.currentTime = 0;
-//       audioRef.current = null;
-//     }
-//   };
-// }, [step]);
+  return () => {
+    if (audioRef.current) {
+      audioRef.current.pause();
+      audioRef.current.currentTime = 0;
+      audioRef.current = null;
+    }
+  };
+}, [step]);
 
-
+  // SOUND WINNER
   useEffect(() => {
   if (step === "winner" && victorySound.current) {
     victorySound.current.pause();
@@ -279,7 +282,9 @@ const Tournament = ({ title, data }) => {
               <p>{round[0][0].name}</p>
             </div>
 
-            <div className="vs_text">VS</div>
+            <div className="vs_text">
+              <img src={vs} alt="" />
+            </div>
 
             {/* RIGHT CARD */}
             <div
