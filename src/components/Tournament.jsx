@@ -71,25 +71,25 @@ const Tournament = ({ title, data }) => {
   };
 
   // SOUND BATTLE
-  useEffect(() => {
-  if (step === "battle") {
-    if (!audioRef.current) {
-      audioRef.current = suspensMusic.current;
-      audioRef.current.loop = true;
-      audioRef.current.volume = 0.1;
-    }
-    audioRef.current.play().catch(() => {
-    });
-  }
+//   useEffect(() => {
+//   if (step === "battle") {
+//     if (!audioRef.current) {
+//       audioRef.current = suspensMusic.current;
+//       audioRef.current.loop = true;
+//       audioRef.current.volume = 0.1;
+//     }
+//     audioRef.current.play().catch(() => {
+//     });
+//   }
 
-  return () => {
-    if (audioRef.current) {
-      audioRef.current.pause();
-      audioRef.current.currentTime = 0;
-      audioRef.current = null;
-    }
-  };
-}, [step]);
+//   return () => {
+//     if (audioRef.current) {
+//       audioRef.current.pause();
+//       audioRef.current.currentTime = 0;
+//       audioRef.current = null;
+//     }
+//   };
+// }, [step]);
 
   // SOUND WINNER
   useEffect(() => {

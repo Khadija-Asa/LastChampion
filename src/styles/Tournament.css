@@ -15,20 +15,22 @@
   padding: 2rem 1rem;             
 }
 
-/* LE TITRE ET LE MESSAGE */
+/* DUEL TITLE + MESSAGE */
 .battle_wrapper h4 {
-  margin-bottom: 2rem;            
+  font-family: 'Coolvetica';
+  font-size: clamp(4rem, 3.4286rem + 2.8571vw, 6rem); 
+  text-transform: uppercase;
 }
 
 .battle_wrapper .duel_message {
   margin-bottom: 5rem;
 }
 
-/* RESPONSIVE : cartes en colonne sous 768px */
+
 @media (max-width: 768px) {
   .duel_wrapper {
     flex-direction: column;
-    gap: 2rem; /* moins d’espace pour les petits écrans */
+    gap: 2rem;
   }
   .battle_wrapper h4,
   .winner_wrapper h5 {
@@ -43,7 +45,6 @@
 }
 
 .wrapper_title h3,
-.battle_wrapper h4,
 .winner_wrapper h5 {
   font-size: clamp(2rem, 0.8571rem + 1.7857vw, 3rem);
   opacity: 0;
@@ -114,9 +115,6 @@
 .card_glass:hover {
   transform: scale(1.03);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-}
-
-.theme_heroes .card_glass:hover {
 }
 
 @keyframes slideUp {
@@ -271,10 +269,9 @@
 }
 
 /* EACH CARD */
-.card_duel {
+/* .card_duel {
   background: rgba(255, 255, 255, 0.05);
   border-radius: 1rem;
-  padding: 1rem;
   cursor: pointer;
   transition: transform 0.2s ease;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
@@ -285,20 +282,47 @@
 
 .card_duel:hover {
   transform: scale(1.05);
+} */
+
+.card_duel {
+  background: rgba(0, 0, 0, 1);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: .8rem;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 1);
+  padding-bottom: 1rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: min-content;
+}
+
+.card_duel:hover {
+  transform: scale(1.03);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
 /* VERSUS */
 .vs_text img {
-  width: 10rem;
-  animation: glitch 3s infinite;
+  width: clamp(3rem, 1rem + 10vw, 10rem);
+  display: block;
 }
 
-@keyframes glitch {
+@media (max-width: 767px) {
+  .vs_text {
+    animation: none;
+    animation: shake 1s infinite;
+  }
+  .vs_text::before,
+  .vs_text::after {
+    animation: none !important;
+  }
+}
+
+@keyframes shake {
   0%   { transform: translate(0, 0); }
-  20%  { transform: translate(-1px, 1px); }
-  40%  { transform: translate(-1px, -1px); }
-  60%  { transform: translate(1px, 1px); }
-  80%  { transform: translate(1px, -1px); }
+  20%  { transform: translate(-0.5px, 0.5px); }
+  40%  { transform: translate(-0.5px, -0.5px); }
+  60%  { transform: translate(0.5px, 0.5px); }
+  80%  { transform: translate(0.5px, -0.5px); }
   100% { transform: translate(0, 0); }
 }
 
@@ -307,28 +331,26 @@
   display: inline-block;
 }
 
-.vs_text img {
-  display: block;
+.vs_text::before {
+  filter: hue-rotate(90deg);
+  transform: translate(-2px, 0);
 }
 
-.vs_text::before,
 .vs_text::after {
+  filter: hue-rotate(300deg);
+  transform: translate(2px, 0);
+}
+
+@media (min-width: 768px) {
+  .vs_text::before,
+  .vs_text::after {
   content: '';
   position: absolute;
   inset: 0;
   background: url("../assets/versus_white.svg") no-repeat center/contain;
   mix-blend-mode: screen;
   animation: glitch 1s infinite;
-}
-
-.vs_text::before {
-  filter: hue-rotate(90deg); /* vert/bleu */
-  transform: translate(-2px, 0);
-}
-
-.vs_text::after {
-  filter: hue-rotate(300deg); /* rouge/rose */
-  transform: translate(2px, 0);
+  }
 }
 
 @keyframes glitch {
@@ -389,11 +411,13 @@
 /* FINAL WINNER */
 .winner_wrapper {
   height: 100vh;
+  width: 100vw;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 10%;
+  overflow: hidden !important;
 }
 
 .winner_wrapper img {
@@ -452,7 +476,7 @@
     top: 20%;        
   }
   .bg_card_right {
-    top: 67%;             
+    top: 65%;             
   }
   .winner_wrapper .bg_card {
     height: 100vh;

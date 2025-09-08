@@ -9,13 +9,14 @@
 @media (max-width: 767px) {
   .theme {
     background: var(--Black);
-    background-position: bottom;
   }
   .theme .image_wrapper {
     aspect-ratio: 1 / 1 !important;
+    object-position: top;
   }
   .theme .winner_wrapper img {
     aspect-ratio: 1 / 1;
+    object-fit: contain;
   }
 }
 
