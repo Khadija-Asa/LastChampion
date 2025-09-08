@@ -413,7 +413,7 @@
   transform: translateY(-50%);
   width: 30vw;
   height: auto;
-  opacity: 0.15;
+  opacity: 0.2;
   filter: blur(2px);
   z-index: 1;
   pointer-events: none;
@@ -422,7 +422,7 @@
 }
 
 .theme_pokemon .bg_card {
-  aspect-ratio: 1 / 1; /* ou l’aspect ratio que tu veux pour Pokémon */
+  aspect-ratio: 1 / 1;
   background: 0;
 }
 
@@ -452,7 +452,7 @@
     top: 20%;        
   }
   .bg_card_right {
-    top: 60%;             
+    top: 67%;             
   }
   .winner_wrapper .bg_card {
     height: 100vh;
