@@ -403,7 +403,7 @@
 
 .winner_wrapper h5 {
   font-size: clamp(1rem, 0.6rem + 2vw, 3rem);
-  line-height: 2rem;
+  line-height: clamp(2rem, 1.6rem + 2vw, 4rem);
 }
 
 /* BACKGROUND DUEL GIANT CARDS */

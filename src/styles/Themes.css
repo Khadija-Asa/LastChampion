@@ -14,6 +14,9 @@
   .theme .image_wrapper {
     aspect-ratio: 1 / 1 !important;
   }
+  .theme .winner_wrapper img {
+    aspect-ratio: 1 / 1;
+  }
 }
 
  /* ANIME */

@@ -312,7 +312,7 @@ const Tournament = ({ title, data }) => {
           <img className="bg_card" src={winner.image} alt={`${winner.name}`} />
 
           <h5>
-            <span className="blink">{winner.name} </span> is the Champion ! 
+            <span className="blink">{winner.name} </span> <br /> is the Champion ! 
           </h5>
 
           <img className="duel_zoom" src={winner.image} alt={winner.name} />
