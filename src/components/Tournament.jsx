@@ -1,6 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
 import { Link } from 'react-router-dom';
-import gsap from "gsap";
 import "./../styles/Tournament.css";
 import TiltCard from "./TiltCard";
 import "./../styles/Themes.css";

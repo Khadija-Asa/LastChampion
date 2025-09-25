@@ -15,7 +15,7 @@ export const esportList = [
   { id: 14, name: "Falcons", image: "https://static.wikia.nocookie.net/fortnite_esports_gamepedia_en/images/5/58/Falcons_Esportlogo_square.png" },
   { id: 15, name: "Astralis", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Astralis.svg/800px-Astralis.svg.png" },
   { id: 16, name: "SK Gaming", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/SK_Gaming_Logo_2022.svg/768px-SK_Gaming_Logo_2022.svg.png" },
-  { id: 17, name: "NRG", image: "https://static.gosugamers.net/b6/4c/45/e0d47ea971fe597f51af16c93ea1215d8867ed4adffea370bc5cd2b58b.webp?w=256" },
+  { id: 17, name: "NRG", image: "https://storage.ensigame.com/logos/teams/1c9656e2541401b7a1aa5c0c0d3aa88e.png" },
   { id: 18, name: "GiantX", image: "https://upload.wikimedia.org/wikipedia/en/0/0e/GiantX_logo.svg" },
   { id: 19, name: "M8", image: "https://upload.wikimedia.org/wikipedia/fr/9/97/Logo_GentleMates_2025.png" },
   { id: 20, name: "Dignitas", image: "https://upload.wikimedia.org/wikipedia/en/thumb/c/c3/Dignitas_logo.svg/1200px-Dignitas_logo.svg.png" },

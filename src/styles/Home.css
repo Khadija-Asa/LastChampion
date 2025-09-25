@@ -172,7 +172,7 @@
 .loader_bar {
   width: 0%;
   height: 4px;
-  background: linear-gradient(90deg, white, #784ba0, #b2c1cc);
+  background: linear-gradient(90deg, black, var(--White), black);
   margin-top: 20px;
   border-radius: 2px;
 }
