@@ -28,7 +28,7 @@ export const retroList = [
   { id: 27, name: "Gremlins 2", image: "https://media.senscritique.com/media/000017742391/300/gremlins_2_the_new_batch.jpg" },
   { id: 28, name: "Pac-Man", image: "https://retro-arcade.fr/wp-content/uploads/2024/08/pac-man-jeu-video.jpg" },
   { id: 29, name: "Kirby's Adventure", image: "https://media.senscritique.com/media/000016224073/300/kirby_s_adventure.jpg" },
-  { id: 30, name: "Bubble Bobble", image: "https://media.senscritique.com/media/000017712571/300/bubble_bobble_part_2.jpg" },
+  { id: 30, name: "Wario Land 3", image: "https://howlongtobeat.com/games/11063_Wario_Land_3.png" },
   { id: 31, name: "Duck Hunt", image: "https://media.senscritique.com/media/000016687410/300/duck_hunt.jpg" },
   { id: 32, name: "Teenage Mutant Ninja Turtles", image: "https://media.senscritique.com/media/000006915931/300/teenage_mutant_hero_turtles.jpg" },
 ];

@@ -101,6 +101,8 @@
 .image-wrapper:hover::after {
   opacity: .5;
   animation: glitch-rgb 0.3s infinite;
+    transition: all .3s ease-in-out;
+
 }
 
 @keyframes glitch-rgb {
@@ -175,4 +177,72 @@
   background: linear-gradient(90deg, black, var(--White), black);
   margin-top: 20px;
   border-radius: 2px;
+}
+
+/* random button */
+.random-btn-container {
+  position: absolute;
+  bottom: 4rem;
+  animation: glitch-rgb 2s infinite;
+}
+
+@media (min-width: 500px) {
+  .random-btn-container {
+    position: absolute;
+    bottom: -2rem;
+    left: -2rem;
+  }
+  .random-btn-container:hover {
+    bottom: 0;
+    left: 0;
+    transition: all 0.5s ease-in-out;
+  }
+}
+
+.random-btn {
+  width: clamp(3.75rem, 2.6786rem + 5.3571vw, 7.5rem);
+  height: clamp(3.75rem, 2.6786rem + 5.3571vw, 7.5rem);
+  border-radius: 50%;
+  border: 1px solid var(--White);
+  background: transparent;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: visible;
+  position: relative;
+}
+
+.svg-circle {
+  width: 100%;
+  height: 100%;
+}
+
+text {
+  font-size: 1rem;
+  fill: var(--White);
+}
+
+/* Animation qui fait tourner tout le groupe <g> */
+.text-group {
+  transform-origin: 50% 50%;
+  animation: rotate 8s linear infinite;
+}
+
+@keyframes rotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Point central */
+.center-point {
+  position: absolute;
+  width: clamp(0.625rem, 0.4464rem + 0.8929vw, 1.25rem);
+  height: clamp(0.625rem, 0.4464rem + 0.8929vw, 1.25rem);
+  background-color: var(--White);
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
 }

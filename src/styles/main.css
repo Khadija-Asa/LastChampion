@@ -90,7 +90,7 @@ body, html, * {
 
 /* Global animations */
 .blink {
-  animation: blink 1.3s infinite;
+  animation: blink 1s infinite;
 }
 
 @keyframes blink { 

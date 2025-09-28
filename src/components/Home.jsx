@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react";
+import { useNavigate } from "react-router-dom";
 import gsap from "gsap";
 import './../styles/Home.css';
 import './../styles/main.css';
@@ -16,6 +17,22 @@ export default function Home() {
   const lastRef = useRef(null);
   const championRef = useRef(null);
   const imageRef = useRef(null);
+
+  // sound
+  const homeSound = useRef(null);
+
+  useEffect(() => {
+    if (!homeSound.current) {
+      homeSound.current = new Audio(`${import.meta.env.BASE_URL}sounds/home2.mp3`);
+      homeSound.current.volume = 0.3;
+      homeSound.current.loop = false;
+      homeSound.current.muted = true;
+      homeSound.current.play().then(() => {
+
+      homeSound.current.muted = false;
+      })
+    }
+  }, []);
 
   // loader
   useEffect(() => {
@@ -94,10 +111,23 @@ export default function Home() {
     }
   }, [isLoading]);
 
+  // Random theme
+  const navigate = useNavigate();
+
+  const handleRandomTheme = () => {
+  const themes = ["/pokemons", "/yu-gi-oh", "/superheroes", "/animes",
+        "/pokemons", "/super-heroes", "/yu-gi-oh", "/lol", "/villains",
+        "/streetfighter", "/esport-teams", "/esport-players", "/video-games",
+        "/game-consoles", "/characters", "/manga", "/retro-games", "/cartoon-heroes"]
+
+  const randomTheme = themes[Math.floor(Math.random() * themes.length)];
+  navigate(randomTheme);
+};
+
   if (isLoading) {
     return (
       <div className="preloader">
-        <span className="loader_text">Only one can remain, who's gonna win ?</span>
+        <span className="loader_text">Only one can remain <br /> <br /> who's gonna win ?</span>
         <div className="loader_bar"></div>
       </div>
     );
@@ -122,6 +152,27 @@ export default function Home() {
 
           <span ref={championRef} className="word champion">champion</span>
         </h1>
+
+        <div className="random-btn-container">
+          <button className="random-btn" onClick={handleRandomTheme}>
+            <svg viewBox="0 0 200 200" className="svg-circle">
+              <g className="text-group">
+                <defs>
+                  <path
+                    id="circlePath"
+                    d="M 100, 100 m -75, 0 a 75,75 0 1,1 150,0 a 75,75 0 1,1 -150,0"
+                  />
+                </defs>
+                <text>
+                  <textPath href="#circlePath" startOffset="0%">
+                    RANDOM THEME• RANDOM THEME• RANDOM THEME•
+                  </textPath>
+                </text>
+              </g>
+            </svg>
+            <span className="center-point"></span>
+          </button>
+        </div>
 
         <div className="home_media">
           <a className="social-link" href="mailto:khadidja.aitsiali@gmail.com" target="_blank"><IoMail size={12}/></a>

@@ -63,16 +63,6 @@
   animation-delay: 0.2s;
 }
 
-.wrapper_title h3 {
-  font-size: clamp(2.5rem, 1.8932rem + 2.589vw, 5rem);
-  font-family: 'Coolvetica';
-  text-transform: uppercase;
-}
-
-.wrapper_title p {
-  font-family: 'VCR';
-}
-
 /* GRID & CARD */
 .grid {
   color: var(--White);
