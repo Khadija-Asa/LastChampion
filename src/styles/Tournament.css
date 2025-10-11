@@ -294,6 +294,7 @@
   padding-bottom: 1rem;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   width: min-content;
+  cursor: url('https://i.ytimg.com/vi/EH19efnxwwY/hqdefault.jpg') 16 16, auto;
 }
 
 .card_duel:hover {
@@ -370,10 +371,6 @@
   aspect-ratio: 5 / 7;
 }
 
-.winner_wrapper img {
-  height: clamp(18.75rem, 4.4643rem + 22.3214vw, 31.25rem);
-}
-
 .card_duel p {
   margin-top: 0.75rem;
   font-size: 1rem;
@@ -417,18 +414,58 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 10%;
   overflow: hidden !important;
 }
 
 .winner_wrapper img {
-  object-fit: cover;
   z-index: 2;
+  opacity: .95;
+  height: clamp(18.75rem, 4.4643rem + 22.3214vw, 31.25rem);
 }
 
 .winner_wrapper h5 {
-  font-size: clamp(1rem, 0.6rem + 2vw, 3rem);
-  line-height: clamp(2rem, 1.6rem + 2vw, 4rem);
+  position: absolute;
+  font-size: 60rem;
+  font-family: 'Coolvetica';
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, .7);
+}
+
+.letter-animation {
+  display: inline-block;
+  text-transform: uppercase;
+  position: relative;
+  overflow: hidden;
+  text-shadow: 0 0 200px var(--Black);
+}
+
+.letter-animation span {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(50%) rotateZ(3deg) skewX(10deg);
+  animation: tearIn 0.6s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+  filter: contrast(150%) brightness(120%);
+}
+
+@keyframes tearIn {
+  0% {
+    opacity: 0;
+    transform: translateY(80%) rotateZ(10deg) skewX(20deg);
+    clip-path: polygon(0 60%, 100% 40%, 100% 100%, 0% 100%);
+    filter: blur(4px);
+  }
+  40% {
+    opacity: 1;
+    transform: translateY(-10%) rotateZ(-5deg) skewX(-10deg);
+    clip-path: polygon(0 0%, 100% 0%, 100% 70%, 0% 100%);
+    filter: blur(1px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0%) rotateZ(0deg) skewX(0deg);
+    clip-path: polygon(0 0%, 100% 0%, 100% 100%, 0% 100%);
+    filter: blur(0);
+  }
 }
 
 /* BACKGROUND DUEL GIANT CARDS */
@@ -499,4 +536,22 @@
   filter: blur(3px);
   z-index: 1;
   pointer-events: none;
+}
+
+/* MUTE BUTTON */
+.mute_button {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  background: transparent;
+  color: var(--White);
+  border: none;
+  font-size: clamp(1rem, 0.8571rem + 0.7143vw, 1.5rem);
+  cursor: pointer;
+  z-index: 1000;
+  transition: transform 0.2s ease;
+}
+
+.mute_button:hover {
+  transform: scale(1.1);
 }

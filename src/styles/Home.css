@@ -184,13 +184,14 @@
   position: absolute;
   bottom: 4rem;
   animation: glitch-rgb 2s infinite;
+
 }
 
 @media (min-width: 500px) {
   .random-btn-container {
     position: absolute;
-    bottom: -2rem;
-    left: -2rem;
+    left: -1rem;
+    bottom: -1rem;
   }
   .random-btn-container:hover {
     bottom: 0;
@@ -223,10 +224,10 @@ text {
   fill: var(--White);
 }
 
-/* Animation qui fait tourner tout le groupe <g> */
 .text-group {
   transform-origin: 50% 50%;
   animation: rotate 8s linear infinite;
+  overflow-x: hidden;
 }
 
 @keyframes rotate {
@@ -234,7 +235,6 @@ text {
   100% { transform: rotate(360deg); }
 }
 
-/* Point central */
 .center-point {
   position: absolute;
   width: clamp(0.625rem, 0.4464rem + 0.8929vw, 1.25rem);

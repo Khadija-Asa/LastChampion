@@ -5,7 +5,8 @@ import TiltCard from "./TiltCard";
 import "./../styles/Themes.css";
 import ChampionMessage from "./ChampionMessage";
 import DuelMessage from "./DuelMessage";
-import { FaLongArrowAltLeft } from "react-icons/fa";
+import { FaLongArrowAltLeft, FaVolumeUp, FaVolumeMute } from "react-icons/fa";
+
 import vs from "../assets/versus_white.svg";
 
 const shuffleArray = (array) => {
@@ -24,6 +25,8 @@ const Tournament = ({ title, data }) => {
   const [duelIndex, setDuelIndex] = useState(0);
   const startButtonRef = useRef(null);
   const [flash, setFlash] = useState(false);
+  const [isMuted, setIsMuted] = useState(false);
+
   const selectSound = useRef(new Audio(`${basePath}sounds/select.mp3`));
   const removeSound = useRef(new Audio(`${basePath}sounds/remove.mp3`));
   const startSound = useRef(new Audio(`${basePath}sounds/whoosh.mp3`));
@@ -32,6 +35,25 @@ const Tournament = ({ title, data }) => {
   const suspensMusic = useRef(new Audio(`${basePath}sounds/tension.mp3`));
   const themeClass = data[0]?.theme ? `theme_${data[0].theme}` : "";
   const backgroundRef = useRef(null);
+
+  // TOGGLE MUTE
+  const toggleMute = () => {
+    setIsMuted((prev) => !prev);
+  };
+
+  // MUTE/UNMUTE
+  useEffect(() => {
+    const sounds = [
+      selectSound.current,
+      removeSound.current,
+      startSound.current,
+      victorySound.current,
+      suspensMusic.current
+    ];
+    sounds.forEach((sound) => {
+      if (sound) sound.muted = isMuted;
+    });
+  }, [isMuted]);
 
   // HANDLE SOUNDS
   const handleSelect = (champion) => {
@@ -174,7 +196,11 @@ const Tournament = ({ title, data }) => {
   };
 
   return (
-    <div className="tournament_wrapper">
+    <section className="tournament_wrapper">
+      {/* 🎚️ bouton mute */}
+      <button className="mute_button" onClick={toggleMute}>
+        {isMuted ? <FaVolumeMute /> : <FaVolumeUp />}
+      </button>
       <ChampionMessage remaining={8 - selected.length} />
 
       {step === "selection" && (
@@ -266,7 +292,7 @@ const Tournament = ({ title, data }) => {
           {round[0] && round[0].length === 2 && (
           <div className="duel_wrapper">
             {/* LEFT CARD */}
-            <div
+            <TiltCard
               className="card_duel"
               onClick={() => handleVote(round[0][0])}
               role="button"
@@ -279,14 +305,14 @@ const Tournament = ({ title, data }) => {
                 alt={round[0][0].name}
               />
               <p>{round[0][0].name}</p>
-            </div>
+            </TiltCard>
 
             <div className="vs_text">
               <img src={vs} alt="" />
             </div>
 
             {/* RIGHT CARD */}
-            <div
+            <TiltCard
               className="card_duel"
               onClick={() => handleVote(round[0][1])}
               role="button"
@@ -299,7 +325,7 @@ const Tournament = ({ title, data }) => {
                 alt={round[0][1].name}
               />
               <p>{round[0][1].name}</p>
-            </div>
+            </TiltCard>
           </div>
         )}
         </div>
@@ -308,21 +334,40 @@ const Tournament = ({ title, data }) => {
       {/* WINNER */}
       {step === "winner" && winner && (
         <div className="winner_wrapper">
-          <img className="bg_card" src={winner.image} alt={`${winner.name}`} />
+          <img
+            className="bg_card"
+            src={winner.image}
+            alt={winner.name}
+          />
 
-          <h5>
-            <span className="blink">{winner.name} </span> <br /> is the Champion ! 
+          <h5 className="letter-animation">
+            {winner?.name?.split(" ").map((word, wi) => (
+              <React.Fragment key={wi}>
+                {word.split("").map((letter, i) => (
+                  <span
+                    key={`${wi}-${i}`}
+                    style={{ animationDelay: `${(wi * 10 + i) * 0.1}s` }}
+                    data-letter={letter}
+                  >
+                    {letter}
+                  </span>
+                ))}
+                {wi < winner.name.split(" ").length - 1 && <br />}
+              </React.Fragment>
+            ))}
           </h5>
 
-          <img className="duel_zoom" src={winner.image} alt={winner.name} />
+          <img className="duel_zoom" src={winner.winnerImage} alt={winner?.name} />
 
           <button className="back_button">
-            <Link to='/'> <span className="blink"><FaLongArrowAltLeft /></span>PLAY AGAIN</Link>
+            <Link to='/'>
+              <span className="blink"><FaLongArrowAltLeft /></span>PLAY AGAIN
+            </Link>
           </button>
-        </div>  
+        </div>
       )}
-      
-    </div>
+
+    </section>
   );
 };
 
