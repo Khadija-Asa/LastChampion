@@ -197,7 +197,8 @@ const Tournament = ({ title, data }) => {
 
   return (
     <section className="tournament_wrapper">
-      {/* 🎚️ bouton mute */}
+
+      {/* MUTE UNMUTE BUTTON */}
       <button className="mute_button" onClick={toggleMute}>
         {isMuted ? <FaVolumeMute /> : <FaVolumeUp />}
       </button>
@@ -248,7 +249,7 @@ const Tournament = ({ title, data }) => {
           </div>
 
           {/* START BUTTON */}
-          {selected.length === 8 && (
+          {selected.length === 2 && (
             <button
               className={`start_button ${flash ? "flash_effect" : ""}`}
               onClick={startTournament}
@@ -357,7 +358,7 @@ const Tournament = ({ title, data }) => {
             ))}
           </h5>
 
-          <img className="duel_zoom" src={winner.winnerImage} alt={winner?.name} />
+          <img className="duel_zoom" src={winner.winnerImage || winner.image} alt={winner.name} />
 
           <button className="back_button">
             <Link to='/'>

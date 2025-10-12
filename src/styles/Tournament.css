@@ -425,7 +425,8 @@
 
 .winner_wrapper h5 {
   position: absolute;
-  font-size: 60rem;
+  font-size: clamp(20rem, 14.2857rem + 28.5714vw, 40rem);
+  line-height: 30rem;
   font-family: 'Coolvetica';
   text-transform: uppercase;
   color: rgba(255, 255, 255, .7);
@@ -443,7 +444,7 @@
   display: inline-block;
   opacity: 0;
   transform: translateY(50%) rotateZ(3deg) skewX(10deg);
-  animation: tearIn 0.6s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+  animation: tearIn .7s cubic-bezier(0.19, 1, 0.22, 1) forwards;
   filter: contrast(150%) brightness(120%);
 }
 
