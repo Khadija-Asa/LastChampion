@@ -427,9 +427,9 @@
   position: absolute;
   font-family: 'Coolvetica';
   text-transform: uppercase;
-  color: rgba(255, 255, 255, .85);
   z-index: 3;
 }
+
 
 @media (max-width: 768px) {
   .winner_wrapper h5 {
@@ -443,7 +443,7 @@
   }
 }
 
-.letter-animation {
+.letter_animation {
   display: inline-block;
   text-transform: uppercase;
   position: relative;

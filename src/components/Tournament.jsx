@@ -347,7 +347,7 @@ const Tournament = ({ title, data }) => {
           </picture>
 
           {/* WINNER TITLE */}
-          <h5 className="letter-animation">
+          <h5 className="letter_animation">
             { (winner.winnerName || winner.name).split(" ").map((word, wi) => (
               <React.Fragment key={wi}>
                 {word.split("").map((letter, i) => (
