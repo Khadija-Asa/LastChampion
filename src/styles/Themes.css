@@ -6,7 +6,7 @@
   min-height: 100vh;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 768px) {
   .theme {
     background: var(--Black);
   }
@@ -14,10 +14,10 @@
     aspect-ratio: 1 / 1 !important;
     object-position: top;
   }
-  .theme .winner_wrapper img {
-    aspect-ratio: 1 / 1;
-    object-fit: contain;
-  }
+  .theme_heroes .winner_wrapper .duel_zoom {
+  max-width: 250px;
+  object-fit: cover;
+}
 }
 
 /* ANIME */
@@ -72,7 +72,9 @@
   object-fit: contain;
   padding: 10px;
 }
-.theme_esport .card img {
+.theme_esport .card img,
+.theme_esport .card_duel img,
+.theme_esport .winner_wrapper .duel_zoom {
   object-position: center;
   filter: drop-shadow(0 0 1px white)
           drop-shadow(0 0 1px white);
@@ -94,6 +96,10 @@
 /* CONSOLES */
 .theme_consoles .image_wrapper {
   aspect-ratio: 1 / 1;
+}
+.theme_consoles .winner_wrapper .duel_zoom {
+  aspect-ratio: 1 / 1;
+  object-fit: contain;
 }
 
 /* CHARACTERS */

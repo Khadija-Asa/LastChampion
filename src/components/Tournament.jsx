@@ -335,31 +335,38 @@ const Tournament = ({ title, data }) => {
       {/* WINNER */}
       {step === "winner" && winner && (
         <div className="winner_wrapper">
-          <img
-            className="bg_card"
-            src={winner.image}
-            alt={winner.name}
-          />
 
+          {/* WINNER BG IMAGE */}
+          <picture>
+            <source media="(max-width: 768px)"
+              srcSet={winner.winnerImage || winner.image} />
+
+            <img className="bg_card"
+              src={winner.image}
+              alt={winner.name} />
+          </picture>
+
+          {/* WINNER TITLE */}
           <h5 className="letter-animation">
-            {winner?.name?.split(" ").map((word, wi) => (
+            { (winner.winnerName || winner.name).split(" ").map((word, wi) => (
               <React.Fragment key={wi}>
                 {word.split("").map((letter, i) => (
                   <span
                     key={`${wi}-${i}`}
-                    style={{ animationDelay: `${(wi * 10 + i) * 0.1}s` }}
+                    style={{ animationDelay: `${(wi * 3 + i) * 0.2}s` }}
                     data-letter={letter}
                   >
                     {letter}
                   </span>
                 ))}
-                {wi < winner.name.split(" ").length - 1 && <br />}
               </React.Fragment>
             ))}
           </h5>
 
+          {/* WINNER IMAGE */}
           <img className="duel_zoom" src={winner.winnerImage || winner.image} alt={winner.name} />
 
+          {/* PLAY AGAIN BUTTON */}
           <button className="back_button">
             <Link to='/'>
               <span className="blink"><FaLongArrowAltLeft /></span>PLAY AGAIN

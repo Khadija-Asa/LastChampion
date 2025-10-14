@@ -419,17 +419,28 @@
 
 .winner_wrapper img {
   z-index: 2;
-  opacity: .95;
+  opacity: .8;
   height: clamp(18.75rem, 4.4643rem + 22.3214vw, 31.25rem);
 }
 
 .winner_wrapper h5 {
   position: absolute;
-  font-size: clamp(20rem, 14.2857rem + 28.5714vw, 40rem);
-  line-height: 30rem;
   font-family: 'Coolvetica';
   text-transform: uppercase;
-  color: rgba(255, 255, 255, .7);
+  color: rgba(255, 255, 255, .85);
+  z-index: 3;
+}
+
+@media (max-width: 768px) {
+  .winner_wrapper h5 {
+    font-size: clamp(8rem, 3rem + 25vw, 15rem);
+  }
+}
+
+@media (min-width: 769px) {
+  .winner_wrapper h5 {
+    font-size: clamp(20rem, 2.8092rem + 35.7675vw, 35rem);
+  }
 }
 
 .letter-animation {
@@ -437,7 +448,7 @@
   text-transform: uppercase;
   position: relative;
   overflow: hidden;
-  text-shadow: 0 0 200px var(--Black);
+  filter: drop-shadow(0 0 10px var(--Black));
 }
 
 .letter-animation span {

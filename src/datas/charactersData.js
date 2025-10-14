@@ -8,7 +8,7 @@ export const charactersList = [
   { id: 7, name: "Yoda", image: "https://hitek.fr/img/up_o/2164577758/aba41_dansstarwarsnousnavonsvuque3individusdelespecedeyodavoicipourquoi.jpg" },
   { id: 8, name: "Regan MacNeil", image: "https://designyoutrust.com/wp-content/uploads/2022/11/1-2.jpg" },
   { id: 9, name: "Wednesday Addams", image: "https://i.pinimg.com/736x/23/96/e8/2396e845aac2131b54d9e8978b045e75.jpg" },
-  { id: 10, name: "Albert Einstein", image: "https://www.humanite.fr/wp-content/uploads/2021/07/capture_35.jpg" },
+  { id: 10, name: "Meredith Grey", image: "https://static.blog4ever.com/2014/09/784000/big_artfichier_784000_4134685_20140927445671.jpg" },
   { id: 11, name: "Maximus", image: "https://www.dexerto.fr/cdn-image/wp-content/uploads/sites/2/2024/07/10/gladiator-crowe.jpg?width=1200&quality=60&format=auto" },
   { id: 12, name: "Phoebe Buffay", image: "https://i.pinimg.com/474x/14/51/ed/1451edef2e656d89bf87f2037f1a7921.jpg" },
   { id: 13, name: "Terminator", image: "https://gonewiththetwins.com/wp-content/uploads/2024/05/terminator_tall.jpg" },
