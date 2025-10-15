@@ -3,7 +3,7 @@ export const mangaList = [
   { id: 2, name: "Monster", image: "https://media.senscritique.com/media/000020329440/300/monster.png" },
   { id: 3, name: "Kingdom", image: "https://media.senscritique.com/media/000005402693/300/kingdom.png" },
   { id: 4, name: "Dragon Ball", image: "https://media.senscritique.com/media/000019266699/300/dragon_ball.png",
-  winnerName: "Dragon B" },
+  winnerName: "Dragon_B" },
   { id: 5, name: "Fullmetal Alchemist", image: "https://media.senscritique.com/media/000019266535/300/fullmetal_alchemist.jpg",
   winnerName: "FullMetal" },
   { id: 6, name: "GTO", image: "https://media.senscritique.com/media/000020130593/300/gto.png" },

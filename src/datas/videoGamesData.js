@@ -9,7 +9,7 @@ export const videoGamesList = [
   winnerName: "Witcher" },
   { id: 5, name: "Halo", image: "https://xboxsquad.fr/wp-content/uploads/2021/01/Halo-Wallpaper-06.jpg" },
   { id: 6, name: "Final Fantasy", image: "https://sm.ign.com/ign_fr/news/f/final-fant/final-fantasy-vii-remake-intergrade-director-would-like-nint_h1x3.jpg",
-  winnerName: "Final_F" },
+  winnerName: "F_Fantasy" },
   { id: 7, name: "League of Legends", image: "https://onelife-media.fr/wp-content/uploads/2024/10/league-of-legends-wild-rift-500-million.jpeg",
   winnerName: "L.O.L" },
   { id: 8, name: "Counter-Strike", image: "https://fr.egw.news/_next/image?url=https%3A%2F%2Fegw.news%2Fuploads%2Fnews%2F1%2F17%2F1743500085719_1743500085719.webp&w=1920&q=75",

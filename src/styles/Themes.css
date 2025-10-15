@@ -14,10 +14,11 @@
     aspect-ratio: 1 / 1 !important;
     object-position: top;
   }
-  .theme_heroes .winner_wrapper .duel_zoom {
+  .theme_heroes .winner_wrapper .duel_zoom,
+  .theme_villains .winner_wrapper .duel_zoom {
   max-width: 250px;
   object-fit: cover;
-}
+  } 
 }
 
 /* ANIME */
@@ -82,10 +83,7 @@
 
 /* ESPORT PLAYERS */
 .theme_players .image_wrapper {
-  aspect-ratio: 1 / 1;
-}
-.theme_players img {
-  object-fit: contain;
+  aspect-ratio: 2 / 3;
 }
 
 /* VIDEO GAMES */

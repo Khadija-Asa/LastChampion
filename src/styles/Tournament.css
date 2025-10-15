@@ -430,7 +430,6 @@
   z-index: 3;
 }
 
-
 @media (max-width: 768px) {
   .winner_wrapper h5 {
     font-size: clamp(8rem, 3rem + 25vw, 15rem);
@@ -451,7 +450,7 @@
   filter: drop-shadow(0 0 10px var(--Black));
 }
 
-.letter-animation span {
+.letter_animation span {
   display: inline-block;
   opacity: 0;
   transform: translateY(50%) rotateZ(3deg) skewX(10deg);
