@@ -6,7 +6,6 @@ import './../styles/main.css';
 import './../styles/Header.css';
 import Header from './Header';
 import { FaCode } from "react-icons/fa6";
-import { MdPhone } from "react-icons/md";
 import { FaLinkedinIn } from "react-icons/fa";
 import { IoMail } from "react-icons/io5";
 
@@ -24,7 +23,7 @@ export default function Home() {
   useEffect(() => {
     if (!homeSound.current) {
       homeSound.current = new Audio(`${import.meta.env.BASE_URL}sounds/home2.mp3`);
-      homeSound.current.volume = 0.3;
+      homeSound.current.volume = 0.1;
       homeSound.current.loop = false;
       homeSound.current.muted = true;
       homeSound.current.play().then(() => {
@@ -115,8 +114,7 @@ export default function Home() {
   const navigate = useNavigate();
 
   const handleRandomTheme = () => {
-  const themes = ["/pokemons", "/yu-gi-oh", "/superheroes", "/animes",
-        "/pokemons", "/super-heroes", "/yu-gi-oh", "/lol", "/villains",
+  const themes = ["/pokemons", "/yu-gi-oh", "/animes", "/super-heroes", "/lol", "/villains",
         "/streetfighter", "/esport-teams", "/esport-players", "/video-games",
         "/game-consoles", "/characters", "/manga", "/retro-games", "/cartoon-heroes"]
 

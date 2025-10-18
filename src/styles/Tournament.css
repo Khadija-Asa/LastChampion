@@ -368,7 +368,8 @@
   height: clamp(15rem, 10.7143rem + 21.4286vw, 30rem);
   object-fit: cover;
   border-radius: 0.5rem 0.5rem 0 0;
-  aspect-ratio: 5 / 7;
+  aspect-ratio: 6 / 7;
+  cursor: pointer;
 }
 
 .card_duel p {
@@ -391,7 +392,7 @@
 /* EFFECT ON IMG */
 .card_duel img.duel_zoom,
 .winner_wrapper img.duel_zoom {
-  animation: zoomInPop .6s ease;
+  animation: zoomInPop .5s ease;
 }
 
 @keyframes zoomInPop {

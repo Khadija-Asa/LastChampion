@@ -7,7 +7,7 @@ export const playersList = [
   { id: 6, name: "N0tail", image: "https://estnn.com/app/uploads/2019/07/n0tail-tutorial-header.jpg" },
   { id: 7, name: "TenZ", image: "https://esportsinsider.com/wp-content/uploads/2025/05/TenZ-joins-Cubert-Academy-large.jpg" },
   { id: 8, name: "Bugha", image: "https://i.guim.co.uk/img/media/68853911284f4d920ab05ab0e48745453d66884b/0_144_3500_2100/master/3500.jpg?width=1200&height=1200&quality=85&auto=format&fit=crop&s=628446fe9b4ff2532ac43a9dcc623cc0" },
-  { id: 9, name: "shroud", image: "https://prosettings.net/cdn-cgi/image/dpr=1%2Cf=auto%2Cfit=contain%2Cg=top%2Ch=200%2Cq=99%2Csharpen=1%2Cw=200/wp-content/uploads/shroud.png" },
+  { id: 9, name: "Dev1ce", image: "https://fr.egw.news/_next/image?url=https%3A%2F%2Fegw.news%2Fuploads%2Fnews%2F1667048949527-16x9.webp&w=1920&q=75" },
   { id: 10, name: "Matriix", image: "https://i.ytimg.com/vi/J2AkjBFtu2k/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLCrcwF0L75A3BTlFpUdp3f75MU58g" },
   { id: 11, name: "Aspas", image: "https://files.bo3.gg/uploads/image/60928/image/webp-1efaeb5d288212d832c3bdb29d440bfd.webp" },
   { id: 12, name: "Caps", image: "https://img.redbull.com/images/c_fill,g_auto,w_450,h_600/q_auto,f_auto/redbullcom/2019/10/24/dcc8458a-c7c6-45ba-9785-14997fe1f502/caps-g2-esports-worlds-2019-lol" },
