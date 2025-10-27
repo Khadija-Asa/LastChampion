@@ -346,6 +346,11 @@ const Tournament = ({ title, data }) => {
               alt={winner.name} />
           </picture>
 
+          {/* WINNER IMAGE */}
+          <TiltCard>
+            <img className="duel_zoom" src={winner.winnerImage || winner.image} alt={winner.name} />
+          </TiltCard>
+
           {/* WINNER TITLE */}
           <h5 className="letter_animation">
             { (winner.winnerName || winner.name).split(" ").map((word, wi) => (
@@ -362,9 +367,6 @@ const Tournament = ({ title, data }) => {
               </React.Fragment>
             ))}
           </h5>
-
-          {/* WINNER IMAGE */}
-          <img className="duel_zoom" src={winner.winnerImage || winner.image} alt={winner.name} />
 
           {/* PLAY AGAIN BUTTON */}
           <button className="back_button">

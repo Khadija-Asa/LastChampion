@@ -179,12 +179,126 @@
   border-radius: 2px;
 }
 
+.preloader_grid {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  flex-wrap: wrap;
+  height: 100vh;
+  width: 100vw;
+  padding: 5px 0;
+  align-content: center;
+}
+
+.preloader_grid {
+  overflow: hidden;
+}
+
+
+.preloader_grid .item {
+  position: relative;
+  overflow: hidden;
+}
+
+.preloader_grid .item::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 1;
+}
+
+.preloader_grid .item h2 {
+  color: var(--White);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  position: relative;
+  z-index: 2;
+  font-size: clamp(1rem, 0.7143rem + 1.4286vw, 2rem);
+}
+
+.preloader_grid .item:nth-child(1) {
+  width: 32%;
+  height: 45%;
+  background-image: url('https://4kwallpapers.com/images/wallpapers/marvels-spider-man-pc-games-playstation-4-playstation-5--8652.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.preloader_grid .item:nth-child(2) {
+  width: 32%;
+  height: 54%;
+  background-image: url('https://i.pinimg.com/736x/4a/2b/c9/4a2bc96ebfe54baa65af2189bbe0b69c.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.preloader_grid .item:nth-child(3) {
+  width: 32%;
+  height: 32%;
+  background: url('https://motionbgs.com/media/6276/obito-manga.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.preloader_grid .item:nth-child(4) {
+  width: 32%;
+  flex-grow: 1;
+  height: 0px;
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Coolvetica';
+}
+
+.preloader_grid h3 {
+  font-size: clamp(1rem, -0.1429rem + 5.7143vw, 5rem);
+  color: var(--White);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+
+.preloader_grid .item:nth-child(5) {
+  width: 32%;
+  height: 42%;
+  background: url('https://wallpaperbat.com/img/8643089-pokemon-wallpaper-4k.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.preloader_grid .item:nth-child(6) {
+  width: 32%;
+  height: 32%;
+  background: url('https://wallpaper.forfun.com/fetch/87/871a9fc0a72078cf5429f865e3c1c96a.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.preloader_grid .item:nth-child(7) {
+  width: 32%;
+  flex-grow: 1;
+  flex-shrink: 1;
+  order: 0;
+  background: url('https://rare-gallery.com/uploads/posts/933041-ghost-Call-of-Duty-video-games-PC-gaming-video-game.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
 /* random button */
 .random-btn-container {
   position: absolute;
   bottom: 4rem;
   animation: glitch-rgb 2s infinite;
-
 }
 
 @media (min-width: 500px) {

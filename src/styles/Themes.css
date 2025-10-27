@@ -18,7 +18,10 @@
   .theme_villains .winner_wrapper .duel_zoom {
     max-width: 250px;
     object-fit: cover;
-  } 
+  }
+  .winner_wrapper .bg_card {
+    width: 100%;
+  }
 }
 
 /* ANIME */

@@ -269,22 +269,6 @@
   align-items: center;
 }
 
-/* EACH CARD */
-/* .card_duel {
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 1rem;
-  cursor: pointer;
-  transition: transform 0.2s ease;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.card_duel:hover {
-  transform: scale(1.05);
-} */
-
 .card_duel {
   background: rgba(0, 0, 0, 1);
   backdrop-filter: blur(12px);
@@ -294,7 +278,6 @@
   padding-bottom: 1rem;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   width: min-content;
-  cursor: url('https://i.ytimg.com/vi/EH19efnxwwY/hqdefault.jpg') 16 16, auto;
 }
 
 .card_duel:hover {
@@ -420,7 +403,6 @@
 
 .winner_wrapper img {
   z-index: 2;
-  opacity: .8;
   height: clamp(18.75rem, 4.4643rem + 22.3214vw, 31.25rem);
 }
 
@@ -449,6 +431,7 @@
   position: relative;
   overflow: hidden;
   filter: drop-shadow(0 0 10px var(--Black));
+  pointer-events: none;
 }
 
 .letter_animation span {
@@ -540,12 +523,12 @@
   position: absolute;
   transform: translate(-50%, -50%);
   left: 50%;
-  width: 80vw;
+  width: 90vw;
   height: 100vh;
   max-width: none;
   max-height: none;
-  opacity: 0.15;
-  filter: blur(3px);
+  opacity: 0.2;
+  filter: blur(1px);
   z-index: 1;
   pointer-events: none;
 }

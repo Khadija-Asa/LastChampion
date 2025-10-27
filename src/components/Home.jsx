@@ -20,44 +20,53 @@ export default function Home() {
   // sound
   const homeSound = useRef(null);
 
-  useEffect(() => {
-    if (!homeSound.current) {
-      homeSound.current = new Audio(`${import.meta.env.BASE_URL}sounds/home2.mp3`);
-      homeSound.current.volume = 0.1;
-      homeSound.current.loop = false;
+useEffect(() => {
+  if (isLoading) {
+    const tl = gsap.timeline({
+      onComplete: () => {
+      setIsLoading(false);
+      },
+    });
+
+    gsap.set(".preloader_grid .item", { y: -100, opacity: 0 });
+
+    tl.to(".preloader_grid .item", {
+      y: 0,
+      opacity: 1,
+      duration: 1,
+      ease: "power4.out",
+      stagger: 0.15
+    })
+    .to({}, { duration: 0.2 })
+    .to(".preloader_grid .item", {
+      y: -150,
+      opacity: 0,
+      duration: 0.8,
+      ease: "power4.in",
+      stagger: 0.1
+    })
+    .to(".preloader", {
+      y: "-100%",
+      duration: 1,
+      ease: "power4.inOut"
+    }, "-=0.5")
+
+     .add(() => {
+      if (!homeSound.current) {
+        homeSound.current = new Audio(`${import.meta.env.BASE_URL}sounds/home2.mp3`);
+        homeSound.current.volume = 0.1;
+        homeSound.current.loop = false;
+      }
+
       homeSound.current.muted = true;
       homeSound.current.play().then(() => {
-
-      homeSound.current.muted = false;
+        homeSound.current.muted = false;
       })
-    }
-  }, []);
+    });
+  }
+}, [isLoading]);
 
-  // loader
-  useEffect(() => {
-    if (isLoading) {
-      const tl = gsap.timeline({
-        onComplete: () => setIsLoading(false),
-      });
 
-      tl.to(".loader_text", {
-        opacity: 1,
-        y: -20,
-        duration: 0.8,
-        ease: "power3.out",
-      })
-        .to(".loader_bar", {
-          width: "100%",
-          duration: 0.8,
-          ease: "power4.inOut",
-        }, "-=0.5")
-        .to(".preloader", {
-          y: "-100%",
-          duration: 0.8,
-          ease: "power4.inOut",
-        });
-    }
-  }, [isLoading]);
 
   // social media
   useEffect(() => {
@@ -125,8 +134,33 @@ export default function Home() {
   if (isLoading) {
     return (
       <div className="preloader">
-        <span className="loader_text">Only one can remain <br /> <br /> who's gonna win ?</span>
-        <div className="loader_bar"></div>
+
+        <section class="preloader_grid">
+          <div class="item">
+            <h2>movies</h2>
+          </div>
+          <div class="item">
+            <h2>anime</h2>
+          </div>
+          <div class="item">
+            <h2>manga</h2>
+          </div>
+          <div class="item">
+            <h3>Only one can remain <br />
+                who's gonna win ?
+            </h3>
+          </div>
+          <div class="item">
+            <h2>pokemon</h2>
+          </div>
+          <div class="item">
+            <h2>series</h2>
+          </div>
+          <div class="item">
+            <h2>games</h2>
+          </div>
+        </section>
+
       </div>
     );
   }
