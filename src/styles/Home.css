@@ -222,7 +222,7 @@
 .preloader_grid .item:nth-child(1) {
   width: 32%;
   height: 45%;
-  background-image: url('https://4kwallpapers.com/images/wallpapers/marvels-spider-man-pc-games-playstation-4-playstation-5--8652.jpg');
+  background-image: url('../assets/spiderman.webp');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -231,7 +231,7 @@
 .preloader_grid .item:nth-child(2) {
   width: 32%;
   height: 54%;
-  background-image: url('https://i.pinimg.com/736x/4a/2b/c9/4a2bc96ebfe54baa65af2189bbe0b69c.jpg');
+  background-image: url('../assets/dbz.webp');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -240,7 +240,7 @@
 .preloader_grid .item:nth-child(3) {
   width: 32%;
   height: 32%;
-  background: url('https://motionbgs.com/media/6276/obito-manga.jpg');
+  background: url('../assets/obito-manga.webp');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -268,7 +268,7 @@
 .preloader_grid .item:nth-child(5) {
   width: 32%;
   height: 42%;
-  background: url('https://wallpaperbat.com/img/8643089-pokemon-wallpaper-4k.jpg');
+  background: url('../assets/pokemon.webp');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -277,7 +277,7 @@
 .preloader_grid .item:nth-child(6) {
   width: 32%;
   height: 32%;
-  background: url('https://wallpaper.forfun.com/fetch/87/871a9fc0a72078cf5429f865e3c1c96a.jpeg');
+  background: url('../assets/walter.webp');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -288,7 +288,7 @@
   flex-grow: 1;
   flex-shrink: 1;
   order: 0;
-  background: url('https://rare-gallery.com/uploads/posts/933041-ghost-Call-of-Duty-video-games-PC-gaming-video-game.jpg');
+  background: url('../assets/callofduty.webp');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
