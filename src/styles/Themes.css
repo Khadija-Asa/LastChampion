@@ -131,3 +131,8 @@
 .theme_cartoons .card img {
   object-position: center;
 }
+
+/* YT/TW FR */
+.theme_youtubers .image_wrapper {
+  aspect-ratio: 3 / 4;
+}

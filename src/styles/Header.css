@@ -156,9 +156,9 @@ header {
   border-right: none;
 }
 
-.links_menu li {
+/* .links_menu li {
   opacity: 0;
-}
+} */
 
 .submenu {
   margin-left: 25%;
@@ -203,7 +203,7 @@ header {
   color: var(--White);
 }
 
-.links_menu.open li:nth-child(1) { animation: fadeInLink 0.4s forwards 0.1s; }
+/* .links_menu.open li:nth-child(1) { animation: fadeInLink 0.4s forwards 0.1s; }
 .links_menu.open li:nth-child(2) { animation: fadeInLink 0.4s forwards 0.2s; }
 .links_menu.open li:nth-child(3) { animation: fadeInLink 0.4s forwards 0.3s; }
 .links_menu.open li:nth-child(4) { animation: fadeInLink 0.4s forwards 0.4s; }
@@ -211,7 +211,7 @@ header {
 
 @keyframes fadeInLink {
   to { opacity: 1; }
-}
+} */
 
 .word_wrapper {
   position: relative;

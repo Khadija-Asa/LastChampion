@@ -1,13 +1,27 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './../styles/Header.css';
-import { FaGithub, FaCode, FaLinkedin } from 'react-icons/fa';
+import { gsap } from 'gsap';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
   const closeMenu = () => setIsMenuOpen(false);
+
+  useEffect(() => {
+    if (isMenuOpen) {
+      // Animation GSAP quand le menu s’ouvre
+      gsap.from(".links_menu li", {
+        opacity: 0,
+        y: 10,
+        stagger: 0.1,
+        duration: 0.5,
+        ease: "power2.out",
+        delay: 0.1,
+      });
+    }
+  }, [isMenuOpen]);
 
   return (
     <header className="navbar_menu">
@@ -48,6 +62,7 @@ const Header = () => {
                 { to: "/characters", label: "Characters", word: "characters" },
                 { to: "/villains", label: "Villains", word: "villains" },
                 { to: "/cartoon-heroes", label: "cartoon heroes", word: "cartoon heroes" },
+                { to: "/youtubers", label: "YT/Twitch (fr)", word: "YT/Twitch (fr)" },
               ]
             },
             {

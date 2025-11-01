@@ -125,7 +125,7 @@ useEffect(() => {
   const handleRandomTheme = () => {
   const themes = ["/pokemons", "/yu-gi-oh", "/animes", "/super-heroes", "/lol", "/villains",
         "/streetfighter", "/esport-teams", "/esport-players", "/video-games",
-        "/game-consoles", "/characters", "/manga", "/retro-games", "/cartoon-heroes"]
+        "/game-consoles", "/characters", "/manga", "/retro-games", "/cartoon-heroes", "/youtubers"]
 
   const randomTheme = themes[Math.floor(Math.random() * themes.length)];
   navigate(randomTheme);
