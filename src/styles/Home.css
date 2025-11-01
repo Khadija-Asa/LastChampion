@@ -222,7 +222,7 @@
 .preloader_grid .item:nth-child(1) {
   width: 32%;
   height: 45%;
-  background-image: url('../assets/spiderman.webp');
+  background-image: url('../assets/spiderman_pc.webp');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -240,7 +240,7 @@
 .preloader_grid .item:nth-child(3) {
   width: 32%;
   height: 32%;
-  background: url('../assets/obito-manga.webp');
+  background: url('../assets/obito-manga_pc.webp');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -268,7 +268,7 @@
 .preloader_grid .item:nth-child(5) {
   width: 32%;
   height: 42%;
-  background: url('../assets/pokemon.webp');
+  background: url('../assets/pokemon_pc.webp');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -288,7 +288,7 @@
   flex-grow: 1;
   flex-shrink: 1;
   order: 0;
-  background: url('../assets/callofduty.webp');
+  background: url('../assets/callofduty_pc.webp');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
