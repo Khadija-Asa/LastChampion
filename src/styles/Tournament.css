@@ -26,7 +26,6 @@
   margin-bottom: 5rem;
 }
 
-
 @media (max-width: 768px) {
   .duel_wrapper {
     flex-direction: column;

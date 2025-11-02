@@ -19,6 +19,8 @@ import Manga from './components/Manga';
 import Retro from './components/Retro';
 import Cartoons from './components/Cartoons';
 import Youtubers from './components/Youtubers';
+import Valorant from './components/Valorant';
+import Tournaments from './components/Tournaments';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
@@ -41,6 +43,8 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route path="/retro-games" element={<Retro />} />
         <Route path="/cartoon-heroes" element={<Cartoons />} />
         <Route path='/youtubers' element={<Youtubers />} />
+        <Route path='/valorant-agents' element={<Valorant />} />
+        <Route path='/esport-tournaments' element={<Tournaments />} />
       </Routes>
     </HashRouter>
   </React.StrictMode>

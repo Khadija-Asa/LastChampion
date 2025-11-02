@@ -136,3 +136,14 @@
 .theme_youtubers .image_wrapper {
   aspect-ratio: 3 / 4;
 }
+
+/* VALORANT AGENTS */
+.theme_valorant .image_wrapper {
+  aspect-ratio: 3 / 4;
+}
+
+/* VALORANT AGENTS */
+.theme_tournaments .image_wrapper {
+  aspect-ratio: 1 / 1;
+}
+

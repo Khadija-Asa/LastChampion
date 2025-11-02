@@ -36,6 +36,7 @@ const Header = () => {
         { to: "/lol", label: "LoL Champions", word: "lol champions" },
         { to: "/streetfighter", label: "StreetFighter", word: "streetfighter" },
         { to: "/yu-gi-oh", label: "Yu-Gi-Oh", word: "yu-gi-oh" },
+        { to: "/valorant-agents", label: "valorant agents", word: "valorant agents" },
       ],
     },
     {
@@ -50,13 +51,14 @@ const Header = () => {
       ],
     },
     {
-      label: "Video Games & E-Sport",
+      label: "Games & E-Sport",
       items: [
         { to: "/game-consoles", label: "Game consoles", word: "game consoles" },
         { to: "/video-games", label: "Video Games", word: "video games" },
+        { to: "/esport-tournaments", label: "esport tournaments", word: "esport tournaments" },
         { to: "/retro-games", label: "Retro Games", word: "retro games" },
-        { to: "/esport-teams", label: "E-sport Teams", word: "e-sport teams" },
-        { to: "/esport-players", label: "E-sport players", word: "e-sport players" },
+        { to: "/esport-teams", label: "Esport Teams", word: "esport teams" },
+        { to: "/esport-players", label: "Esport players", word: "esport players" },
       ],
     },
   ];
