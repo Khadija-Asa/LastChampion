@@ -164,10 +164,9 @@ useEffect(() => {
   }
 
   return (
-    <section>
-      <section className="home_container">
+    <section className="home_container">
 
-        <Header/>
+      <Header/>
 
       <div className="home">
         <h1 className="title_container">
@@ -213,17 +212,6 @@ useEffect(() => {
         </div>
       </div>
 
-      </section>
-
-      <footer className="footer">
-        <ul className="footer_links">
-          <li><a href="#about">Mentions légales</a></li>
-          <li><a href="#projects">lorem ipsum</a></li>
-          <li><a href="#services">lorem ipsum</a></li>
-        </ul>
-      </footer>
-
     </section>
-
   );
 }
