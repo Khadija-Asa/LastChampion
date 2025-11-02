@@ -31,7 +31,7 @@ export const youtubersList = [
   { id: 25, name: "Byilhan", image: "https://maville.com/photosmvi/2024/10/06/P34639732D6494882G.jpg" },
   { id: 26, name: "Djilsi", image: "https://yt3.googleusercontent.com/OURu7mcfKBYZ4mX5bq_xdZBdfuAh2MlemG3Icgod1i8NOItwGccGXWqJaKxmMxSMr2TRdcFpewM=s900-c-k-c0x00ffffff-no-rj" },
   { id: 27, name: "SKyyart", image: "https://actustream.fr/img/Skyyart-strategie-esport-poker-et-concepts-XXL.jpg" },
-  { id: 28, name: "Celine Dept", image: "https://i.namu.wiki/i/kopwvc6-G7WjzFXdoVPh2B01yyEk3QKbQKVwwn8tEWVnQu5LCJqoAIlZtOaiPLbv35ejS1ZHf7F2dwQHiFwb0A.webp" },
+  { id: 28, name: "RebeuDtr", image: "https://www.melty.fr/wp-content/uploads/meltyfr/2023/05/untitled-design-1-2.jpg" },
   { id: 29, name: "Gotaga", image: "https://www.lexpress.fr/resizer/v2/LAI3AT5UVJESZHTLOBXPY6NOSI.jpg?auth=0143186d49e8976588ef34c036d0a22f36f4d3d5e35993320d09d05060d2579f&width=1200&height=630&quality=85&smart=true" },
   { id: 30, name: "Anyme", image: "https://cdn.unitycms.io/images/FMays6cKaoK96h2mJU3AnX.jpg" },
   { id: 31, name: "Maxime Biaggi", image: "https://www.arte-mare.corsica/wp-content/uploads/2024/08/Maxime-Biaggi.jpg",

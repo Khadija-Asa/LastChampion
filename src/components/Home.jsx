@@ -66,8 +66,6 @@ useEffect(() => {
   }
 }, [isLoading]);
 
-
-
   // social media
   useEffect(() => {
     if (!isLoading) {
@@ -166,8 +164,10 @@ useEffect(() => {
   }
 
   return (
-    <section className="home_container">
-      <Header/>
+    <section>
+      <section className="home_container">
+
+        <Header/>
 
       <div className="home">
         <h1 className="title_container">
@@ -210,10 +210,20 @@ useEffect(() => {
           <a className="social-link" href="https://khadija-asa.github.io/web_developer/" target="_blank"><FaCode size={12}/></a>
           <a className="social-link" href="https://www.linkedin.com/in/khadidja-ait-si-ali/" target="_blank"><FaLinkedinIn size={12}/></a>
           <a className="social-link" href="mailto:khadidja.aitsiali@gmail.com" target="_blank"><IoMail size={12}/></a>
-          {/* <a className="social-link" href="tel:+33614720566" target="_blank"><MdPhone size={12}/></a> */}
         </div>
       </div>
 
+      </section>
+
+      <footer className="footer">
+        <ul className="footer_links">
+          <li><a href="#about">Mentions légales</a></li>
+          <li><a href="#projects">lorem ipsum</a></li>
+          <li><a href="#services">lorem ipsum</a></li>
+        </ul>
+      </footer>
+
     </section>
+
   );
 }

@@ -249,7 +249,7 @@ const Tournament = ({ title, data }) => {
           </div>
 
           {/* START BUTTON */}
-          {selected.length === 2 && (
+          {selected.length === 8 && (
             <button
               className={`start_button ${flash ? "flash_effect" : ""}`}
               onClick={startTournament}
