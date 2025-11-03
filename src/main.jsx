@@ -21,6 +21,8 @@ import Cartoons from './components/Cartoons';
 import Youtubers from './components/Youtubers';
 import Valorant from './components/Valorant';
 import Tournaments from './components/Tournaments';
+import Fifa from './components/Fifa';
+import Onepiece from './components/Onepiece';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
@@ -42,9 +44,11 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route path="/manga" element={<Manga />} />
         <Route path="/retro-games" element={<Retro />} />
         <Route path="/cartoon-heroes" element={<Cartoons />} />
-        <Route path='/youtubers' element={<Youtubers />} />
+        <Route path='/youtubers-streamers' element={<Youtubers />} />
         <Route path='/valorant-agents' element={<Valorant />} />
         <Route path='/esport-tournaments' element={<Tournaments />} />
+        <Route path='/fifa26-clubs' element={<Fifa />} />
+        <Route path='/one-piece' element={<Onepiece />} />     
       </Routes>
     </HashRouter>
   </React.StrictMode>

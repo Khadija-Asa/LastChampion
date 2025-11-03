@@ -29,7 +29,7 @@ const Header = () => {
 
   const sections = [
     {
-      label: "Champion versus",
+      label: "Versus & Battles",
       items: [
         { to: "/pokemons", label: "Pokemon", word: "pokemon" },
         { to: "/animes", label: "Anime", word: "anime" },
@@ -37,28 +37,31 @@ const Header = () => {
         { to: "/streetfighter", label: "StreetFighter", word: "streetfighter" },
         { to: "/yu-gi-oh", label: "Yu-Gi-Oh", word: "yu-gi-oh" },
         { to: "/valorant-agents", label: "valorant agents", word: "valorant agents" },
+        { to: "/one-piece", label: "One Piece", word: "one piece" },
       ],
     },
     {
-      label: "Heroes & Characters",
+      label: "Pop Universes",
       items: [
+        { to: "/movies", label: "Movies", word: "movies" },
         { to: "/super-heroes", label: "Superheroes", word: "superheroes" },
         { to: "/manga", label: "Manga", word: "manga" },
         { to: "/characters", label: "Characters", word: "characters" },
         { to: "/villains", label: "Villains", word: "villains" },
+        { to: "/youtubers-streamers", label: "YT/Twitch (fr)", word: "YT/Twitch (fr)" },
         { to: "/cartoon-heroes", label: "Cartoon Heroes", word: "cartoon heroes" },
-        { to: "/youtubers", label: "YT/Twitch (fr)", word: "YT/Twitch (fr)" },
       ],
     },
     {
-      label: "Games & E-Sport",
+      label: "Gaming & E-Sport",
       items: [
         { to: "/game-consoles", label: "Game consoles", word: "game consoles" },
         { to: "/video-games", label: "Video Games", word: "video games" },
-        { to: "/esport-tournaments", label: "esport tournaments", word: "esport tournaments" },
+        { to: "/fifa26-clubs", label: "Fifa26 Clubs", word: "fifa26 clubs" },
         { to: "/retro-games", label: "Retro Games", word: "retro games" },
         { to: "/esport-teams", label: "Esport Teams", word: "esport teams" },
         { to: "/esport-players", label: "Esport players", word: "esport players" },
+        { to: "/esport-tournaments", label: "esport tournaments", word: "esport tournaments" },
       ],
     },
   ];

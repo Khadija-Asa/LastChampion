@@ -37,11 +37,11 @@ useEffect(() => {
       ease: "power4.out",
       stagger: 0.15
     })
-    .to({}, { duration: 0.2 })
+    // .to({}, { duration: 99999 })
     .to(".preloader_grid .item", {
       y: -150,
       opacity: 0,
-      duration: 0.8,
+      duration: 1,
       ease: "power4.in",
       stagger: 0.1
     })
@@ -54,7 +54,7 @@ useEffect(() => {
      .add(() => {
       if (!homeSound.current) {
         homeSound.current = new Audio(`${import.meta.env.BASE_URL}sounds/home2.mp3`);
-        homeSound.current.volume = 0.1;
+        homeSound.current.volume = 0.08;
         homeSound.current.loop = false;
       }
 

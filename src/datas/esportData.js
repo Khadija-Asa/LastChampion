@@ -17,7 +17,7 @@ export const esportList = [
   { id: 16, name: "SK Gaming", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/SK_Gaming_Logo_2022.svg/768px-SK_Gaming_Logo_2022.svg.png" },
   { id: 17, name: "NRG", image: "https://storage.ensigame.com/logos/teams/1c9656e2541401b7a1aa5c0c0d3aa88e.png" },
   { id: 18, name: "GiantX", image: "https://upload.wikimedia.org/wikipedia/en/0/0e/GiantX_logo.svg" },
-  { id: 19, name: "M8", image: "https://upload.wikimedia.org/wikipedia/fr/9/97/Logo_GentleMates_2025.png" },
+  { id: 19, name: "M8", image: "https://upload.wikimedia.org/wikipedia/commons/b/be/Gentle_Mates_2025.png" },
   { id: 20, name: "Dignitas", image: "https://upload.wikimedia.org/wikipedia/en/thumb/c/c3/Dignitas_logo.svg/1200px-Dignitas_logo.svg.png" },
   { id: 21, name: "Furia", image: "https://upload.wikimedia.org/wikipedia/en/thumb/a/ad/FURIA_Esports_logo.svg/1200px-FURIA_Esports_logo.svg.png" },
   { id: 22, name: "Gen.G", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Gen.G_Logo.svg/1200px-Gen.G_Logo.svg.png" },

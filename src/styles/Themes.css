@@ -141,9 +141,32 @@
 .theme_valorant .image_wrapper {
   aspect-ratio: 3 / 4;
 }
+.theme_valorant .winner_wrapper .bg_card {
+  object-position: top;
+}
 
-/* VALORANT AGENTS */
+/* E-TOURNAMENTS */
 .theme_tournaments .image_wrapper {
   aspect-ratio: 1 / 1;
 }
 
+/* FIFA26 */
+.theme_fifa .image_wrapper {
+  aspect-ratio: 1 / 1;
+}
+.theme_fifa img {
+  object-fit: contain;
+  padding: 10px;
+}
+.theme_fifa .card img,
+.theme_fifa .card_duel img,
+.theme_fifa .winner_wrapper .duel_zoom {
+  object-position: center;
+  filter: drop-shadow(0 0 1px white)
+          drop-shadow(0 0 1px white);
+}
+
+/* ONE PIECE */
+.theme_onepiece .image_wrapper {
+  aspect-ratio: 3 / 4;
+}
