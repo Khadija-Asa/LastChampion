@@ -353,20 +353,24 @@ const Tournament = ({ title, data }) => {
 
           {/* WINNER TITLE */}
           <h5 className="letter_animation">
-            { (winner.winnerName || winner.name).split(" ").map((word, wi) => (
-              <React.Fragment key={wi}>
-                {word.split("").map((letter, i) => (
-                  <span
-                    key={`${wi}-${i}`}
-                    style={{ animationDelay: `${(wi * 3 + i) * 0.2}s` }}
-                    data-letter={letter}
-                  >
-                    {letter}
-                  </span>
-                ))}
-              </React.Fragment>
-            ))}
+            {(winner.winnerName || winner.name)
+              .split(" ")
+              .map((word, wi, arr) => (
+                <React.Fragment key={wi}>
+                  {word.split("").map((letter, i) => (
+                    <span
+                      key={`${wi}-${i}`}
+                      style={{ animationDelay: `${(wi * 3 + i) * 0.2}s` }}
+                      data-letter={letter}
+                    >
+                      {letter}
+                    </span>
+                  ))}
+                  {wi < arr.length - 1 && <span>&nbsp;</span>}
+                </React.Fragment>
+              ))}
           </h5>
+
 
           {/* PLAY AGAIN BUTTON */}
           <button className="back_button">

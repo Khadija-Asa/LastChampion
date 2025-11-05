@@ -6,6 +6,22 @@
   min-height: 100vh;
 }
 
+.theme .winner_wrapper img {
+  border: 5px solid #222;
+  box-shadow:
+    0 4px 0 var(--Black);
+    background-color: var(--Black);
+}
+
+@media (min-width: 769px) {
+  .theme .winner_wrapper .duel_zoom {
+    height: 80vh;
+    width: 40vw;
+    object-fit: cover;
+    object-position: center;
+  }
+}
+
 @media (max-width: 768px) {
   .theme {
     background: var(--Black);
@@ -169,4 +185,13 @@
 /* ONE PIECE */
 .theme_onepiece .image_wrapper {
   aspect-ratio: 3 / 4;
+}
+
+/* MOVIES */
+.theme_movies .image_wrapper {
+  aspect-ratio: 3 / 4;
+}
+.theme_movies .winner_wrapper h5 {
+  font-size: clamp(4rem, -3.3944rem + 31.5493vw, 25rem);
+  word-spacing: 0.4rem;
 }

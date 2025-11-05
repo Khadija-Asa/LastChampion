@@ -23,6 +23,7 @@ import Valorant from './components/Valorant';
 import Tournaments from './components/Tournaments';
 import Fifa from './components/Fifa';
 import Onepiece from './components/Onepiece';
+import Movies from './components/Movies';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
@@ -48,7 +49,8 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route path='/valorant-agents' element={<Valorant />} />
         <Route path='/esport-tournaments' element={<Tournaments />} />
         <Route path='/fifa26-clubs' element={<Fifa />} />
-        <Route path='/one-piece' element={<Onepiece />} />     
+        <Route path='/one-piece' element={<Onepiece />} /> 
+        <Route path='/movies' element={<Movies />} />         
       </Routes>
     </HashRouter>
   </React.StrictMode>
