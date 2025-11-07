@@ -31,8 +31,7 @@
     flex-direction: column;
     gap: 2rem;
   }
-  .battle_wrapper h4,
-  .winner_wrapper h5 {
+  .battle_wrapper h4 {
     padding-top: 3rem;
   }
 }
@@ -410,20 +409,9 @@
   font-family: 'Coolvetica';
   text-transform: uppercase;
   z-index: 3;
-  font-size: clamp(7.5rem, 1.0714rem + 32.1429vw, 30rem);
+  /* font-size: clamp(7.5rem, 1.0714rem + 32.1429vw, 30rem); */
+  font-size: 20vw;
 }
-
-/* @media (max-width: 768px) {
-  .winner_wrapper h5 {
-    font-size: clamp(8rem, 3rem + 25vw, 15rem);
-  }
-} */
-
-/* @media (min-width: 769px) {
-  .winner_wrapper h5 {
-    font-size: clamp(20rem, 2.8092rem + 35.7675vw, 35rem);
-  }
-} */
 
 .letter_animation {
   display: inline-block;

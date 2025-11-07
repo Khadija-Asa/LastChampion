@@ -192,6 +192,11 @@
   aspect-ratio: 3 / 4;
 }
 .theme_movies .winner_wrapper h5 {
-  font-size: clamp(4rem, -3.3944rem + 31.5493vw, 25rem);
+  font-size: 20vw;
   word-spacing: 0.4rem;
+}
+
+/* SERIES */
+.theme_series .image_wrapper {
+  aspect-ratio: 3 / 4;
 }

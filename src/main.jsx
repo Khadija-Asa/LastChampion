@@ -24,6 +24,7 @@ import Tournaments from './components/Tournaments';
 import Fifa from './components/Fifa';
 import Onepiece from './components/Onepiece';
 import Movies from './components/Movies';
+import Series from './components/Series';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
@@ -50,7 +51,8 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route path='/esport-tournaments' element={<Tournaments />} />
         <Route path='/fifa26-clubs' element={<Fifa />} />
         <Route path='/one-piece' element={<Onepiece />} /> 
-        <Route path='/movies' element={<Movies />} />         
+        <Route path='/movies' element={<Movies />} />  
+        <Route path='/series' element={<Series />} />                
       </Routes>
     </HashRouter>
   </React.StrictMode>

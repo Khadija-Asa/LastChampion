@@ -54,7 +54,7 @@ useEffect(() => {
      .add(() => {
       if (!homeSound.current) {
         homeSound.current = new Audio(`${import.meta.env.BASE_URL}sounds/home2.mp3`);
-        homeSound.current.volume = 0.08;
+        homeSound.current.volume = 0.05;
         homeSound.current.loop = false;
       }
 
