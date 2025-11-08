@@ -16,7 +16,7 @@
 @media (min-width: 769px) {
   .theme .winner_wrapper .duel_zoom {
     height: 80vh;
-    width: 40vw;
+    width: 30vw;
     object-fit: cover;
     object-position: center;
   }
@@ -52,7 +52,7 @@
 .theme_pokemon .card_duel img {
   object-fit: contain;
 }
-.theme_pokemon .winner_wrapper img {
+.theme_pokemon .winner_wrapper .duel_zoom {
   object-fit: contain;
 }
 
@@ -67,6 +67,9 @@
 /* YU GI OH */
 .theme_yugioh .image_wrapper {
   aspect-ratio: 2 / 3;
+}
+.theme_yugioh .card_duel img {
+  object-position: top;
 }
 
 /* LOL */
@@ -205,3 +208,11 @@
 .theme_football .image_wrapper {
   aspect-ratio: 3 / 4;
 }
+
+/* FORTNITE */
+.theme_fortnite .image_wrapper {
+  aspect-ratio: 1 / 1;
+}
+.theme_fortnite .card_duel img {
+}
+

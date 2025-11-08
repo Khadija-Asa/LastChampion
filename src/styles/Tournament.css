@@ -23,6 +23,8 @@
 }
 
 .battle_wrapper .duel_message {
+  text-decoration: underline;
+  text-underline-offset: 1rem;
   margin-bottom: 5rem;
 }
 
@@ -33,6 +35,30 @@
   }
   .battle_wrapper h4 {
     padding-top: 3rem;
+  }
+}
+
+@keyframes popIn {
+  0% {
+    transform: scale(0.6);
+    opacity: 0;
+  }
+  40% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeOut {
+  0%, 80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
   }
 }
 

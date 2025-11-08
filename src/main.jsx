@@ -26,6 +26,7 @@ import Onepiece from './components/Onepiece';
 import Movies from './components/Movies';
 import Series from './components/Series';
 import Football from './components/Football';
+import Fortnite from './components/Fortnite';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
@@ -54,7 +55,8 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route path='/one-piece' element={<Onepiece />} /> 
         <Route path='/movies' element={<Movies />} />  
         <Route path='/series' element={<Series />} />  
-        <Route path='/football-players' element={<Football />} />                              
+        <Route path='/football-players' element={<Football />} />  
+        <Route path='/fortnite-skins' element={<Fortnite />} />                                                          
       </Routes>
     </HashRouter>
   </React.StrictMode>

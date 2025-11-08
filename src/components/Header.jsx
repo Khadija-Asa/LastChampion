@@ -32,7 +32,7 @@ const Header = () => {
       label: "Versus & Battles",
       items: [
         { to: "/animes", label: "Anime", word: "anime" },
-        { to: "/football-players", label: "football-players", word: "football-players" },
+        { to: "/football-players", label: "football players", word: "football players" },
         { to: "/lol", label: "LoL Champions", word: "lol champions" },
         { to: "/one-piece", label: "One Piece", word: "one piece" },
         { to: "/pokemons", label: "Pokemon", word: "pokemon" },
@@ -61,6 +61,7 @@ const Header = () => {
         { to: "/esport-players", label: "Esport players", word: "esport players" },
         { to: "/esport-tournaments", label: "esport tournaments", word: "esport tournaments" },
         { to: "/fifa26-clubs", label: "Fifa26 Clubs", word: "fifa26 clubs" },
+        { to: "/fortnite-skins", label: "OG Fortnite skins", word: "OG Fortnite skins" },
         { to: "/game-consoles", label: "Game consoles", word: "game consoles" },
         { to: "/retro-games", label: "Retro Games", word: "retro games" },
         { to: "/video-games", label: "Video Games", word: "video games" },

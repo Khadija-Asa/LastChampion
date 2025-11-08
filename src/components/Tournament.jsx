@@ -309,7 +309,7 @@ const Tournament = ({ title, data }) => {
             </TiltCard>
 
             <div className="vs_text">
-              <img src={vs} alt="" />
+              <img src={vs} alt="VS image" />
             </div>
 
             {/* RIGHT CARD */}
