@@ -32,6 +32,7 @@ const Header = () => {
       label: "Versus & Battles",
       items: [
         { to: "/animes", label: "Anime", word: "anime" },
+        { to: "/football-players", label: "football-players", word: "football-players" },
         { to: "/lol", label: "LoL Champions", word: "lol champions" },
         { to: "/one-piece", label: "One Piece", word: "one piece" },
         { to: "/pokemons", label: "Pokemon", word: "pokemon" },
