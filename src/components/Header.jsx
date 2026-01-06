@@ -76,14 +76,22 @@ const Header = () => {
           <span className='logo-title'>LastChampion</span>
         </div>
 
-        <button
-          className={`burger_menu ${isMenuOpen ? 'open' : ''}`}
-          onClick={toggleMenu}
-          aria-label="Toggle menu">
-          <span className="burger_bar"></span>
-          <span className="burger_bar"></span>
-          <span className="burger_bar"></span>
-        </button>
+        <div className="menu_action">
+          <div className="menu_start">
+            <span className="start_text">start</span>
+            <span className="start_arrow">➬</span>
+          </div>
+
+          <button
+            className={`burger_menu ${isMenuOpen ? 'open' : ''}`}
+            onClick={toggleMenu}
+            aria-label="Toggle menu">
+
+            <span className="burger_bar"></span>
+            <span className="burger_bar"></span>
+            <span className="burger_bar"></span>
+          </button>
+        </div>
       </nav>
 
       <nav>

@@ -1,5 +1,5 @@
 header {
-  padding: .5rem 1rem;
+  padding: 0rem 1rem;
   position: absolute;
   width: 100vw;
 }
@@ -23,6 +23,42 @@ header {
 .menu_logo a {
   color: var(--White);
 }
+
+/* Start arrow */
+.menu_action {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.menu_start {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  color: var(--White);
+  letter-spacing: 1px;
+  user-select: none;
+  padding-top: 2.5rem;
+  transform: rotate(-10deg);
+}
+
+.start_text {
+  font-size: .8rem;
+}
+
+.start_arrow {
+  display: inline-block;
+  font-size: 1.1rem;
+  animation: arrowNudge 1s ease-in-out infinite;
+}
+
+/* Animation directionnelle */
+@keyframes arrowNudge {
+  0% { transform: translateX(0); opacity: .7; }
+  50% { transform: translateX(3px); opacity: 1; }
+  100% { transform: translateX(0); opacity: .7; }
+}
+
 
 /* Burger menu */
 .burger_menu {
@@ -260,6 +296,11 @@ header {
 .hover_link:hover .letter:nth-child(13) { transform: translateX(0); opacity: 1; transition-delay: 0.65s; }
 .hover_link:hover .letter:nth-child(14) { transform: translateX(0); opacity: 1; transition-delay: 0.7s; }
 .hover_link:hover .letter:nth-child(15) { transform: translateX(0); opacity: 1; transition-delay: 0.75s; }
+.hover_link:hover .letter:nth-child(16) { transform: translateX(0); opacity: 1; transition-delay: 0.8s; }
+.hover_link:hover .letter:nth-child(17) { transform: translateX(0); opacity: 1; transition-delay: 0.85s; }
+.hover_link:hover .letter:nth-child(18) { transform: translateX(0); opacity: 1; transition-delay: 0.9s; }
+.hover_link:hover .letter:nth-child(19) { transform: translateX(0); opacity: 1; transition-delay: 0.95s; }
+.hover_link:hover .letter:nth-child(20) { transform: translateX(0); opacity: 1; transition-delay: 1s; }
 
 /* media queries */
 @media (min-width: 768px) {
