@@ -214,8 +214,6 @@ const Tournament = ({ title, data }) => {
           {/* TITLE */}
           <div className="wrapper_title">
             <h3>{title}</h3>
-            <br />
-            <br />
             <p>Click to select up to 8 champions</p>
           </div>
 

@@ -207,7 +207,7 @@ useEffect(() => {
         </div>
 
         <div className="home_media">
-          <a className="social-link" href="https://khadija-asa.github.io/web_developer/" target="_blank"><FaCode size={12}/></a>
+          <a className="social-link" href="khadidja-dev.fr" target="_blank"><FaCode size={12}/></a>
           <a className="social-link" href="https://www.linkedin.com/in/khadidja-ait-si-ali/" target="_blank"><FaLinkedinIn size={12}/></a>
           <a className="social-link" href="mailto:khadidja.aitsiali@gmail.com" target="_blank"><IoMail size={12}/></a>
         </div>
