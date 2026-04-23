@@ -109,7 +109,8 @@
 }
 
 .card.selected {
-  border: 3px solid var(--White);
+  border: 2px solid rgba(255, 255, 255, 0.9);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2), 0 0 6px rgba(255, 255, 255, 0.45);
 }
 
 .card img {
@@ -133,7 +134,6 @@
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: .8rem;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 1);
-  padding-bottom: 1rem;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -176,7 +176,9 @@
 .image_wrapper {
   width: 100%;
   overflow: hidden;
-  border-radius: 0.5rem 0.5rem 0 0;
+  border-radius: .8rem;
+  position: relative;
+  isolation: isolate;
 }
 
 .image_wrapper img {
@@ -184,6 +186,63 @@
   height: 100%;
   object-fit: cover;
   display: block;
+}
+
+/* DÉGRADÉ NOM EN BAS DE LA CARTE */
+.image_wrapper::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 55%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.92) 0%, transparent 100%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* NOM EN OVERLAY SUR L'IMAGE */
+.card_name {
+  position: absolute;
+  bottom: 0.65rem;
+  left: 0;
+  right: 0;
+  padding: 0 0.6rem;
+  font-size: clamp(0.65rem, 0.5071rem + 0.7143vw, 0.85rem);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  text-align: center;
+  z-index: 2;
+}
+
+/* BADGE NUMÉRO DE SÉLECTION */
+.card_badge {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  width: 1.6rem;
+  height: 1.6rem;
+  border-radius: 50%;
+  background: var(--White);
+  color: var(--Black);
+  font-size: 0.8rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  animation: popIn 0.3s ease;
+}
+
+/* CARTE DÉSACTIVÉE (8 slots pleins) */
+.card_disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.card_disabled:hover {
+  transform: none !important;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 1) !important;
 }
 
 /* START BUTTON */
