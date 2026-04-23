@@ -8,6 +8,7 @@ import DuelMessage from "./DuelMessage";
 import { FaLongArrowAltLeft, FaVolumeUp, FaVolumeMute } from "react-icons/fa";
 
 import vs from "../assets/versus_white.svg";
+import gsap from "gsap";
 
 const shuffleArray = (array) => {
   return [...array].sort(() => 0.5 - Math.random());
@@ -35,6 +36,7 @@ const Tournament = ({ title, data }) => {
   const suspensMusic = useRef(new Audio(`${basePath}sounds/tension.mp3`));
   const themeClass = data[0]?.theme ? `theme_${data[0].theme}` : "";
   const backgroundRef = useRef(null);
+  const winnerCardRef = useRef(null);
 
   // TOGGLE MUTE
   const toggleMute = () => {
@@ -123,6 +125,35 @@ const Tournament = ({ title, data }) => {
   }
 }, [step]);
 
+  // ANIMATION CARTE WINNER
+  useEffect(() => {
+    if (step !== "winner" || !winnerCardRef.current) return;
+
+    const startX = -(window.innerWidth * 0.7);
+    const tween = gsap.fromTo(
+      winnerCardRef.current,
+      { x: startX, y: -300, rotation: -540, scale: 0.1, opacity: 0 },
+      {
+        x: 0, y: 0, rotation: 0, scale: 1, opacity: 1,
+        duration: 1.5,
+        ease: "back.out(1.4)",
+        delay: 0.3,
+        onComplete: () => {
+          gsap.to(winnerCardRef.current, {
+            y: -12,
+            rotation: 1.5,
+            duration: 2.2,
+            ease: "sine.inOut",
+            yoyo: true,
+            repeat: -1,
+          });
+        }
+      }
+    );
+
+    return () => tween.kill();
+  }, [step]);
+
   // GLOBAL TOURNAMENT
   const startTournament = () => {
     const shuffled = shuffleArray(selected);
@@ -193,6 +224,15 @@ const Tournament = ({ title, data }) => {
 
     const duelNumber = duelIndex + 1;
     return `${duelNumber}${getOrdinalSuffix(duelNumber)} ${label} match`;
+  };
+
+  // INDEX DU MATCH EN COURS (0 → 6)
+  const getCurrentMatchIndex = () => {
+    const total = round.length + duelIndex;
+    if (total === 4) return duelIndex;
+    if (total === 2) return 4 + duelIndex;
+    if (total === 1) return 6;
+    return 0;
   };
 
   return (
@@ -274,6 +314,39 @@ const Tournament = ({ title, data }) => {
           {/* DUEL MESSAGE */}
           <DuelMessage text={getDuelText()} />
 
+          {/* TIMELINE */}
+          {(() => {
+            const cm = getCurrentMatchIndex();
+            return (
+              <div className="tournament_timeline">
+                <div className="timeline_group">
+                  <span className="timeline_label">QF</span>
+                  <div className="timeline_dots">
+                    {[0, 1, 2, 3].map((i) => (
+                      <span key={i} className={`timeline_dot ${i < cm ? "done" : i === cm ? "active" : ""}`} />
+                    ))}
+                  </div>
+                </div>
+                <span className="timeline_connector" />
+                <div className="timeline_group">
+                  <span className="timeline_label">SF</span>
+                  <div className="timeline_dots">
+                    {[4, 5].map((i) => (
+                      <span key={i} className={`timeline_dot ${i < cm ? "done" : i === cm ? "active" : ""}`} />
+                    ))}
+                  </div>
+                </div>
+                <span className="timeline_connector" />
+                <div className="timeline_group">
+                  <span className="timeline_label">Final</span>
+                  <div className="timeline_dots">
+                    <span className={`timeline_dot ${cm === 6 ? "active" : ""}`} />
+                  </div>
+                </div>
+              </div>
+            );
+          })()}
+
           {/* BACKGROUND GIANT IMAGES */}
           {round[0] && round[0].length === 2 && (
             <div className="bg_card_wrapper">
@@ -338,22 +411,14 @@ const Tournament = ({ title, data }) => {
         <div className="winner_wrapper">
 
           {/* WINNER BG IMAGE */}
-          <picture>
-            <source media="(max-width: 768px)"
-              srcSet={winner.winnerImage || winner.image} />
+          <img
+            className="bg_card"
+            src={winner.winnerImage || winner.image}
+            alt={winner.name}
+          />
 
-            <img className="bg_card"
-              src={winner.image}
-              alt={winner.name} />
-          </picture>
-
-          {/* WINNER IMAGE */}
-          <TiltCard>
-            <img className="duel_zoom" src={winner.winnerImage || winner.image} alt={winner.name} />
-          </TiltCard>
-
-          {/* WINNER TITLE */}
-          <h5 className="letter_animation">
+          {/* NOM EN GRAND EN FOND (atmosphère) */}
+          {/* <h5 className="letter_animation">
             {(winner.winnerName || winner.name)
               .split(" ")
               .map((word, wi, arr) => (
@@ -370,8 +435,20 @@ const Tournament = ({ title, data }) => {
                   {wi < arr.length - 1 && <span>&nbsp;</span>}
                 </React.Fragment>
               ))}
-          </h5>
+          </h5> */}
 
+          {/* LABEL */}
+          <p className="winner_label">Last Champion</p>
+
+          {/* CARTE WINNER — ANIMATION GSAP */}
+          <div className="winner_card_wrapper" ref={winnerCardRef}>
+            <img
+              className="winner_img"
+              src={winner.winnerImage || winner.image}
+              alt={winner.name}
+            />
+            <p className="winner_card_name">{winner.name}</p>
+          </div>
 
           {/* PLAY AGAIN BUTTON */}
           <button className="back_button">
