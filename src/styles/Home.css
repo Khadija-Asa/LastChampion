@@ -40,7 +40,7 @@
   font-weight: bold;
   text-transform: uppercase;
   position: relative;
-  gap: clamp(1.5rem, 1.4rem + 0.5vw, 2rem);
+  gap: 10rem;
 }
 
 .home h1 {
@@ -65,49 +65,104 @@
   z-index: 2;
 }
 
-/* image */
+/* COMBAT DE CARTES */
 .image-wrapper {
   position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
   z-index: 1;
+  display: flex;
+  align-items: flex-end;
+  gap: 0.6rem;
 }
 
-.center-image {
-  width: clamp(6.25rem, 2.5rem + 18.75vw, 25rem);
-  height: auto;
-  object-fit: cover;
+.battle_card {
+  width: clamp(7rem, 4rem + 10vw, 16rem);
+  border-radius: 0.6rem;
+  overflow: hidden;
+  isolation: isolate;
+  position: relative;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.9);
+  transform-origin: center bottom;
 }
 
-.image-wrapper {
-  position: absolute;
-  display: inline-block;
-}
-
-.center-image {
-  display: block;
-  filter: grayscale(50%) hue-rotate(10deg);
-  mix-blend-mode: multiply;
-}
-
-/* glitch */
-.image-wrapper::before,
-.image-wrapper::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
+.battle_card img {
   width: 100%;
-  height: 100%;
-  background: url("https://wallpapers.com/images/hd/ash-ketchum-pokemon-trainer-pose-8qvwplhdpl9aecuu.jpg") no-repeat center/cover;
-  mix-blend-mode: screen;
-  opacity: 0;
+  aspect-ratio: 2 / 3;
+  object-fit: cover;
+  object-position: top;
+  display: block;
+}
+
+.battle_card::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 50%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, transparent 100%);
+  z-index: 1;
   pointer-events: none;
 }
 
-.image-wrapper:hover::before,
-.image-wrapper:hover::after {
-  opacity: .5;
-  animation: glitch-rgb 0.3s infinite;
-  transition: all .3s ease-in-out;
+.battle_card p {
+  position: absolute;
+  bottom: 0.4rem;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-size: clamp(0.35rem, 0.2rem + 0.5vw, 0.6rem);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  z-index: 2;
+  padding: 0 0.3rem;
+}
+
+/* FISSURES SUR LES CARTES */
+.card_crack {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 3;
+  opacity: 0;
+  filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.95)) drop-shadow(0 0 6px rgba(255, 255, 255, 0.4));
+}
+
+/* FLASH D'IMPACT */
+.impact_flash {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: clamp(8rem, 4rem + 12vw, 20rem);
+  height: clamp(8rem, 4rem + 12vw, 20rem);
+  border-radius: 50%;
+  background: radial-gradient(circle,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 255, 255, 0.7) 35%,
+    rgba(255, 255, 255, 0.2) 60%,
+    transparent 75%
+  );
+  opacity: 0;
+  pointer-events: none;
+  z-index: 10;
+}
+
+/* CRAQUELURE D'IMPACT */
+.crack_overlay {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: clamp(12rem, 6rem + 18vw, 28rem);
+  height: clamp(12rem, 6rem + 18vw, 28rem);
+  opacity: 0;
+  pointer-events: none;
+  z-index: 11;
+  filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.95)) drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));
 }
 
 @keyframes glitch-rgb {

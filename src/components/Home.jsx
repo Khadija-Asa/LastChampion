@@ -8,6 +8,10 @@ import Header from './Header';
 import { FaCode } from "react-icons/fa6";
 import { FaLinkedinIn } from "react-icons/fa";
 import { IoMail } from "react-icons/io5";
+import { animeList } from "../datas/animesData";
+import { heroesList } from "../datas/heroesData";
+import { lolList } from "../datas/lolData";
+import { villainsList } from "../datas/villainsData";
 
 
 export default function Home() {
@@ -15,7 +19,23 @@ export default function Home() {
 
   const lastRef = useRef(null);
   const championRef = useRef(null);
-  const imageRef = useRef(null);
+  const leftCardRef = useRef(null);
+  const rightCardRef = useRef(null);
+  const impactRef = useRef(null);
+  const crackRef = useRef(null);
+  const leftCrackRef = useRef(null);
+  const rightCrackRef = useRef(null);
+
+  // DEUX CARDS ALÉATOIRES
+  const [cards] = useState(() => {
+    const categories = [animeList, heroesList, lolList, villainsList];
+    const category = categories[Math.floor(Math.random() * categories.length)];
+    const idx1 = Math.floor(Math.random() * category.length);
+    let idx2;
+    do { idx2 = Math.floor(Math.random() * category.length); } while (idx2 === idx1);
+    return [category[idx1], category[idx2]];
+  });
+  const [card1, card2] = cards;
 
   // sound
   const homeSound = useRef(null);
@@ -87,33 +107,42 @@ useEffect(() => {
     }
   }, [isLoading]);
 
-  // title
+  // ANIMATION TITRE + COMBAT DE CARTES
   useEffect(() => {
     if (!isLoading) {
+      gsap.set(impactRef.current, { xPercent: -50, yPercent: -50, scale: 0, opacity: 0 });
+      gsap.set(crackRef.current, { xPercent: -50, yPercent: -50, scale: 0.4, opacity: 0 });
+      gsap.set([leftCrackRef.current, rightCrackRef.current], { opacity: 0 });
+
       const tl = gsap.timeline({ defaults: { ease: "expoScale(0.5,7,none)", duration: 1 } });
 
-      // Image
-      tl.fromTo(
-        imageRef.current,
-        { scale: 0, opacity: 0 },
-        { scale: 1, opacity: 1, duration: 1.2 }
-      );
+      // Mots
+      tl.fromTo(lastRef.current, { y: "-100%", scale: 0.3, opacity: 0 }, { y: 0, scale: 1, opacity: 1 })
+        .fromTo(championRef.current, { y: "100%", scale: 0.3, opacity: 0 }, { y: 0, scale: 1, opacity: 1 }, "-=0.8")
 
-      // Last
-      tl.fromTo(
-        lastRef.current,
-        { y: "-100%", scale: 0.3, opacity: 0 },
-        { y: 0, scale: 1, opacity: 1 },
-        "-=1"
-      );
+        // Cartes volantes depuis les côtés
+        .fromTo(leftCardRef.current,
+          { x: -window.innerWidth, rotation: -30, opacity: 0 },
+          { x: 0, rotation: 8, opacity: 1, duration: 0.65, ease: "power3.out" },
+          "-=0.3"
+        )
+        .fromTo(rightCardRef.current,
+          { x: window.innerWidth, rotation: 30, opacity: 0 },
+          { x: 0, rotation: -8, opacity: 1, duration: 0.65, ease: "power3.out" },
+          "<"
+        )
 
-      // Champion
-      tl.fromTo(
-        championRef.current,
-        { y: "100%", scale: 0.3, opacity: 0 },
-        { y: 0, scale: 1, opacity: 1 },
-        "-=0.8"
-      );
+        // Impact — flash blanc + craquelures
+        .to(impactRef.current, { opacity: 1, scale: 1, duration: 0.1, ease: "none" })
+        .to(crackRef.current, { opacity: 1, scale: 1, duration: 0.08, ease: "none" }, "<")
+        .to([leftCrackRef.current, rightCrackRef.current], { opacity: 1, duration: 0.06, ease: "none" }, "<")
+        .to(".home", { x: 10, duration: 0.04, yoyo: true, repeat: 7, ease: "none" }, "<")
+        .to(impactRef.current, { opacity: 0, scale: 5, duration: 0.45, ease: "power2.out" })
+        .to(crackRef.current, { opacity: 0, scale: 1.3, duration: 0.55, ease: "power2.out" }, "<")
+
+        // Stabilisation — cartes qui s'inclinent l'une vers l'autre
+        .to(leftCardRef.current, { x: -10, rotation: 12, duration: 0.3, ease: "back.out(2)" }, "-=0.35")
+        .to(rightCardRef.current, { x: 10, rotation: -12, duration: 0.3, ease: "back.out(2)" }, "<");
     }
   }, [isLoading]);
 
@@ -174,12 +203,68 @@ useEffect(() => {
           <span ref={lastRef} className="word last">last</span>
 
           <div className="image-wrapper">
-            <img
-              ref={imageRef}
-              className="center-image"
-              src="https://wallpapers.com/images/hd/ash-ketchum-pokemon-trainer-pose-8qvwplhdpl9aecuu.jpg" 
-              alt="Sacha"
-            />
+            {/* FLASH D'IMPACT */}
+            <div className="impact_flash" ref={impactRef} />
+
+            {/* CRAQUELURE D'IMPACT */}
+            <svg className="crack_overlay" ref={crackRef} viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+              <g stroke="white" fill="none" strokeLinecap="round">
+                <line x1="50" y1="50" x2="8" y2="6" strokeWidth="1.8"/>
+                <line x1="22" y1="20" x2="10" y2="32" strokeWidth="1"/>
+                <line x1="50" y1="50" x2="94" y2="4" strokeWidth="1.6"/>
+                <line x1="78" y1="20" x2="92" y2="36" strokeWidth="1"/>
+                <line x1="50" y1="50" x2="1" y2="52" strokeWidth="1.4"/>
+                <line x1="50" y1="50" x2="99" y2="70" strokeWidth="1.4"/>
+                <line x1="50" y1="50" x2="33" y2="100" strokeWidth="1.3"/>
+                <line x1="50" y1="50" x2="70" y2="100" strokeWidth="1.3"/>
+                <line x1="50" y1="50" x2="50" y2="0" strokeWidth="1.5"/>
+                <line x1="50" y1="18" x2="36" y2="4" strokeWidth="0.9"/>
+                <line x1="50" y1="50" x2="15" y2="88" strokeWidth="1.1"/>
+                <line x1="50" y1="50" x2="88" y2="95" strokeWidth="1.1"/>
+              </g>
+            </svg>
+
+            {/* CARTE GAUCHE */}
+            <div className="battle_card" ref={leftCardRef}>
+              <img src={card1.image} alt={card1.name} />
+              <p>{card1.name}</p>
+              {/* FISSURES — impact depuis la droite */}
+              <svg className="card_crack" ref={leftCrackRef} viewBox="0 0 60 100" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+                <g stroke="white" fill="none" strokeLinecap="round">
+                  <line x1="58" y1="50" x2="0" y2="8" strokeWidth="1.8"/>
+                  <line x1="58" y1="50" x2="2" y2="50" strokeWidth="2"/>
+                  <line x1="58" y1="50" x2="0" y2="92" strokeWidth="1.8"/>
+                  <line x1="58" y1="50" x2="16" y2="0" strokeWidth="1.3"/>
+                  <line x1="58" y1="50" x2="16" y2="100" strokeWidth="1.3"/>
+                  <line x1="58" y1="50" x2="36" y2="0" strokeWidth="1"/>
+                  <line x1="58" y1="50" x2="36" y2="100" strokeWidth="1"/>
+                  <line x1="22" y1="22" x2="10" y2="34" strokeWidth="0.8"/>
+                  <line x1="22" y1="78" x2="10" y2="66" strokeWidth="0.8"/>
+                  <line x1="40" y1="14" x2="28" y2="26" strokeWidth="0.7"/>
+                </g>
+              </svg>
+            </div>
+
+            {/* CARTE DROITE */}
+            <div className="battle_card" ref={rightCardRef}>
+              <img src={card2.image} alt={card2.name} />
+              <p>{card2.name}</p>
+              {/* FISSURES — impact depuis la gauche */}
+              <svg className="card_crack" ref={rightCrackRef} viewBox="0 0 60 100" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+                <g stroke="white" fill="none" strokeLinecap="round">
+                  <line x1="2" y1="50" x2="60" y2="8" strokeWidth="1.8"/>
+                  <line x1="2" y1="50" x2="58" y2="50" strokeWidth="2"/>
+                  <line x1="2" y1="50" x2="60" y2="92" strokeWidth="1.8"/>
+                  <line x1="2" y1="50" x2="44" y2="0" strokeWidth="1.3"/>
+                  <line x1="2" y1="50" x2="44" y2="100" strokeWidth="1.3"/>
+                  <line x1="2" y1="50" x2="24" y2="0" strokeWidth="1"/>
+                  <line x1="2" y1="50" x2="24" y2="100" strokeWidth="1"/>
+                  <line x1="38" y1="22" x2="50" y2="34" strokeWidth="0.8"/>
+                  <line x1="38" y1="78" x2="50" y2="66" strokeWidth="0.8"/>
+                  <line x1="20" y1="14" x2="32" y2="26" strokeWidth="0.7"/>
+                </g>
+              </svg>
+            </div>
           </div>
 
           <span ref={championRef} className="word champion">champion</span>
