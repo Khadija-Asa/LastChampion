@@ -440,7 +440,7 @@ const Tournament = ({ title, data }) => {
           </h5> */}
 
           {/* label */}
-          <p className="winner_label">The Last Champion</p>
+          <p className="winner_label">Last Champion </p>
 
           {/* winner card */}
           <div className="winner_card_wrapper" ref={winnerCardRef}>
