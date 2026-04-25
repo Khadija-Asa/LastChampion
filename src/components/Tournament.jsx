@@ -129,24 +129,26 @@ const Tournament = ({ title, data }) => {
   useEffect(() => {
     if (step !== "winner" || !winnerCardRef.current) return;
 
-    const startX = -(window.innerWidth * 0.7);
     const tween = gsap.fromTo(
       winnerCardRef.current,
-      { x: startX, y: -300, rotation: -540, scale: 0.1, opacity: 0 },
+      { y: -window.innerHeight * 1.5, scale: 1.2, opacity: 0, rotation: 0 },
       {
-        x: 0, y: 0, rotation: 0, scale: 1, opacity: 1,
-        duration: 1.5,
-        ease: "back.out(1.4)",
-        delay: 0.3,
+        y: 0, scale: 1, opacity: 1, rotation: 0,
+        duration: 0.6,
+        ease: "power4.in",
+        delay: 0.2,
         onComplete: () => {
-          gsap.to(winnerCardRef.current, {
-            y: -12,
-            rotation: 1.5,
-            duration: 2.2,
-            ease: "sine.inOut",
-            yoyo: true,
-            repeat: -1,
-          });
+          const tl = gsap.timeline();
+          tl.to(".winner_wrapper", { x: 10, duration: 0.04, yoyo: true, repeat: 7, ease: "none" })
+            .to(winnerCardRef.current, { scaleX: 1.1, scaleY: 0.85, duration: 0.07, ease: "none" }, "<")
+            .to(winnerCardRef.current, { scaleX: 0.97, scaleY: 1.05, duration: 0.1, ease: "none" })
+            .to(winnerCardRef.current, { scaleX: 1, scaleY: 1, duration: 0.15, ease: "power2.out" })
+            .add(() => {
+              gsap.to(winnerCardRef.current, {
+                y: -12, rotation: 1.5, duration: 2.2,
+                ease: "sine.inOut", yoyo: true, repeat: -1,
+              });
+            });
         }
       }
     );
