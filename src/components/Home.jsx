@@ -26,7 +26,7 @@ export default function Home() {
   const leftCrackRef = useRef(null);
   const rightCrackRef = useRef(null);
 
-  // DEUX CARDS ALÉATOIRES
+  // random cards
   const [cards] = useState(() => {
     const categories = [animeList, heroesList, lolList, villainsList];
     const category = categories[Math.floor(Math.random() * categories.length)];
@@ -37,7 +37,7 @@ export default function Home() {
   });
   const [card1, card2] = cards;
 
-  // sound
+  // home sound
   const homeSound = useRef(null);
 
 useEffect(() => {
@@ -86,7 +86,7 @@ useEffect(() => {
   }
 }, [isLoading]);
 
-  // social media
+  // social links
   useEffect(() => {
     if (!isLoading) {
       const tl = gsap.timeline({ delay: 1, ease: "power3.out" });
@@ -107,7 +107,7 @@ useEffect(() => {
     }
   }, [isLoading]);
 
-  // ANIMATION TITRE + COMBAT DE CARTES
+  // title & cards
   useEffect(() => {
     if (!isLoading) {
       gsap.set(impactRef.current, { xPercent: -50, yPercent: -50, scale: 0, opacity: 0 });
@@ -116,11 +116,11 @@ useEffect(() => {
 
       const tl = gsap.timeline({ defaults: { ease: "expoScale(0.5,7,none)", duration: 1 } });
 
-      // Mots
-      tl.fromTo(lastRef.current, { y: "-100%", scale: 0.3, opacity: 0 }, { y: 0, scale: 1, opacity: 1 })
+      // words
+      tl.fromTo(lastRef.current, { y: "-100%", scale: 0.3, opacity: 0 }, { y: 0, scale: 1, opacity: 0.8 })
         .fromTo(championRef.current, { y: "100%", scale: 0.3, opacity: 0 }, { y: 0, scale: 1, opacity: 1 }, "-=0.8")
 
-        // Cartes volantes depuis les côtés
+        // flying cards
         .fromTo(leftCardRef.current,
           { x: -window.innerWidth, rotation: -30, opacity: 0 },
           { x: 0, rotation: 8, opacity: 1, duration: 0.65, ease: "power3.out" },
@@ -132,7 +132,7 @@ useEffect(() => {
           "<"
         )
 
-        // Impact — flash blanc + craquelures
+        // impact & cracks
         .to(impactRef.current, { opacity: 1, scale: 1, duration: 0.1, ease: "none" })
         .to(crackRef.current, { opacity: 1, scale: 1, duration: 0.08, ease: "none" }, "<")
         .to([leftCrackRef.current, rightCrackRef.current], { opacity: 1, duration: 0.06, ease: "none" }, "<")
@@ -140,13 +140,25 @@ useEffect(() => {
         .to(impactRef.current, { opacity: 0, scale: 5, duration: 0.45, ease: "power2.out" })
         .to(crackRef.current, { opacity: 0, scale: 1.3, duration: 0.55, ease: "power2.out" }, "<")
 
-        // Stabilisation — cartes qui s'inclinent l'une vers l'autre
+        // card settle
         .to(leftCardRef.current, { x: -10, rotation: 12, duration: 0.3, ease: "back.out(2)" }, "-=0.35")
-        .to(rightCardRef.current, { x: 10, rotation: -12, duration: 0.3, ease: "back.out(2)" }, "<");
+        .to(rightCardRef.current, { x: 10, rotation: -12, duration: 0.3, ease: "back.out(2)" }, "<")
+
+        // card float
+        .add(() => {
+          gsap.to(leftCardRef.current, {
+            y: -10, rotation: 10, duration: 2.4,
+            ease: "sine.inOut", yoyo: true, repeat: -1,
+          });
+          gsap.to(rightCardRef.current, {
+            y: -10, rotation: -10, duration: 2,
+            ease: "sine.inOut", yoyo: true, repeat: -1, delay: 0.3,
+          });
+        });
     }
   }, [isLoading]);
 
-  // Random theme
+  // random theme
   const navigate = useNavigate();
 
   const handleRandomTheme = () => {
@@ -203,10 +215,10 @@ useEffect(() => {
           <span ref={lastRef} className="word last">last</span>
 
           <div className="image-wrapper">
-            {/* FLASH D'IMPACT */}
+            {/* impact flash */}
             <div className="impact_flash" ref={impactRef} />
 
-            {/* CRAQUELURE D'IMPACT */}
+            {/* impact crack */}
             <svg className="crack_overlay" ref={crackRef} viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
               <g stroke="white" fill="none" strokeLinecap="round">
                 <line x1="50" y1="50" x2="8" y2="6" strokeWidth="1.8"/>
@@ -224,11 +236,11 @@ useEffect(() => {
               </g>
             </svg>
 
-            {/* CARTE GAUCHE */}
+            {/* left card */}
             <div className="battle_card" ref={leftCardRef}>
               <img src={card1.image} alt={card1.name} />
               <p>{card1.name}</p>
-              {/* FISSURES — impact depuis la droite */}
+              {/* right impact cracks */}
               <svg className="card_crack" ref={leftCrackRef} viewBox="0 0 60 100" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
                 <g stroke="white" fill="none" strokeLinecap="round">
                   <line x1="58" y1="50" x2="0" y2="8" strokeWidth="1.8"/>
@@ -245,11 +257,11 @@ useEffect(() => {
               </svg>
             </div>
 
-            {/* CARTE DROITE */}
+            {/* right card */}
             <div className="battle_card" ref={rightCardRef}>
               <img src={card2.image} alt={card2.name} />
               <p>{card2.name}</p>
-              {/* FISSURES — impact depuis la gauche */}
+              {/* left impact cracks */}
               <svg className="card_crack" ref={rightCrackRef} viewBox="0 0 60 100" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
                 <g stroke="white" fill="none" strokeLinecap="round">
                   <line x1="2" y1="50" x2="60" y2="8" strokeWidth="1.8"/>
@@ -269,6 +281,14 @@ useEffect(() => {
 
           <span ref={championRef} className="word champion">champion</span>
         </h1>
+
+        {/* tagline & cta */}
+        <p className="home_subtitle">Only one can remain<br/>who's gonna win?</p>
+        <button
+          className="choose_btn"
+          onClick={() => document.querySelector('.burger_menu')?.click()}>
+          choose your theme
+        </button>
 
         <div className="random-btn-container">
           <button className="random-btn" onClick={handleRandomTheme}>

@@ -14,7 +14,7 @@ const shuffleArray = (array) => {
   return [...array].sort(() => 0.5 - Math.random());
 };
 
-// URL IMG PUBLIC
+// public img path
 const basePath = import.meta.env.BASE_URL;
 
 const Tournament = ({ title, data }) => {
@@ -38,12 +38,12 @@ const Tournament = ({ title, data }) => {
   const backgroundRef = useRef(null);
   const winnerCardRef = useRef(null);
 
-  // TOGGLE MUTE
+  // toggle mute
   const toggleMute = () => {
     setIsMuted((prev) => !prev);
   };
 
-  // MUTE/UNMUTE
+  // mute / unmute
   useEffect(() => {
     const sounds = [
       selectSound.current,
@@ -57,7 +57,7 @@ const Tournament = ({ title, data }) => {
     });
   }, [isMuted]);
 
-  // HANDLE SOUNDS
+  // handle sounds
   const handleSelect = (champion) => {
     if (selected.includes(champion)) {
       setSelected(selected.filter((c) => c !== champion));
@@ -93,7 +93,7 @@ const Tournament = ({ title, data }) => {
     }
   };
 
-  // SOUND BATTLE
+  // battle sound
   useEffect(() => {
   if (step === "battle") {
     if (!audioRef.current) {
@@ -114,7 +114,7 @@ const Tournament = ({ title, data }) => {
   };
 }, [step]);
 
-  // SOUND WINNER
+  // winner sound
   useEffect(() => {
   if (step === "winner" && victorySound.current) {
     victorySound.current.pause();
@@ -125,7 +125,7 @@ const Tournament = ({ title, data }) => {
   }
 }, [step]);
 
-  // ANIMATION CARTE WINNER
+  // winner card animation
   useEffect(() => {
     if (step !== "winner" || !winnerCardRef.current) return;
 
@@ -154,7 +154,7 @@ const Tournament = ({ title, data }) => {
     return () => tween.kill();
   }, [step]);
 
-  // GLOBAL TOURNAMENT
+  // tournament logic
   const startTournament = () => {
     const shuffled = shuffleArray(selected);
     const initialDuels = [];
@@ -166,7 +166,7 @@ const Tournament = ({ title, data }) => {
     setDuelIndex(0);
   };
 
-  // HANDLE VOTES
+  // handle votes
   const handleVote = (winner) => {
     const updatedNextRound = [...nextRound, winner];
 
@@ -206,7 +206,7 @@ const Tournament = ({ title, data }) => {
     }
   }, [selected]);
 
-  // TITLE DUEL
+  // duel title
   const getOrdinalSuffix = (n) => {
     if (n === 1) return "st";
     if (n === 2) return "nd";
@@ -226,7 +226,7 @@ const Tournament = ({ title, data }) => {
     return `${duelNumber}${getOrdinalSuffix(duelNumber)} ${label} match`;
   };
 
-  // INDEX DU MATCH EN COURS (0 → 6)
+  // current match index
   const getCurrentMatchIndex = () => {
     const total = round.length + duelIndex;
     if (total === 4) return duelIndex;
@@ -238,7 +238,7 @@ const Tournament = ({ title, data }) => {
   return (
     <section className="tournament_wrapper">
 
-      {/* MUTE UNMUTE BUTTON */}
+      {/* mute button */}
       <button className="mute_button" onClick={toggleMute}>
         {isMuted ? <FaVolumeMute /> : <FaVolumeUp />}
       </button>
@@ -246,18 +246,18 @@ const Tournament = ({ title, data }) => {
 
       {step === "selection" && (
         <>
-          {/* BACK BUTTON */}
+          {/* back button */}
           <button className="back_button">
             <Link to='/'> <span className="blink"><FaLongArrowAltLeft /></span>MENU</Link>
           </button>
 
-          {/* TITLE */}
+          {/* title */}
           <div className="wrapper_title">
             <h3>{title}</h3>
             <p>Click to select up to 8 champions</p>
           </div>
 
-          {/* GRID */}
+          {/* grid */}
           <div className="grid">
             {data.map((item, index) => (
               <div
@@ -270,7 +270,7 @@ const Tournament = ({ title, data }) => {
                   onClick={() => handleSelect(item)}
                 >
                   <div className="card_content">
-                    {/* BADGE NUMÉRO DE SÉLECTION */}
+                    {/* selection badge */}
                     {selected.includes(item) && (
                       <span className="card_badge">{selected.indexOf(item) + 1}</span>
                     )}
@@ -289,7 +289,7 @@ const Tournament = ({ title, data }) => {
             ))}
           </div>
 
-          {/* START BUTTON */}
+          {/* start button */}
           {selected.length === 8 && (
             <button
               className={`start_button ${flash ? "flash_effect" : ""}`}
@@ -301,20 +301,20 @@ const Tournament = ({ title, data }) => {
         </>
       )}
 
-      {/* DUEL VERSUS */}
+      {/* duel versus */}
       {step === "battle" && round.length > 0 && (
         <div className={`battle_wrapper ${themeClass}`}>
           <h4>Choose your winner</h4>
 
-          {/* BACK BUTTON */}
+          {/* back button */}
           <button className="back_button">
             <Link to='/'> <span className="blink"><FaLongArrowAltLeft /></span>MENU</Link>
           </button>
 
-          {/* DUEL MESSAGE */}
+          {/* duel message */}
           <DuelMessage text={getDuelText()} />
 
-          {/* TIMELINE */}
+          {/* timeline */}
           {(() => {
             const cm = getCurrentMatchIndex();
             return (
@@ -347,7 +347,7 @@ const Tournament = ({ title, data }) => {
             );
           })()}
 
-          {/* BACKGROUND GIANT IMAGES */}
+          {/* bg giant images */}
           {round[0] && round[0].length === 2 && (
             <div className="bg_card_wrapper">
               <img
@@ -363,10 +363,10 @@ const Tournament = ({ title, data }) => {
             </div>
           )}
 
-          {/* DUEL */}
+          {/* duel */}
           {round[0] && round[0].length === 2 && (
           <div className="duel_wrapper">
-            {/* LEFT CARD */}
+            {/* left card */}
             <TiltCard
               className="card_duel"
               onClick={() => handleVote(round[0][0])}
@@ -386,7 +386,7 @@ const Tournament = ({ title, data }) => {
               <img src={vs} alt="VS image" />
             </div>
 
-            {/* RIGHT CARD */}
+            {/* right card */}
             <TiltCard
               className="card_duel"
               onClick={() => handleVote(round[0][1])}
@@ -406,18 +406,18 @@ const Tournament = ({ title, data }) => {
         </div>
       )}
 
-      {/* WINNER */}
+      {/* winner */}
       {step === "winner" && winner && (
         <div className="winner_wrapper">
 
-          {/* WINNER BG IMAGE */}
+          {/* winner bg */}
           <img
             className="bg_card"
             src={winner.winnerImage || winner.image}
             alt={winner.name}
           />
 
-          {/* NOM EN GRAND EN FOND (atmosphère) */}
+          {/* big bg name */}
           {/* <h5 className="letter_animation">
             {(winner.winnerName || winner.name)
               .split(" ")
@@ -437,10 +437,10 @@ const Tournament = ({ title, data }) => {
               ))}
           </h5> */}
 
-          {/* LABEL */}
+          {/* label */}
           <p className="winner_label">Last Champion</p>
 
-          {/* CARTE WINNER — ANIMATION GSAP */}
+          {/* winner card */}
           <div className="winner_card_wrapper" ref={winnerCardRef}>
             <img
               className="winner_img"
@@ -450,7 +450,7 @@ const Tournament = ({ title, data }) => {
             <p className="winner_card_name">{winner.name}</p>
           </div>
 
-          {/* PLAY AGAIN BUTTON */}
+          {/* play again */}
           <button className="back_button">
             <Link to='/'>
               <span className="blink"><FaLongArrowAltLeft /></span>PLAY AGAIN

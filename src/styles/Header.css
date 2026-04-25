@@ -24,39 +24,10 @@ header {
   color: var(--White);
 }
 
-/* Start arrow */
+/* Menu action */
 .menu_action {
   display: flex;
   align-items: center;
-  gap: 1rem;
-}
-
-.menu_start {
-  display: flex;
-  align-items: center;
-  gap: 3px;
-  color: var(--White);
-  letter-spacing: 1px;
-  user-select: none;
-  padding-top: 2.5rem;
-  transform: rotate(-10deg);
-}
-
-.start_text {
-  font-size: .8rem;
-}
-
-.start_arrow {
-  display: inline-block;
-  font-size: 1.1rem;
-  animation: arrowNudge 1s ease-in-out infinite;
-}
-
-/* Animation directionnelle */
-@keyframes arrowNudge {
-  0% { transform: translateX(0); opacity: .7; }
-  50% { transform: translateX(3px); opacity: 1; }
-  100% { transform: translateX(0); opacity: .7; }
 }
 
 
@@ -67,14 +38,13 @@ header {
   justify-content: space-between;
   width: 40px;
   height: 28px;
-  background: none;
+  background-color: var(--White);
   border: 1px solid var(--Gray);
   cursor: pointer;
   z-index: 1001;
   transition: all 0.3s ease;
   align-items: center;
   padding: 8px;
-  background-color: var(--White);
 }
 
 .burger_bar {

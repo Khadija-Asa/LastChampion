@@ -1,14 +1,61 @@
 .home_container {
-  background-image: url(./../assets/home_bg.jpg);
+  background-image:
+    repeating-linear-gradient(
+      to bottom,
+      transparent 0px,
+      transparent 3px,
+      rgba(0, 0, 0, 0.18) 3px,
+      rgba(0, 0, 0, 0.18) 4px
+    ),
+    linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6)),
+    url(../assets/home_bg.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  text-rendering: optimizeSpeed;
   text-rendering: optimizeSpeed;
   width: 100vw;
   height: 100vh;
   font-family: 'VCR';
   position: relative;
   z-index: 2;
+}
+
+/* beam flicker layer */
+.home_container::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: conic-gradient(
+    at 50% 0%,
+    transparent 0deg,
+    transparent 128deg,
+    rgba(255, 255, 255, 0.08) 152deg,
+    rgba(255, 255, 255, 0.32) 180deg,
+    rgba(255, 255, 255, 0.08) 208deg,
+    transparent 232deg,
+    transparent 360deg
+  );
+  pointer-events: none;
+  z-index: 0;
+  animation: spotlight_flicker 4s linear infinite;
+}
+
+@keyframes spotlight_flicker {
+  /* fade in */
+  0%   { opacity: 0.15; }
+  28%  { opacity: 1; }
+  /* electric flicker */
+  42%  { opacity: 1; }
+  44%  { opacity: 0.05; }
+  46%  { opacity: 1; }
+  48%  { opacity: 0.15; }
+  50%  { opacity: 0.9; }
+  52%  { opacity: 0.02; }
+  54%  { opacity: 1; }
+  /* fade out */
+  80%  { opacity: 0.6; }
+  100% { opacity: 0.15; }
 }
 
 .home {
@@ -32,7 +79,6 @@
 }
 
 .title_container {
-  font-size: clamp(3rem, 0.6rem + 12vw, 15rem);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -40,10 +86,11 @@
   font-weight: bold;
   text-transform: uppercase;
   position: relative;
-  gap: 10rem;
+  gap: 8rem;
 }
 
 .home h1 {
+  font-size: clamp(3rem, 0.6rem + 12vw, 15rem);
   text-shadow: 0 0 100px var(--Black), 0 0 100px var(--Black), 0 0 150px var(--Black);
   opacity: 0;
   transform: translateY(-70px);
@@ -58,14 +105,14 @@
 }
 
 .last {
-  z-index: 0;
-}
-
-.champion {
   z-index: 2;
 }
 
-/* COMBAT DE CARTES */
+.champion {
+  z-index: 0;
+}
+
+/* battle cards */
 .image-wrapper {
   position: absolute;
   left: 50%;
@@ -74,7 +121,7 @@
   z-index: 1;
   display: flex;
   align-items: flex-end;
-  gap: 0.6rem;
+  gap: clamp(0.5rem, -0.2143rem + 3.5714vw, 3rem);
 }
 
 .battle_card {
@@ -94,6 +141,7 @@
   object-fit: cover;
   object-position: top;
   display: block;
+  transition: transform 0.35s ease;
 }
 
 .battle_card::after {
@@ -121,7 +169,7 @@
   padding: 0 0.3rem;
 }
 
-/* FISSURES SUR LES CARTES */
+/* card cracks */
 .card_crack {
   position: absolute;
   inset: 0;
@@ -133,7 +181,7 @@
   filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.95)) drop-shadow(0 0 6px rgba(255, 255, 255, 0.4));
 }
 
-/* FLASH D'IMPACT */
+/* impact flash */
 .impact_flash {
   position: absolute;
   left: 50%;
@@ -152,7 +200,7 @@
   z-index: 10;
 }
 
-/* CRAQUELURE D'IMPACT */
+/* impact crack overlay */
 .crack_overlay {
   position: absolute;
   left: 50%;
@@ -171,6 +219,48 @@
   50% { transform: translate(2px, -2px); }
   75% { transform: translate(-1px, 1px); }
   100% { transform: translate(0, 0); }
+}
+
+/* tagline & cta */
+.home_subtitle {
+  font-size: clamp(0.55rem, 0.4rem + 0.7vw, 0.85rem);
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  color: rgba(255, 255, 255, 0.45);
+  text-align: center;
+  line-height: 1.8;
+  margin-top: 1.5rem;
+  opacity: 0;
+  animation: fadeUp 0.8s ease forwards;
+  animation-delay: 2.4s;
+}
+
+.choose_btn {
+  margin-top: 1rem;
+  padding: 0.6rem 1.8rem;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  color: var(--White);
+  font-family: 'VCR';
+  font-size: clamp(0.5rem, 0.35rem + 0.7vw, 0.75rem);
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  cursor: pointer;
+  opacity: 0;
+  animation: fadeUp 0.8s ease forwards;
+  animation-delay: 2.7s;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.choose_btn:hover {
+  background: var(--White);
+  color: var(--Black);
+  border-color: var(--White);
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
 /* social media */

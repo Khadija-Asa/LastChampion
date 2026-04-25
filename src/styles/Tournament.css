@@ -3,7 +3,7 @@
   color: var(--White);
 }
 
-/* CONTENEUR DU DUEL */
+/* duel container */
 .battle_wrapper {
   min-height: 100vh;              
   display: flex;
@@ -15,7 +15,7 @@
   padding: 2rem 1rem;             
 }
 
-/* DUEL TITLE + MESSAGE */
+/* duel title */
 .battle_wrapper h4 {
   font-family: 'Coolvetica';
   font-size: clamp(2.2rem, 1rem + 4vw, 5rem);
@@ -44,7 +44,7 @@
   margin-bottom: 1.5rem;
 }
 
-/* TIMELINE */
+/* timeline */
 .tournament_timeline {
   display: flex;
   align-items: flex-end;
@@ -153,7 +153,7 @@
   }
 }
 
-/* TITLE */
+/* title */
 .wrapper_title {
   padding-top: 5rem;
   padding-bottom: clamp(3rem, 1.8571rem + 1.7857vw, 5rem);
@@ -168,7 +168,7 @@
   animation-delay: 0.2s;
 }
 
-/* TITRE PRINCIPAL */
+/* main title */
 .wrapper_title h3 {
   font-family: 'Coolvetica';
   font-size: clamp(2.2rem, 1rem + 4vw, 5rem);
@@ -196,7 +196,7 @@
   animation-delay: 0.2s;
 }
 
-/* SOUS-TITRE */
+/* subtitle */
 .wrapper_title p {
   font-size: clamp(0.7rem, 0.5rem + 0.8vw, 1rem);
   text-transform: uppercase;
@@ -205,7 +205,7 @@
   animation-delay: 0.5s;
 }
 
-/* GRID & CARD */
+/* grid & card */
 .grid {
   color: var(--White);
   display: flex;
@@ -306,7 +306,7 @@
   display: block;
 }
 
-/* DÉGRADÉ NOM EN BAS DE LA CARTE */
+/* card name gradient */
 .image_wrapper::after {
   content: '';
   position: absolute;
@@ -319,7 +319,7 @@
   z-index: 1;
 }
 
-/* NOM EN OVERLAY SUR L'IMAGE */
+/* name overlay */
 .card_name {
   position: absolute;
   bottom: 0.65rem;
@@ -333,7 +333,7 @@
   z-index: 2;
 }
 
-/* BADGE NUMÉRO DE SÉLECTION */
+/* selection badge */
 .card_badge {
   position: absolute;
   top: 0.5rem;
@@ -352,7 +352,7 @@
   animation: popIn 0.3s ease;
 }
 
-/* CARTE DÉSACTIVÉE (8 slots pleins) */
+/* disabled card */
 .card_disabled {
   opacity: 0.4;
   cursor: not-allowed;
@@ -363,7 +363,7 @@
   box-shadow: 0 6px 20px rgba(0, 0, 0, 1) !important;
 }
 
-/* START BUTTON */
+/* start button */
 .start_button {
   margin-bottom: 5rem;
   padding: 10px 20px;
@@ -396,7 +396,7 @@
   animation: flash 1s ease-in-out 2;
 }
 
-/* CHAMPION MESSAGE */
+/* champion message */
 .champion_message {
   position: fixed;
   top: 50%;
@@ -433,7 +433,7 @@
   }
 }
 
-/* BACK BUTTON */
+/* back button */
 .back_button {
   position: absolute;
   left: .5rem;
@@ -461,7 +461,7 @@
   gap: .5rem;
 }
 
-/* DUEL WRAPPER */
+/* duel wrapper */
 .duel_wrapper {
   height: 100%;
   width: 100vw;
@@ -488,7 +488,7 @@
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
-/* DÉGRADÉ NOM EN BAS */
+/* name gradient */
 .card_duel::after {
   content: '';
   position: absolute;
@@ -501,7 +501,7 @@
   z-index: 1;
 }
 
-/* VERSUS */
+/* versus */
 .vs_text img {
   width: clamp(3rem, 1rem + 10vw, 10rem);
   display: block;
@@ -562,7 +562,7 @@
   80%      { clip-path: inset(15% 0 25% 0); }
 }
 
-/* IMAGE CARD */
+/* image card */
 .card_duel img {
   height: clamp(15rem, 10.7143rem + 21.4286vw, 30rem);
   object-fit: cover;
@@ -572,7 +572,7 @@
   display: block;
 }
 
-/* NOM EN OVERLAY SUR L'IMAGE */
+/* name overlay */
 .card_duel p {
   position: absolute;
   bottom: 0.8rem;
@@ -598,7 +598,7 @@
   }
 }
 
-/* EFFECT ON IMG */
+/* image effect */
 .card_duel img.duel_zoom,
 .winner_wrapper img.duel_zoom {
   animation: zoomInPop .5s ease;
@@ -616,7 +616,7 @@
   }
 }
 
-/* FINAL WINNER */
+/* winner screen */
 .winner_wrapper {
   height: 100vh;
   width: 100vw;
@@ -629,7 +629,7 @@
   position: relative;
 }
 
-/* LABEL "LAST CHAMPION" */
+/* winner label */
 .winner_label {
   font-size: clamp(0.6rem, 0.4rem + 0.8vw, 0.85rem);
   text-transform: uppercase;
@@ -642,7 +642,7 @@
   animation-delay: 2s;
 }
 
-/* WINNER CARD */
+/* winner card */
 .winner_card_wrapper {
   position: relative;
   z-index: 4;
@@ -661,7 +661,7 @@
   object-position: top;
 }
 
-/* NAME ON CARD */
+/* name on card */
 .winner_card_wrapper::after {
   content: '';
   position: absolute;
@@ -674,7 +674,7 @@
   pointer-events: none;
 }
 
-/* NAME OVERLAY */
+/* name overlay */
 .winner_card_name {
   position: absolute;
   bottom: 0.8rem;
@@ -688,7 +688,7 @@
   z-index: 2;
 }
 
-/* GIG NAME BEHIND */
+/* bg name */
 /* .winner_wrapper h5 {
   position: absolute;
   font-family: 'Coolvetica';
@@ -735,7 +735,7 @@
   }
 }
 
-/* BACKGROUND DUEL GIANT CARDS */
+/* bg duel cards */
 .bg_card {
   position: absolute;
   top: 50%;
@@ -793,7 +793,7 @@
   }
 }
 
-/* BACKGROUND WINNER GIANT CARD */
+/* bg winner card */
 .winner_wrapper .bg_card {
   position: absolute;
   transform: translate(-50%, -50%);
@@ -808,7 +808,7 @@
   pointer-events: none;
 }
 
-/* MUTE BUTTON */
+/* mute button */
 .mute_button {
   position: fixed;
   top: 1rem;

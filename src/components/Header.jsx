@@ -77,11 +77,6 @@ const Header = () => {
         </div>
 
         <div className="menu_action">
-          <div className="menu_start">
-            <span className="start_text">start</span>
-            <span className="start_arrow">➬</span>
-          </div>
-
           <button
             className={`burger_menu ${isMenuOpen ? 'open' : ''}`}
             onClick={toggleMenu}
