@@ -25,6 +25,7 @@ export default function Home() {
   const crackRef = useRef(null);
   const leftCrackRef = useRef(null);
   const rightCrackRef = useRef(null);
+  const spotlightRef = useRef(null);
 
   // random cards
   const [cards] = useState(() => {
@@ -48,28 +49,34 @@ useEffect(() => {
       },
     });
 
-    gsap.set(".preloader_grid .item", { y: -100, opacity: 0 });
+    gsap.set(".preloader_grid .item", { y: -80, opacity: 0 });
 
     tl.to(".preloader_grid .item", {
       y: 0,
       opacity: 1,
-      duration: 1,
+      duration: 0.5,
       ease: "power4.out",
-      stagger: 0.15
+      stagger: 0.07
     })
-    // .to({}, { duration: 99999 })
     .to(".preloader_grid .item", {
-      y: -150,
+      scale: 1.03,
+      duration: 0.15,
+      ease: "power2.out",
+      stagger: 0.02
+    })
+    .to(".preloader_grid .item", {
+      y: -220,
       opacity: 0,
-      duration: 1,
-      ease: "power4.in",
-      stagger: 0.1
+      scale: 1,
+      duration: 0.38,
+      ease: "power3.in",
+      stagger: 0.03
     })
     .to(".preloader", {
       y: "-100%",
-      duration: 1,
+      duration: 0.65,
       ease: "power4.inOut"
-    }, "-=0.5")
+    }, "-=0.25")
 
      .add(() => {
       if (!homeSound.current) {
@@ -113,11 +120,12 @@ useEffect(() => {
       gsap.set(impactRef.current, { xPercent: -50, yPercent: -50, scale: 0, opacity: 0 });
       gsap.set(crackRef.current, { xPercent: -50, yPercent: -50, scale: 0.4, opacity: 0 });
       gsap.set([leftCrackRef.current, rightCrackRef.current], { opacity: 0 });
+      gsap.set(spotlightRef.current, { opacity: 0 });
 
       const tl = gsap.timeline({ defaults: { ease: "expoScale(0.5,7,none)", duration: 1 } });
 
       // words
-      tl.fromTo(lastRef.current, { y: "-100%", scale: 0.3, opacity: 0 }, { y: 0, scale: 1, opacity: 0.8 })
+      tl.fromTo(lastRef.current, { y: "-100%", scale: 0.3, opacity: 0 }, { y: 0, scale: 1, opacity: 0.9 })
         .fromTo(championRef.current, { y: "100%", scale: 0.3, opacity: 0 }, { y: 0, scale: 1, opacity: 1 }, "-=0.8")
 
         // flying cards
@@ -143,6 +151,22 @@ useEffect(() => {
         // card settle
         .to(leftCardRef.current, { x: -10, rotation: 12, duration: 0.3, ease: "back.out(2)" }, "-=0.35")
         .to(rightCardRef.current, { x: 10, rotation: -12, duration: 0.3, ease: "back.out(2)" }, "<")
+
+        // spotlight reveal
+        .add(() => {
+          gsap.timeline()
+            .to(spotlightRef.current, { opacity: 0.9, duration: 0.1, ease: "none" })
+            .to(spotlightRef.current, { opacity: 0.02, duration: 0.08, ease: "none" })
+            .to(spotlightRef.current, { opacity: 1, duration: 0.06, ease: "none" })
+            .to(spotlightRef.current, { opacity: 0.1, duration: 0.1, ease: "none" })
+            .to(spotlightRef.current, { opacity: 0.85, duration: 0.08, ease: "none" })
+            .to(spotlightRef.current, { opacity: 0.05, duration: 0.06, ease: "none" })
+            .to(spotlightRef.current, { opacity: 1, duration: 0.1, ease: "none" })
+            .add(() => {
+              gsap.set(spotlightRef.current, { clearProps: "opacity" });
+              spotlightRef.current.style.animation = "spotlight_flicker 4s linear infinite";
+            });
+        }, "-=0.1")
 
         // card float
         .add(() => {
@@ -207,6 +231,7 @@ useEffect(() => {
 
   return (
     <section className="home_container">
+      <div className="home_spotlight" ref={spotlightRef} />
 
       <Header/>
 

@@ -640,6 +640,9 @@
   opacity: 0;
   animation: slideDown 0.8s ease-in-out forwards;
   animation-delay: 2s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* winner card */
