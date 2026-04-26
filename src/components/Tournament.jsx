@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import "./../styles/Tournament.css";
 import TiltCard from "./TiltCard";
 import "./../styles/Themes.css";
@@ -18,6 +18,7 @@ const shuffleArray = (array) => {
 const basePath = import.meta.env.BASE_URL;
 
 const Tournament = ({ title, data }) => {
+  const navigate = useNavigate();
   const [step, setStep] = useState("selection");
   const [selected, setSelected] = useState([]);
   const [round, setRound] = useState([]);
@@ -249,8 +250,8 @@ const Tournament = ({ title, data }) => {
       {step === "selection" && (
         <>
           {/* back button */}
-          <button className="back_button">
-            <Link to='/'> <span className="blink"><FaLongArrowAltLeft /></span>MENU</Link>
+          <button className="back_button" onClick={() => navigate('/', { state: { openMenu: true } })}>
+            <span className="blink"><FaLongArrowAltLeft /></span>THEMES
           </button>
 
           {/* title */}

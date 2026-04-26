@@ -1,14 +1,21 @@
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import './../styles/Header.css';
 import { gsap } from 'gsap';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [openSection, setOpenSection] = useState(null);
+  const location = useLocation();
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
   const closeMenu = () => setIsMenuOpen(false);
+
+  useEffect(() => {
+    if (location.state?.openMenu) {
+      setIsMenuOpen(true);
+    }
+  }, []);
 
   const toggleSection = (label) => {
     setOpenSection(openSection === label ? null : label);
@@ -73,7 +80,7 @@ const Header = () => {
     <header className="navbar_menu">
       <nav className="social_menu">
         <div className="menu_logo">
-          <span className='logo-title'>LastChampion</span>
+          LastChampion
         </div>
 
         <div className="menu_action">

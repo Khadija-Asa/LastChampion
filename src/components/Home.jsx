@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import gsap from "gsap";
 import './../styles/Home.css';
 import './../styles/main.css';
@@ -15,7 +15,8 @@ import { villainsList } from "../datas/villainsData";
 
 
 export default function Home() {
-  const [isLoading, setIsLoading] = useState(true);
+  const location = useLocation();
+  const [isLoading, setIsLoading] = useState(!location.state?.openMenu);
 
   const lastRef = useRef(null);
   const championRef = useRef(null);
