@@ -38,6 +38,12 @@ const Tournament = ({ title, data }) => {
   const themeClass = data[0]?.theme ? `theme_${data[0].theme}` : "";
   const backgroundRef = useRef(null);
   const winnerCardRef = useRef(null);
+  const finalTitleRef = useRef(null);
+  const leftDuelRef = useRef(null);
+  const rightDuelRef = useRef(null);
+  const finalOverlayRef = useRef(null);
+  const [finalAnimating, setFinalAnimating] = useState(false);
+  const [finalWinner, setFinalWinner] = useState(null);
 
   // toggle mute
   const toggleMute = () => {
@@ -209,6 +215,107 @@ const Tournament = ({ title, data }) => {
     }
   }, [selected]);
 
+  const isFinal = step === "battle" && round.length > 0 && round.length + duelIndex === 1;
+
+  // final title animation
+  useEffect(() => {
+    if (!isFinal || !finalTitleRef.current) return;
+    const tl = gsap.timeline();
+    tl.fromTo(finalTitleRef.current,
+      { scale: 8, opacity: 0, filter: "blur(40px)" },
+      { scale: 1, opacity: 1, filter: "blur(0px)", duration: 1.1, ease: "expo.out" }
+    )
+    .to(finalTitleRef.current, { x: 14, duration: 0.04, yoyo: true, repeat: 11, ease: "none" }, "-=0.05")
+    .add(() => {
+      gsap.to(finalTitleRef.current, {
+        textShadow: "0 0 80px rgba(255,255,255,1), 0 0 160px rgba(255,255,255,0.4)",
+        duration: 1.8, yoyo: true, repeat: -1, ease: "sine.inOut"
+      });
+    });
+    return () => tl.kill();
+  }, [isFinal]);
+
+  // final cards entry
+  useEffect(() => {
+    if (!isFinal || !leftDuelRef.current || !rightDuelRef.current) return;
+    gsap.fromTo(leftDuelRef.current,
+      { x: -window.innerWidth, rotation: -20, opacity: 0 },
+      { x: 0, rotation: 0, opacity: 1, duration: 0.9, ease: "power4.out", delay: 1.2 }
+    );
+    gsap.fromTo(rightDuelRef.current,
+      { x: window.innerWidth, rotation: 20, opacity: 0 },
+      { x: 0, rotation: 0, opacity: 1, duration: 0.9, ease: "power4.out", delay: 1.2 }
+    );
+  }, [isFinal]);
+
+  // VS entrance animation per duel
+  useEffect(() => {
+    if (step !== "battle") return;
+    gsap.fromTo(".vs_text",
+      { scale: 0.05, opacity: 0 },
+      { scale: 1, opacity: 1, duration: 0.6, ease: "back.out(2)", delay: 0.3 }
+    );
+  }, [duelIndex, step]);
+
+  // final vote with impact animation
+  const handleFinalVote = (winner, side) => {
+    if (finalAnimating) return;
+    setFinalAnimating(true);
+    const winnerEl = side === "left" ? leftDuelRef.current : rightDuelRef.current;
+    const loserEl  = side === "left" ? rightDuelRef.current : leftDuelRef.current;
+    const dir = side === "left" ? 1 : -1;
+
+    if (audioRef.current) gsap.to(audioRef.current, { volume: 0, duration: 0.8 });
+
+    gsap.timeline()
+      .to(".battle_wrapper", { x: dir * 22, duration: 0.04, yoyo: true, repeat: 9, ease: "none" })
+      .to(winnerEl, { scale: 1.25, duration: 0.2, ease: "power2.out" }, "<")
+      .to(loserEl, { x: dir * window.innerWidth * 1.3, rotation: dir * 35, scale: 0.4, opacity: 0, duration: 0.55, ease: "power4.in" }, "+=0.05")
+      .to([".final_title", ".vs_text"], { opacity: 0, duration: 0.3 })
+      .add(() => {
+        winnerEl.style.zIndex = "20";
+        const rect = winnerEl.getBoundingClientRect();
+        const currentX = gsap.getProperty(winnerEl, "x") || 0;
+        const currentY = gsap.getProperty(winnerEl, "y") || 0;
+        const dx = window.innerWidth / 2 - (rect.left + rect.width / 2);
+        const dy = window.innerHeight / 2 - (rect.top + rect.height / 2);
+        gsap.to(winnerEl, {
+          x: currentX + dx,
+          y: currentY + dy,
+          scale: 1.4,
+          duration: 0.7,
+          ease: "power3.out",
+          onComplete: () => {
+            const impactTl = gsap.timeline();
+            impactTl
+              .to(".battle_wrapper", { x: 10, duration: 0.04, yoyo: true, repeat: 7, ease: "none" })
+              .to(winnerEl, { scaleX: 1.1, scaleY: 0.85, duration: 0.07, ease: "none" }, "<")
+              .to(winnerEl, { scaleX: 0.97, scaleY: 1.05, duration: 0.1,  ease: "none" })
+              .to(winnerEl, { scaleX: 1,    scaleY: 1,    duration: 0.15, ease: "power2.out" })
+              .add(() => {
+                setFinalWinner(winner);
+                gsap.to(winnerEl, { y: "-=12", rotation: 1.5, duration: 2.2, ease: "sine.inOut", yoyo: true, repeat: -1 });
+              });
+          }
+        });
+      });
+  };
+
+  // final winner overlay + victory sound + crash animation
+  useEffect(() => {
+    if (!finalWinner) return;
+    if (victorySound.current) {
+      victorySound.current.pause();
+      victorySound.current.currentTime = 0;
+      victorySound.current.playbackRate = 1.5;
+      victorySound.current.volume = 0.1;
+      victorySound.current.play();
+    }
+    if (finalOverlayRef.current) {
+      gsap.fromTo(finalOverlayRef.current, { opacity: 0 }, { opacity: 1, duration: 0.8, ease: "power2.out" });
+    }
+  }, [finalWinner]);
+
   // duel title
   const getOrdinalSuffix = (n) => {
     if (n === 1) return "st";
@@ -306,19 +413,25 @@ const Tournament = ({ title, data }) => {
 
       {/* duel versus */}
       {step === "battle" && round.length > 0 && (
-        <div className={`battle_wrapper ${themeClass}`}>
-          <h4>Choose your winner</h4>
+        <div className={`battle_wrapper ${themeClass} ${isFinal ? "final_battle" : ""}`}>
+          {!isFinal && <h4>Choose your winner</h4>}
 
           {/* back button */}
-          <button className="back_button">
-            <Link to='/'> <span className="blink"><FaLongArrowAltLeft /></span>MENU</Link>
+          <button className="back_button" style={finalWinner ? { position: "relative", zIndex: 20 } : {}}>
+            <Link to='/'>
+              <span className="blink"><FaLongArrowAltLeft /></span>
+              {finalWinner ? "PLAY AGAIN" : "MENU"}
+            </Link>
           </button>
 
-          {/* duel message */}
-          <DuelMessage text={getDuelText()} />
+          {/* duel message / final title */}
+          {isFinal
+            ? <h2 className="final_title" ref={finalTitleRef}>Final</h2>
+            : <DuelMessage text={getDuelText()} />
+          }
 
           {/* timeline */}
-          {(() => {
+          {!isFinal && (() => {
             const cm = getCurrentMatchIndex();
             return (
               <div className="tournament_timeline">
@@ -351,6 +464,7 @@ const Tournament = ({ title, data }) => {
           })()}
 
           {/* bg giant images */}
+
           {round[0] && round[0].length === 2 && (
             <div className="bg_card_wrapper">
               <img
@@ -370,40 +484,44 @@ const Tournament = ({ title, data }) => {
           {round[0] && round[0].length === 2 && (
           <div className="duel_wrapper">
             {/* left card */}
-            <TiltCard
-              className="card_duel"
-              onClick={() => handleVote(round[0][0])}
-              role="button"
-              tabIndex={0}
-              onKeyDown={(e) => { if (e.key === "Enter") handleVote(round[0][0]); }}
-            >
-              <img
-                className="duel_zoom"
-                src={round[0][0].image}
-                alt={round[0][0].name}
-              />
-              <p>{round[0][0].name}</p>
-            </TiltCard>
+            <div ref={leftDuelRef}>
+              <TiltCard
+                className="card_duel"
+                onClick={() => isFinal ? handleFinalVote(round[0][0], "left") : handleVote(round[0][0])}
+                role="button"
+                tabIndex={0}
+                onKeyDown={(e) => { if (e.key === "Enter") isFinal ? handleFinalVote(round[0][0], "left") : handleVote(round[0][0]); }}
+              >
+                <img className="duel_zoom" src={round[0][0].image} alt={round[0][0].name} />
+                <p>{round[0][0].name}</p>
+              </TiltCard>
+            </div>
 
             <div className="vs_text">
               <img src={vs} alt="VS image" />
             </div>
 
             {/* right card */}
-            <TiltCard
-              className="card_duel"
-              onClick={() => handleVote(round[0][1])}
-              role="button"
-              tabIndex={0}
-              onKeyDown={(e) => { if (e.key === "Enter") handleVote(round[0][1]); }}
-            >
-              <img
-                className="duel_zoom"
-                src={round[0][1].image}
-                alt={round[0][1].name}
-              />
-              <p>{round[0][1].name}</p>
-            </TiltCard>
+            <div ref={rightDuelRef}>
+              <TiltCard
+                className="card_duel"
+                onClick={() => isFinal ? handleFinalVote(round[0][1], "right") : handleVote(round[0][1])}
+                role="button"
+                tabIndex={0}
+                onKeyDown={(e) => { if (e.key === "Enter") isFinal ? handleFinalVote(round[0][1], "right") : handleVote(round[0][1]); }}
+              >
+                <img className="duel_zoom" src={round[0][1].image} alt={round[0][1].name} />
+                <p>{round[0][1].name}</p>
+              </TiltCard>
+            </div>
+          </div>
+        )}
+
+        {/* final winner overlay */}
+        {finalWinner && (
+          <div className="final_winner_overlay" ref={finalOverlayRef}>
+            <img className="bg_card" src={finalWinner.winnerImage || finalWinner.image} alt={finalWinner.name} />
+            <p className="winner_label">Last Champion</p>
           </div>
         )}
         </div>

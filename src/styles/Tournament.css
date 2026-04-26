@@ -153,6 +153,52 @@
   }
 }
 
+/* final winner overlay */
+.final_winner_overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 15;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  opacity: 0;
+}
+
+.final_winner_overlay .bg_card {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: blur(20px) brightness(0.25);
+  z-index: -1;
+}
+
+.final_winner_overlay .winner_label {
+  position: absolute;
+  bottom: 8rem;
+}
+
+/* final */
+.final_title {
+  font-family: 'Coolvetica';
+  font-size: clamp(5rem, 3rem + 12vw, 18rem);
+  text-transform: uppercase;
+  color: var(--White);
+  letter-spacing: 0.05em;
+  line-height: 1;
+  opacity: 0;
+  position: relative;
+  z-index: 2;
+  margin-bottom: 1rem;
+}
+
+.final_battle .duel_wrapper {
+  margin-top: 1rem;
+}
+
 /* title */
 .wrapper_title {
   padding-top: 5rem;
