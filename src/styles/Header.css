@@ -164,7 +164,7 @@ header {
   color: var(--Black);
 }
 
-.menu_section:nth-child(3) {
+.menu_section:nth-child(4) {
   border-right: none;
 }
 
@@ -279,16 +279,19 @@ header {
     padding-top: 0;
   }
   .menu_section {
-    width: 33.33%;
+    width: 25%;
     height: 60vh;
     align-items: center;
+    justify-content: center;
   }
   .submenu {
     margin-left: 0;
   }
   .section_title {
-  pointer-events: none;
-}
+    pointer-events: none;
+    font-size: clamp(0.85rem, 0.4rem + 1.1vw, 1.6rem);
+    margin-bottom: clamp(0.5rem, 0.2rem + 1vw, 1.5rem);
+  }
 }
 
 /* accordion mobile */
@@ -338,7 +341,7 @@ header {
     border-left: none;
     border-bottom: none;
   }
-  .menu_section:nth-child(3) {
+  .menu_section:nth-child(4) {
     border-bottom: 1px solid var(--Gray);
   }
 }
