@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect } from "react";
 import { Link, useNavigate } from 'react-router-dom';
 import "./../styles/Tournament.css";
 import TiltCard from "./TiltCard";
@@ -36,12 +36,12 @@ const Tournament = ({ title, data }) => {
   const audioRef = useRef(null);
   const suspensMusic = useRef(new Audio(`${basePath}sounds/tension.mp3`));
   const themeClass = data[0]?.theme ? `theme_${data[0].theme}` : "";
-  const backgroundRef = useRef(null);
   const winnerCardRef = useRef(null);
   const finalTitleRef = useRef(null);
   const leftDuelRef = useRef(null);
   const rightDuelRef = useRef(null);
   const finalOverlayRef = useRef(null);
+  const newWinnerCardRef = useRef(null);
   const [finalAnimating, setFinalAnimating] = useState(false);
   const [finalWinner, setFinalWinner] = useState(null);
 
@@ -240,11 +240,11 @@ const Tournament = ({ title, data }) => {
     if (!isFinal || !leftDuelRef.current || !rightDuelRef.current) return;
     gsap.fromTo(leftDuelRef.current,
       { x: -window.innerWidth, rotation: -20, opacity: 0 },
-      { x: 0, rotation: 0, opacity: 1, duration: 0.9, ease: "power4.out", delay: 1.2 }
+      { x: 0, rotation: 0, opacity: 1, duration: 0.9, ease: "power4.out", delay: 0.4 }
     );
     gsap.fromTo(rightDuelRef.current,
       { x: window.innerWidth, rotation: 20, opacity: 0 },
-      { x: 0, rotation: 0, opacity: 1, duration: 0.9, ease: "power4.out", delay: 1.2 }
+      { x: 0, rotation: 0, opacity: 1, duration: 0.9, ease: "power4.out", delay: 0.4 }
     );
   }, [isFinal]);
 
@@ -270,7 +270,7 @@ const Tournament = ({ title, data }) => {
     gsap.timeline()
       .to(".battle_wrapper", { x: dir * 22, duration: 0.04, yoyo: true, repeat: 9, ease: "none" })
       .to(winnerEl, { scale: 1.25, duration: 0.2, ease: "power2.out" }, "<")
-      .to(loserEl, { x: dir * window.innerWidth * 1.3, rotation: dir * 35, scale: 0.4, opacity: 0, duration: 0.55, ease: "power4.in" }, "+=0.05")
+      .to(loserEl, { x: dir * window.innerWidth * 1.3, rotation: dir * 35, scale: 0.4, opacity: 0, duration: 0.55, ease: "power4.in", onStart: () => setFinalWinner(winner) }, "+=0.05")
       .to([".final_title", ".vs_text"], { opacity: 0, duration: 0.3 })
       .add(() => {
         winnerEl.style.zIndex = "20";
@@ -286,16 +286,23 @@ const Tournament = ({ title, data }) => {
           duration: 0.7,
           ease: "power3.out",
           onComplete: () => {
-            const impactTl = gsap.timeline();
-            impactTl
-              .to(".battle_wrapper", { x: 10, duration: 0.04, yoyo: true, repeat: 7, ease: "none" })
-              .to(winnerEl, { scaleX: 1.1, scaleY: 0.85, duration: 0.07, ease: "none" }, "<")
-              .to(winnerEl, { scaleX: 0.97, scaleY: 1.05, duration: 0.1,  ease: "none" })
-              .to(winnerEl, { scaleX: 1,    scaleY: 1,    duration: 0.15, ease: "power2.out" })
-              .add(() => {
-                setFinalWinner(winner);
-                gsap.to(winnerEl, { y: "-=12", rotation: 1.5, duration: 2.2, ease: "sine.inOut", yoyo: true, repeat: -1 });
-              });
+            gsap.set(winnerEl, { opacity: 0 });
+            gsap.set('.duel_wrapper', { opacity: 0 });
+            gsap.set('.bg_card_wrapper', { opacity: 0 });
+            if (newWinnerCardRef.current) {
+              gsap.set(newWinnerCardRef.current, { opacity: 1 });
+              const bgCard = finalOverlayRef.current?.querySelector('.bg_card');
+              if (bgCard) gsap.fromTo(bgCard, { opacity: 0 }, { opacity: 1, duration: 1.2, delay: 0.6, ease: "power2.out" });
+              const impactTl = gsap.timeline();
+              impactTl
+                .to(".battle_wrapper", { x: 10, duration: 0.04, yoyo: true, repeat: 7, ease: "none" })
+                .to(newWinnerCardRef.current, { scaleX: 1.1, scaleY: 0.85, duration: 0.07, ease: "none" }, "<")
+                .to(newWinnerCardRef.current, { scaleX: 0.97, scaleY: 1.05, duration: 0.1, ease: "none" })
+                .to(newWinnerCardRef.current, { scaleX: 1, scaleY: 1, duration: 0.15, ease: "power2.out" })
+                .add(() => {
+                  gsap.to(newWinnerCardRef.current, { y: "-=12", rotation: 1.5, duration: 2.2, ease: "sine.inOut", yoyo: true, repeat: -1 });
+                });
+            }
           }
         });
       });
@@ -312,7 +319,7 @@ const Tournament = ({ title, data }) => {
       victorySound.current.play();
     }
     if (finalOverlayRef.current) {
-      gsap.fromTo(finalOverlayRef.current, { opacity: 0 }, { opacity: 1, duration: 0.8, ease: "power2.out" });
+      gsap.set(finalOverlayRef.current, { opacity: 1 });
     }
   }, [finalWinner]);
 
@@ -417,7 +424,7 @@ const Tournament = ({ title, data }) => {
           {!isFinal && <h4>Choose your winner</h4>}
 
           {/* back button */}
-          <button className="back_button" style={finalWinner ? { position: "relative", zIndex: 20 } : {}}>
+          <button className={`back_button ${finalWinner ? "back_button_final" : ""}`} style={finalWinner ? { zIndex: 20 } : {}}>
             <Link to='/'>
               <span className="blink"><FaLongArrowAltLeft /></span>
               {finalWinner ? "PLAY AGAIN" : "MENU"}
@@ -522,6 +529,10 @@ const Tournament = ({ title, data }) => {
           <div className="final_winner_overlay" ref={finalOverlayRef}>
             <img className="bg_card" src={finalWinner.winnerImage || finalWinner.image} alt={finalWinner.name} />
             <p className="winner_label">Last Champion</p>
+            <div className="winner_card_wrapper" ref={newWinnerCardRef} style={{ opacity: 0 }}>
+              <img className="winner_img" src={finalWinner.winnerImage || finalWinner.image} alt={finalWinner.name} />
+              <p className="winner_card_name">{finalWinner.name}</p>
+            </div>
           </div>
         )}
         </div>
@@ -529,7 +540,7 @@ const Tournament = ({ title, data }) => {
 
       {/* winner */}
       {step === "winner" && winner && (
-        <div className="winner_wrapper">
+        <div className={`winner_wrapper ${themeClass}`}>
 
           {/* winner bg */}
           <img
