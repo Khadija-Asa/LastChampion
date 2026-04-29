@@ -27,7 +27,7 @@ const Tournament = ({ title, data }) => {
   const [duelIndex, setDuelIndex] = useState(0);
   const startButtonRef = useRef(null);
   const [flash, setFlash] = useState(false);
-  const [isMuted, setIsMuted] = useState(false);
+  const [isMuted, setIsMuted] = useState(() => sessionStorage.getItem("muted") === "true");
 
   const selectSound = useRef(new Audio(`${basePath}sounds/select.mp3`));
   const removeSound = useRef(new Audio(`${basePath}sounds/remove.mp3`));
@@ -47,7 +47,11 @@ const Tournament = ({ title, data }) => {
 
   // toggle mute
   const toggleMute = () => {
-    setIsMuted((prev) => !prev);
+    setIsMuted((prev) => {
+      const next = !prev;
+      sessionStorage.setItem("muted", next);
+      return next;
+    });
   };
 
   // mute / unmute
