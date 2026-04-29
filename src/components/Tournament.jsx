@@ -29,12 +29,17 @@ const Tournament = ({ title, data }) => {
   const [flash, setFlash] = useState(false);
   const [isMuted, setIsMuted] = useState(() => sessionStorage.getItem("muted") === "true");
 
-  const selectSound = useRef(new Audio(`${basePath}sounds/select.mp3`));
-  const removeSound = useRef(new Audio(`${basePath}sounds/remove.mp3`));
-  const startSound = useRef(new Audio(`${basePath}sounds/whoosh.mp3`));
-  const victorySound = useRef(new Audio(`${basePath}sounds/victory.mp3`));
+  const selectSound = useRef(null);
+  const removeSound = useRef(null);
+  const startSound = useRef(null);
+  const victorySound = useRef(null);
   const audioRef = useRef(null);
-  const suspensMusic = useRef(new Audio(`${basePath}sounds/tension.mp3`));
+  const suspensMusic = useRef(null);
+
+  const getSound = (ref, src) => {
+    if (!ref.current) ref.current = new Audio(src);
+    return ref.current;
+  };
   const themeClass = data[0]?.theme ? `theme_${data[0].theme}` : "";
   const winnerCardRef = useRef(null);
   const finalTitleRef = useRef(null);
@@ -61,7 +66,7 @@ const Tournament = ({ title, data }) => {
       removeSound.current,
       startSound.current,
       victorySound.current,
-      suspensMusic.current
+      suspensMusic.current,
     ];
     sounds.forEach((sound) => {
       if (sound) sound.muted = isMuted;
@@ -73,68 +78,58 @@ const Tournament = ({ title, data }) => {
     if (selected.includes(champion)) {
       setSelected(selected.filter((c) => c !== champion));
 
-      if (removeSound.current) {
-        removeSound.current.pause();
-        removeSound.current.currentTime = 0;
-        removeSound.current.playbackRate = 1.5;
-        removeSound.current.volume = 0.3;
-        removeSound.current.play();
-      }
+      const snd = getSound(removeSound, `${basePath}sounds/remove.mp3`);
+      snd.muted = isMuted;
+      snd.pause(); snd.currentTime = 0; snd.playbackRate = 1.5; snd.volume = 0.3;
+      snd.play();
     } else if (selected.length < 8) {
       const updated = [...selected, champion];
       setSelected(updated);
 
       if (updated.length === 8) {
-        if (startSound.current) {
-          startSound.current.pause();
-          startSound.current.currentTime = 0;
-          startSound.current.playbackRate = 2;
-          startSound.current.volume = 0.3;
-          startSound.current.play();
-        }
+        const snd = getSound(startSound, `${basePath}sounds/whoosh.mp3`);
+        snd.muted = isMuted;
+        snd.pause(); snd.currentTime = 0; snd.playbackRate = 2; snd.volume = 0.3;
+        snd.play();
       } else {
-        if (selectSound.current) {
-          selectSound.current.pause();
-          selectSound.current.currentTime = 0;
-          selectSound.current.playbackRate = 1;
-          selectSound.current.volume = 0.3;
-          selectSound.current.play();
-        }
+        const snd = getSound(selectSound, `${basePath}sounds/select.mp3`);
+        snd.muted = isMuted;
+        snd.pause(); snd.currentTime = 0; snd.playbackRate = 1; snd.volume = 0.3;
+        snd.play();
       }
     }
   };
 
   // battle sound
   useEffect(() => {
-  if (step === "battle") {
-    if (!audioRef.current) {
-      audioRef.current = suspensMusic.current;
-      audioRef.current.loop = true;
-      audioRef.current.volume = 0.1;
+    if (step === "battle") {
+      if (!audioRef.current) {
+        audioRef.current = getSound(suspensMusic, `${basePath}sounds/tension.mp3`);
+        audioRef.current.loop = true;
+        audioRef.current.volume = 0.1;
+        audioRef.current.muted = isMuted;
+      }
+      audioRef.current.play().catch(() => {});
     }
-    audioRef.current.play().catch(() => {
-    });
-  }
 
-  return () => {
-    if (audioRef.current) {
-      audioRef.current.pause();
-      audioRef.current.currentTime = 0;
-      audioRef.current = null;
-    }
-  };
-}, [step]);
+    return () => {
+      if (audioRef.current) {
+        audioRef.current.pause();
+        audioRef.current.currentTime = 0;
+        audioRef.current = null;
+      }
+    };
+  }, [step]);
 
   // winner sound
   useEffect(() => {
-  if (step === "winner" && victorySound.current) {
-    victorySound.current.pause();
-    victorySound.current.currentTime = 0;
-    victorySound.current.playbackRate = 1.5;
-    victorySound.current.volume = 0.1;
-    victorySound.current.play();
-  }
-}, [step]);
+    if (step === "winner") {
+      const snd = getSound(victorySound, `${basePath}sounds/victory.mp3`);
+      snd.muted = isMuted;
+      snd.pause(); snd.currentTime = 0; snd.playbackRate = 1.5; snd.volume = 0.1;
+      snd.play();
+    }
+  }, [step]);
 
   // winner card animation
   useEffect(() => {
@@ -316,13 +311,10 @@ const Tournament = ({ title, data }) => {
   // final winner overlay + victory sound + crash animation
   useEffect(() => {
     if (!finalWinner) return;
-    if (victorySound.current) {
-      victorySound.current.pause();
-      victorySound.current.currentTime = 0;
-      victorySound.current.playbackRate = 1.5;
-      victorySound.current.volume = 0.1;
-      victorySound.current.play();
-    }
+    const snd = getSound(victorySound, `${basePath}sounds/victory.mp3`);
+    snd.muted = isMuted;
+    snd.pause(); snd.currentTime = 0; snd.playbackRate = 1.5; snd.volume = 0.1;
+    snd.play();
     if (finalOverlayRef.current) {
       gsap.set(finalOverlayRef.current, { opacity: 1 });
     }
@@ -403,6 +395,8 @@ const Tournament = ({ title, data }) => {
                         src={item.image}
                         alt={item.name}
                         className="card_img loading"
+                        loading="lazy"
+                        decoding="async"
                         onLoad={(e) => e.target.classList.remove("loading")}
                       />
                       <p className="card_name">{item.name}</p>

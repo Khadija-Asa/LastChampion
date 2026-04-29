@@ -17,7 +17,7 @@ export const heroesList = [
   { id: 9, name: "Scarlet Witch", image: `${basePath}images/heroes/scarlet_witch.webp`,
   winnerName: "Scarlet" },
   { id: 10, name: "Wolverine", image: `${basePath}images/heroes/wolverine.webp` },
-  { id: 11, name: "Deadpool", image: `${basePath}images/heroes/deadpool.png` },
+  { id: 11, name: "Deadpool", image: `${basePath}images/heroes/deadpool.webp` },
   { id: 12, name: "Green Lantern", image: `${basePath}images/heroes/green_lantern.jpg`,
   winnerName: "G_Lantern" },
   { id: 13, name: "Aquaman", image: `${basePath}images/heroes/aquaman.webp` },
@@ -43,7 +43,7 @@ export const heroesList = [
   winnerName: "SpiderMan" },
   { id: 29, name: "Green Arrow", image: `${basePath}images/heroes/green_arrow.webp`,
   winnerName: "G_Arrow" },
-  { id: 30, name: "Shazam", image: `${basePath}images/heroes/shazam.png` },
+  { id: 30, name: "Shazam", image: `${basePath}images/heroes/shazam.webp` },
   { id: 31, name: "Hawkeye", image: `${basePath}images/heroes/hawkeye.webp` },
   { id: 32, name: "Hawkgirl", image: `${basePath}images/heroes/hawkgirl.webp` },
 ];

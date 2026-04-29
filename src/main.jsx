@@ -1,63 +1,66 @@
-import React from 'react';
+import React, { lazy, Suspense } from 'react';
 import ReactDOM from 'react-dom/client';
 import { HashRouter, Routes, Route } from 'react-router-dom';
 
 import Home from './components/Home';
-import Animes from './components/Animes';
-import Pokemons from './components/Pokemons';
-import Heroes from './components/Heroes';
-import Yugioh from './components/Yugioh';
-import Lol from './components/Lol';
-import Villains from './components/Villains';
-import Streetfighter from './components/Streetfighter';
-import Esport from './components/Esport';
-import Players from './components/Players';
-import Videogames from './components/Videogames';
-import Consoles from './components/Consoles';
-import Characters from './components/Characters';
-import Manga from './components/Manga';
-import Retro from './components/Retro';
-import Cartoons from './components/Cartoons';
-import Youtubers from './components/Youtubers';
-import Valorant from './components/Valorant';
-import Tournaments from './components/Tournaments';
-import Fifa from './components/Fifa';
-import Onepiece from './components/Onepiece';
-import Movies from './components/Movies';
-import Series from './components/Series';
-import Football from './components/Football';
-import Fortnite from './components/Fortnite';
+
+const Animes        = lazy(() => import('./components/Animes'));
+const Pokemons      = lazy(() => import('./components/Pokemons'));
+const Heroes        = lazy(() => import('./components/Heroes'));
+const Yugioh        = lazy(() => import('./components/Yugioh'));
+const Lol           = lazy(() => import('./components/Lol'));
+const Villains      = lazy(() => import('./components/Villains'));
+const Streetfighter = lazy(() => import('./components/Streetfighter'));
+const Esport        = lazy(() => import('./components/Esport'));
+const Players       = lazy(() => import('./components/Players'));
+const Videogames    = lazy(() => import('./components/Videogames'));
+const Consoles      = lazy(() => import('./components/Consoles'));
+const Characters    = lazy(() => import('./components/Characters'));
+const Manga         = lazy(() => import('./components/Manga'));
+const Retro         = lazy(() => import('./components/Retro'));
+const Cartoons      = lazy(() => import('./components/Cartoons'));
+const Youtubers     = lazy(() => import('./components/Youtubers'));
+const Valorant      = lazy(() => import('./components/Valorant'));
+const Tournaments   = lazy(() => import('./components/Tournaments'));
+const Fifa          = lazy(() => import('./components/Fifa'));
+const Onepiece      = lazy(() => import('./components/Onepiece'));
+const Movies        = lazy(() => import('./components/Movies'));
+const Series        = lazy(() => import('./components/Series'));
+const Football      = lazy(() => import('./components/Football'));
+const Fortnite      = lazy(() => import('./components/Fortnite'));
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <HashRouter>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/animes" element={<Animes />} />
-        <Route path="/pokemons" element={<Pokemons />} />
-        <Route path="/super-heroes" element={<Heroes />} />
-        <Route path="/yu-gi-oh" element={<Yugioh />} />
-        <Route path="/lol" element={<Lol />} />
-        <Route path="/villains" element={<Villains />} />
-        <Route path="/streetfighter" element={<Streetfighter />} />
-        <Route path="/esport-teams" element={<Esport />} />
-        <Route path="/esport-players" element={<Players />} />
-        <Route path="/video-games" element={<Videogames />} />
-        <Route path="/game-consoles" element={<Consoles />} />
-        <Route path="/characters" element={<Characters />} />
-        <Route path="/manga" element={<Manga />} />
-        <Route path="/retro-games" element={<Retro />} />
-        <Route path="/cartoon-heroes" element={<Cartoons />} />
-        <Route path='/youtubers-streamers' element={<Youtubers />} />
-        <Route path='/valorant-agents' element={<Valorant />} />
-        <Route path='/esport-tournaments' element={<Tournaments />} />
-        <Route path='/fifa26-clubs' element={<Fifa />} />
-        <Route path='/one-piece' element={<Onepiece />} /> 
-        <Route path='/movies' element={<Movies />} />  
-        <Route path='/series' element={<Series />} />  
-        <Route path='/football-players' element={<Football />} />  
-        <Route path='/fortnite-skins' element={<Fortnite />} />                                                          
-      </Routes>
+      <Suspense>
+        <Routes>
+          <Route path="/"                    element={<Home />} />
+          <Route path="/animes"              element={<Animes />} />
+          <Route path="/pokemons"            element={<Pokemons />} />
+          <Route path="/super-heroes"        element={<Heroes />} />
+          <Route path="/yu-gi-oh"            element={<Yugioh />} />
+          <Route path="/lol"                 element={<Lol />} />
+          <Route path="/villains"            element={<Villains />} />
+          <Route path="/streetfighter"       element={<Streetfighter />} />
+          <Route path="/esport-teams"        element={<Esport />} />
+          <Route path="/esport-players"      element={<Players />} />
+          <Route path="/video-games"         element={<Videogames />} />
+          <Route path="/game-consoles"       element={<Consoles />} />
+          <Route path="/characters"          element={<Characters />} />
+          <Route path="/manga"               element={<Manga />} />
+          <Route path="/retro-games"         element={<Retro />} />
+          <Route path="/cartoon-heroes"      element={<Cartoons />} />
+          <Route path="/youtubers-streamers" element={<Youtubers />} />
+          <Route path="/valorant-agents"     element={<Valorant />} />
+          <Route path="/esport-tournaments"  element={<Tournaments />} />
+          <Route path="/fifa26-clubs"        element={<Fifa />} />
+          <Route path="/one-piece"           element={<Onepiece />} />
+          <Route path="/movies"              element={<Movies />} />
+          <Route path="/series"              element={<Series />} />
+          <Route path="/football-players"    element={<Football />} />
+          <Route path="/fortnite-skins"      element={<Fortnite />} />
+        </Routes>
+      </Suspense>
     </HashRouter>
   </React.StrictMode>
 );

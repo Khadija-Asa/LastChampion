@@ -10,16 +10,19 @@
 @font-face {
   font-family: 'VCR';
   src: url(../fonts/vcr/SUPER-VCR_MONO.ttf) format('truetype');
+  font-display: swap;
 }
 
 @font-face {
   font-family: 'Gameboy';
   src: url(../fonts/Gameboy/GameBoy.ttf) format('truetype');
+  font-display: swap;
 }
 
 @font-face {
   font-family: 'Coolvetica';
   src: url(../fonts/Coolvetica/Coolvetica.otf) format('truetype');
+  font-display: swap;
 }
 
 /* Box sizing rules */
