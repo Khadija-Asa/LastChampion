@@ -228,8 +228,8 @@ const Tournament = ({ title, data }) => {
     .to(finalTitleRef.current, { x: 14, duration: 0.04, yoyo: true, repeat: 11, ease: "none" }, "-=0.05")
     .add(() => {
       gsap.to(finalTitleRef.current, {
-        textShadow: "0 0 80px rgba(255,255,255,1), 0 0 160px rgba(255,255,255,0.4)",
-        duration: 1.8, yoyo: true, repeat: -1, ease: "sine.inOut"
+        x: 10, rotation: 0.5,
+        duration: 3, yoyo: true, repeat: -1, ease: "sine.inOut"
       });
     });
     return () => tl.kill();
@@ -293,15 +293,16 @@ const Tournament = ({ title, data }) => {
               gsap.set(newWinnerCardRef.current, { opacity: 1 });
               const bgCard = finalOverlayRef.current?.querySelector('.bg_card');
               if (bgCard) gsap.fromTo(bgCard, { opacity: 0 }, { opacity: 1, duration: 1.2, delay: 0.6, ease: "power2.out" });
-              const impactTl = gsap.timeline();
-              impactTl
-                .to(".battle_wrapper", { x: 10, duration: 0.04, yoyo: true, repeat: 7, ease: "none" })
-                .to(newWinnerCardRef.current, { scaleX: 1.1, scaleY: 0.85, duration: 0.07, ease: "none" }, "<")
-                .to(newWinnerCardRef.current, { scaleX: 0.97, scaleY: 1.05, duration: 0.1, ease: "none" })
-                .to(newWinnerCardRef.current, { scaleX: 1, scaleY: 1, duration: 0.15, ease: "power2.out" })
-                .add(() => {
-                  gsap.to(newWinnerCardRef.current, { y: "-=12", rotation: 1.5, duration: 2.2, ease: "sine.inOut", yoyo: true, repeat: -1 });
-                });
+              gsap.fromTo(newWinnerCardRef.current,
+                { scale: 0.78, y: 30, filter: "brightness(2.5) blur(4px)" },
+                {
+                  scale: 1, y: 0, filter: "brightness(1) blur(0px)",
+                  duration: 0.9, ease: "back.out(1.4)",
+                  onComplete: () => {
+                    gsap.to(newWinnerCardRef.current, { y: "-=12", rotation: 1.5, duration: 2.2, ease: "sine.inOut", yoyo: true, repeat: -1 });
+                  }
+                }
+              );
             }
           }
         });
@@ -423,8 +424,6 @@ const Tournament = ({ title, data }) => {
       {/* duel versus */}
       {step === "battle" && round.length > 0 && (
         <div className={`battle_wrapper ${themeClass} ${isFinal ? "final_battle" : ""}`}>
-          {!isFinal && <h4>Choose your winner</h4>}
-
           {/* back button */}
           <button className={`back_button ${finalWinner ? "back_button_final" : ""}`} style={finalWinner ? { zIndex: 20 } : {}}>
             <Link to='/'>
@@ -436,64 +435,56 @@ const Tournament = ({ title, data }) => {
           {/* duel message / final title */}
           {isFinal
             ? <h2 className="final_title" ref={finalTitleRef}>Final</h2>
-            : <DuelMessage text={getDuelText()} />
+            : (() => {
+                const cm = getCurrentMatchIndex();
+                return (
+                  <div className="battle_header">
+                    <p className="battle_label">Choose your winner</p>
+                    <DuelMessage text={getDuelText()} />
+                    <div className="tournament_timeline">
+                      <div className="timeline_group">
+                        <span className="timeline_label">QF</span>
+                        <div className="timeline_dots">
+                          {[0, 1, 2, 3].map((i) => (
+                            <span key={i} className={`timeline_dot ${i < cm ? "done" : i === cm ? "active" : ""}`} />
+                          ))}
+                        </div>
+                      </div>
+                      <span className="timeline_connector" />
+                      <div className="timeline_group">
+                        <span className="timeline_label">SF</span>
+                        <div className="timeline_dots">
+                          {[4, 5].map((i) => (
+                            <span key={i} className={`timeline_dot ${i < cm ? "done" : i === cm ? "active" : ""}`} />
+                          ))}
+                        </div>
+                      </div>
+                      <span className="timeline_connector" />
+                      <div className="timeline_group">
+                        <span className="timeline_label">Final</span>
+                        <div className="timeline_dots">
+                          <span className={`timeline_dot ${cm === 6 ? "active" : ""}`} />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })()
           }
 
-          {/* timeline */}
-          {!isFinal && (() => {
-            const cm = getCurrentMatchIndex();
-            return (
-              <div className="tournament_timeline">
-                <div className="timeline_group">
-                  <span className="timeline_label">QF</span>
-                  <div className="timeline_dots">
-                    {[0, 1, 2, 3].map((i) => (
-                      <span key={i} className={`timeline_dot ${i < cm ? "done" : i === cm ? "active" : ""}`} />
-                    ))}
-                  </div>
-                </div>
-                <span className="timeline_connector" />
-                <div className="timeline_group">
-                  <span className="timeline_label">SF</span>
-                  <div className="timeline_dots">
-                    {[4, 5].map((i) => (
-                      <span key={i} className={`timeline_dot ${i < cm ? "done" : i === cm ? "active" : ""}`} />
-                    ))}
-                  </div>
-                </div>
-                <span className="timeline_connector" />
-                <div className="timeline_group">
-                  <span className="timeline_label">Final</span>
-                  <div className="timeline_dots">
-                    <span className={`timeline_dot ${cm === 6 ? "active" : ""}`} />
-                  </div>
-                </div>
-              </div>
-            );
-          })()}
-
-          {/* bg giant images */}
-
+          {/* duel area */}
           {round[0] && round[0].length === 2 && (
+          <div className="duel_area">
+
+            {/* bg giant images */}
             <div className="bg_card_wrapper">
-              <img
-                className="bg_card bg_card_left"
-                src={round[0][0].image}
-                alt={round[0][0].name}
-              />
-              <img
-                className="bg_card bg_card_right"
-                src={round[0][1].image}
-                alt={round[0][1].name}
-              />
+              <img className="bg_card bg_card_left" src={round[0][0].image} alt={round[0][0].name} />
+              <img className="bg_card bg_card_right" src={round[0][1].image} alt={round[0][1].name} />
             </div>
-          )}
 
-          {/* duel */}
-          {round[0] && round[0].length === 2 && (
           <div className="duel_wrapper">
             {/* left card */}
-            <div ref={leftDuelRef}>
+            <div ref={leftDuelRef} className="duel_card_side">
               <TiltCard
                 className="card_duel"
                 onClick={() => isFinal ? handleFinalVote(round[0][0], "left") : handleVote(round[0][0])}
@@ -511,7 +502,7 @@ const Tournament = ({ title, data }) => {
             </div>
 
             {/* right card */}
-            <div ref={rightDuelRef}>
+            <div ref={rightDuelRef} className="duel_card_side">
               <TiltCard
                 className="card_duel"
                 onClick={() => isFinal ? handleFinalVote(round[0][1], "right") : handleVote(round[0][1])}
@@ -523,6 +514,7 @@ const Tournament = ({ title, data }) => {
                 <p>{round[0][1].name}</p>
               </TiltCard>
             </div>
+          </div>
           </div>
         )}
 
