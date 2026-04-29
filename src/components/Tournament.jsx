@@ -368,10 +368,12 @@ const Tournament = ({ title, data }) => {
             <span className="blink"><FaLongArrowAltLeft /></span>THEMES
           </button>
 
-          {/* title */}
-          <div className="wrapper_title">
-            <h3>{title}</h3>
-            <p>Click to select up to 8 champions</p>
+          {/* progress bar */}
+          <div className="selection_header">
+            <p className="selection_subtitle">Select 8 champions to start the tournament</p>
+            <div className="selection_bar">
+              <div className="selection_bar_fill" style={{ width: `${(selected.length / 8) * 100}%` }} />
+            </div>
           </div>
 
           {/* grid */}

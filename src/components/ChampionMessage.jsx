@@ -11,7 +11,7 @@ const ChampionMessage = ({ remaining }) => {
       } else if (remaining === 1) {
         setMessage("Just one more champion");
       } else {
-        setMessage(` ${remaining} champions left to pick`);
+        setMessage(`${remaining} champions left to pick`);
       }
 
       setVisible(true);
@@ -21,6 +21,8 @@ const ChampionMessage = ({ remaining }) => {
       }, 1500);
 
       return () => clearTimeout(timer);
+    } else {
+      setVisible(false);
     }
   }, [remaining]);
 
