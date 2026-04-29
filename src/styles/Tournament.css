@@ -2,14 +2,12 @@
   text-align: center;
   color: var(--White);
   min-height: 100vh;
-  background:
-    repeating-linear-gradient(17deg,  transparent 0, transparent 47px, rgba(255,255,255,0.025) 47px, rgba(255,255,255,0.025) 48px),
-    repeating-linear-gradient(79deg,  transparent 0, transparent 63px, rgba(255,255,255,0.02)  63px, rgba(255,255,255,0.02)  64px),
-    repeating-linear-gradient(-31deg, transparent 0, transparent 89px, rgba(255,255,255,0.018) 89px, rgba(255,255,255,0.018) 90px),
-    repeating-linear-gradient(143deg, transparent 0, transparent 53px, rgba(255,255,255,0.015) 53px, rgba(255,255,255,0.015) 54px),
-    repeating-linear-gradient(-67deg, transparent 0, transparent 71px, rgba(255,255,255,0.018) 71px, rgba(255,255,255,0.018) 72px),
-    radial-gradient(ellipse 100% 50% at 50% 0%, rgba(255,255,255,0.05) 0%, transparent 70%),
-    linear-gradient(180deg, #0f0f14 0%, #080809 100%);
+  position: relative;
+  background: url('../assets/theme_bg.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
 }
 
 /* duel container */
@@ -22,6 +20,7 @@
   align-items: center;
   text-align: center;
   position: relative;
+  z-index: 1;
   padding: 0;
 }
 
@@ -308,6 +307,8 @@
   width: 100%;
   padding: 6rem 2.5rem 0;
   margin-bottom: 3rem;
+  position: relative;
+  z-index: 1;
 }
 
 .selection_header_inner {
@@ -399,6 +400,8 @@
   flex-wrap: wrap;
   gap: 1.5rem;
   justify-content: center;
+  position: relative;
+  z-index: 1;
   padding: 0 2.5rem 8rem;
   width: 100%;
 }
@@ -578,6 +581,8 @@
   cursor: pointer;
   border: 1px solid var(--Black);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+  position: relative;
+  z-index: 2;
 }
 
 .start_button:hover {
@@ -877,6 +882,7 @@
   gap: 1.2rem;
   overflow: hidden !important;
   position: relative;
+  z-index: 1;
 }
 
 /* winner label */
