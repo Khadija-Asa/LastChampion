@@ -46,7 +46,7 @@ useEffect(() => {
   if (isLoading) {
     const tl = gsap.timeline({
       onComplete: () => {
-      setIsLoading(false);
+        setIsLoading(false);
       },
     });
 
@@ -55,29 +55,29 @@ useEffect(() => {
     tl.to(".preloader_grid .item", {
       y: 0,
       opacity: 1,
-      duration: 0.5,
+      duration: 0.25,
       ease: "power4.out",
-      stagger: 0.07
+      stagger: 0.035
     })
     .to(".preloader_grid .item", {
       scale: 1.03,
-      duration: 0.15,
+      duration: 0.08,
       ease: "power2.out",
-      stagger: 0.02
+      stagger: 0.01
     })
     .to(".preloader_grid .item", {
       y: -220,
       opacity: 0,
       scale: 1,
-      duration: 0.38,
+      duration: 0.19,
       ease: "power3.in",
-      stagger: 0.03
+      stagger: 0.015
     })
     .to(".preloader", {
       y: "-100%",
-      duration: 0.65,
+      duration: 0.32,
       ease: "power4.inOut"
-    }, "-=0.25")
+    }, "-=0.12")
 
      .add(() => {
       if (!homeSound.current) {
@@ -118,25 +118,27 @@ useEffect(() => {
   // title & cards
   useEffect(() => {
     if (!isLoading) {
-      gsap.set(impactRef.current, { xPercent: -50, yPercent: -50, scale: 0, opacity: 0 });
-      gsap.set(crackRef.current, { xPercent: -50, yPercent: -50, scale: 0.4, opacity: 0 });
+      gsap.set(impactRef.current, { scale: 0, opacity: 0 });
+      gsap.set(crackRef.current, { scale: 0.4, opacity: 0 });
       gsap.set([leftCrackRef.current, rightCrackRef.current], { opacity: 0 });
       gsap.set(spotlightRef.current, { opacity: 0 });
+
+      const vw = document.documentElement.clientWidth;
 
       const tl = gsap.timeline({ defaults: { ease: "expoScale(0.5,7,none)", duration: 1 } });
 
       // words
-      tl.fromTo(lastRef.current, { y: "-100%", scale: 0.3, opacity: 0 }, { y: 0, scale: 1, opacity: 0.9 })
-        .fromTo(championRef.current, { y: "100%", scale: 0.3, opacity: 0 }, { y: 0, scale: 1, opacity: 1 }, "-=0.8")
+      tl.fromTo(lastRef.current, { y: -150, scale: 0.3, opacity: 0 }, { y: 0, scale: 1, opacity: 0.9 })
+        .fromTo(championRef.current, { y: 150, scale: 0.3, opacity: 0 }, { y: 0, scale: 1, opacity: 1 }, "-=0.8")
 
         // flying cards
         .fromTo(leftCardRef.current,
-          { x: -window.innerWidth, rotation: -30, opacity: 0 },
+          { x: -vw, rotation: -30, opacity: 0 },
           { x: 0, rotation: 8, opacity: 1, duration: 0.65, ease: "power3.out" },
           "-=0.3"
         )
         .fromTo(rightCardRef.current,
-          { x: window.innerWidth, rotation: 30, opacity: 0 },
+          { x: vw, rotation: 30, opacity: 0 },
           { x: 0, rotation: -8, opacity: 1, duration: 0.65, ease: "power3.out" },
           "<"
         )
@@ -169,16 +171,12 @@ useEffect(() => {
             });
         }, "-=0.1")
 
-        // card float
+        // card float — CSS animation (compositor thread)
         .add(() => {
-          gsap.to(leftCardRef.current, {
-            y: -10, rotation: 10, duration: 2.4,
-            ease: "sine.inOut", yoyo: true, repeat: -1,
-          });
-          gsap.to(rightCardRef.current, {
-            y: -10, rotation: -10, duration: 2,
-            ease: "sine.inOut", yoyo: true, repeat: -1, delay: 0.3,
-          });
+          gsap.set(leftCardRef.current, { clearProps: "transform" });
+          gsap.set(rightCardRef.current, { clearProps: "transform" });
+          leftCardRef.current.classList.add("card_float_left");
+          rightCardRef.current.classList.add("card_float_right");
         });
     }
   }, [isLoading]);
@@ -264,7 +262,7 @@ useEffect(() => {
 
             {/* left card */}
             <div className="battle_card" ref={leftCardRef}>
-              <img src={card1.image} alt={card1.name} />
+              <img src={card1.image} alt={card1.name} loading="lazy" decoding="async" />
               <p>{card1.name}</p>
               {/* right impact cracks */}
               <svg className="card_crack" ref={leftCrackRef} viewBox="0 0 60 100" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
@@ -285,7 +283,7 @@ useEffect(() => {
 
             {/* right card */}
             <div className="battle_card" ref={rightCardRef}>
-              <img src={card2.image} alt={card2.name} />
+              <img src={card2.image} alt={card2.name} loading="lazy" decoding="async" />
               <p>{card2.name}</p>
               {/* left impact cracks */}
               <svg className="card_crack" ref={rightCrackRef} viewBox="0 0 60 100" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">

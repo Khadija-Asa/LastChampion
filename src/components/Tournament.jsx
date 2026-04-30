@@ -379,14 +379,13 @@ const Tournament = ({ title, data }) => {
               <div
                 key={item.id}
                 className="card_wrapper"
-                style={{ animationDelay: `${index * 100}ms` }}
+                style={{ animationDelay: `${Math.min(index * 40, 500)}ms` }}
               >
                 <TiltCard
                   className={`card card_glass ${selected.includes(item) ? "selected" : ""} ${selected.length === 8 && !selected.includes(item) ? "card_disabled" : ""}`}
                   onClick={() => handleSelect(item)}
                 >
                   <div className="card_content">
-                    {/* selection badge */}
                     {selected.includes(item) && (
                       <span className="card_badge">{selected.indexOf(item) + 1}</span>
                     )}
@@ -394,10 +393,9 @@ const Tournament = ({ title, data }) => {
                       <img
                         src={item.image}
                         alt={item.name}
-                        className="card_img loading"
-                        loading="lazy"
+                        className="card_img"
+                        loading={index < 8 ? "eager" : "lazy"}
                         decoding="async"
-                        onLoad={(e) => e.target.classList.remove("loading")}
                       />
                       <p className="card_name">{item.name}</p>
                     </div>

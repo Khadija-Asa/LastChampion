@@ -25,6 +25,7 @@
 .home_spotlight {
   position: absolute;
   inset: 0;
+  will-change: opacity;
   background-image: conic-gradient(
     at 50% 0%,
     transparent 0deg,
@@ -75,6 +76,10 @@
   .home h1 {
     margin-top: -5rem;
   }
+
+  .battle_card {
+    width: clamp(4.5rem, 2rem + 9vw, 6rem);
+  }
 }
 
 .title_container {
@@ -89,7 +94,7 @@
 }
 
 .home h1 {
-  font-size: clamp(3rem, 0.6rem + 12vw, 15rem);
+  font-size: clamp(3rem, 0.4286rem + 12.8571vw, 12rem);
   text-shadow: 0 0 100px var(--Black), 0 0 100px var(--Black), 0 0 150px var(--Black);
   opacity: 0;
   transform: translateY(-70px);
@@ -132,6 +137,27 @@
   border: 1px solid rgba(255, 255, 255, 0.2);
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.9);
   transform-origin: center bottom;
+  will-change: transform;
+}
+
+@keyframes card_float_left {
+  0%, 100% { transform: translateX(-10px) rotate(12deg); }
+  50%       { transform: translateX(-10px) rotate(10deg) translateY(-10px); }
+}
+
+@keyframes card_float_right {
+  0%, 100% { transform: translateX(10px) rotate(-12deg); }
+  50%       { transform: translateX(10px) rotate(-10deg) translateY(-10px); }
+}
+
+.card_float_left {
+  animation: card_float_left 2.4s ease-in-out infinite;
+}
+
+.card_float_right {
+  animation: card_float_right 2s ease-in-out infinite;
+  animation-delay: 0.3s;
+  animation-fill-mode: backwards;
 }
 
 .battle_card img {
@@ -185,6 +211,7 @@
   position: absolute;
   left: 50%;
   top: 50%;
+  transform: translate(-50%, -50%);
   width: clamp(8rem, 4rem + 12vw, 20rem);
   height: clamp(8rem, 4rem + 12vw, 20rem);
   border-radius: 50%;
@@ -204,6 +231,7 @@
   position: absolute;
   left: 50%;
   top: 50%;
+  transform: translate(-50%, -50%);
   width: clamp(12rem, 6rem + 18vw, 28rem);
   height: clamp(12rem, 6rem + 18vw, 28rem);
   opacity: 0;

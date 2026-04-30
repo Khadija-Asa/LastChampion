@@ -6,15 +6,14 @@
     <meta name="theme-color" content="#080808" />
     <meta name="description" content="LastChampion - Fais s'affronter tes personnages préférés et découvre qui sera le dernier champion !" />
 
-    <link rel="icon" href="/LastChampion/assets/versus.svg" type="image/svg+xml" />
+    <link rel="icon" href="/src/assets/versus.svg" type="image/svg+xml" />
 
-    <!-- Preconnect to top image domains -->
-    <link rel="preconnect" href="https://upload.wikimedia.org" crossorigin />
-    <link rel="preconnect" href="https://cmsassets.rgpub.io" crossorigin />
-    <link rel="preconnect" href="https://s4.anilist.co" crossorigin />
-    <link rel="preconnect" href="https://assets.pokemon.com" crossorigin />
-    <link rel="preconnect" href="https://images.ygoprodeck.com" crossorigin />
-    <link rel="preconnect" href="https://media.senscritique.com" crossorigin />
+    <!-- Preload critical fonts to break CSS → font chain -->
+    <link rel="preload" href="/src/fonts/Coolvetica/Coolvetica.otf" as="font" type="font/otf" crossorigin />
+    <link rel="preload" href="/src/fonts/vcr/SUPER-VCR_MONO.ttf" as="font" type="font/ttf" crossorigin />
+
+    <!-- Preload LCP background image -->
+    <link rel="preload" href="/src/assets/arena_bg.avif" as="image" type="image/avif" />
 
     <title>LastChampion - Who's gonna win ?</title>
   </head>
