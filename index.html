@@ -6,23 +6,22 @@
     <meta name="theme-color" content="#080808" />
     <meta name="description" content="LastChampion - Fais s'affronter tes personnages préférés et découvre qui sera le dernier champion !" />
 
-    <link rel="icon" href="/LastChampion/assets/versus.svg" type="image/svg+xml" />
+    <link rel="icon" href="/LastChampion/assets/versus-CpIXEZw4.svg" type="image/svg+xml" />
 
-    <!-- Preconnect to top image domains -->
-    <link rel="preconnect" href="https://upload.wikimedia.org" crossorigin />
-    <link rel="preconnect" href="https://cmsassets.rgpub.io" crossorigin />
-    <link rel="preconnect" href="https://s4.anilist.co" crossorigin />
-    <link rel="preconnect" href="https://assets.pokemon.com" crossorigin />
-    <link rel="preconnect" href="https://images.ygoprodeck.com" crossorigin />
-    <link rel="preconnect" href="https://media.senscritique.com" crossorigin />
+    <!-- Preload critical fonts to break CSS → font chain -->
+    <link rel="preload" href="/LastChampion/assets/Coolvetica-CowmaHKW.otf" as="font" type="font/otf" crossorigin />
+    <link rel="preload" href="/LastChampion/assets/SUPER-VCR_MONO-vos47QCg.ttf" as="font" type="font/ttf" crossorigin />
+
+    <!-- Preload LCP background image -->
+    <link rel="preload" href="/LastChampion/assets/arena_bg-Bljk0awY.avif" as="image" type="image/avif" />
 
     <title>LastChampion - Who's gonna win ?</title>
-    <script type="module" crossorigin src="/LastChampion/assets/index-BUZiq4kH.js"></script>
+    <script type="module" crossorigin src="/LastChampion/assets/index-CHUpbQBa.js"></script>
     <link rel="modulepreload" crossorigin href="/LastChampion/assets/vendor-react-DekamgWB.js">
     <link rel="modulepreload" crossorigin href="/LastChampion/assets/vendor-gsap-CH_iu5NA.js">
     <link rel="modulepreload" crossorigin href="/LastChampion/assets/vendor-icons-BAH7bg4a.js">
-    <link rel="stylesheet" crossorigin href="/LastChampion/assets/index-W21jikUB.css">
-  </head>
+    <link rel="stylesheet" crossorigin href="/LastChampion/assets/index-DxIGkg_1.css">
+  <link rel="manifest" href="/LastChampion/manifest.webmanifest"><script id="vite-plugin-pwa:register-sw" src="/LastChampion/registerSW.js"></script></head>
 
   <body>
     <div id="root"></div>
