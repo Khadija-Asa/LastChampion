@@ -10,6 +10,30 @@
   background-attachment: fixed;
 }
 
+@media (max-width: 768px) {
+  .tournament_wrapper {
+    background-attachment: scroll;
+  }
+}
+
+@keyframes winner_float {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50%       { transform: translateY(-12px) rotate(1.5deg); }
+}
+
+.winner_float {
+  animation: winner_float 2.2s ease-in-out infinite;
+}
+
+@keyframes final_title_float {
+  0%, 100% { transform: translateX(0) rotate(0deg); }
+  50%       { transform: translateX(10px) rotate(0.5deg); }
+}
+
+.final_title_float {
+  animation: final_title_float 3s ease-in-out infinite;
+}
+
 /* duel container */
 .battle_wrapper {
   height: 100vh;

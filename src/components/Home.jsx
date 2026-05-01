@@ -13,6 +13,7 @@ import { heroesList } from "../datas/heroesData";
 import { lolList } from "../datas/lolData";
 import { villainsList } from "../datas/villainsData";
 
+const isMobile = window.matchMedia("(max-width: 768px)").matches;
 
 export default function Home() {
   const location = useLocation();
@@ -97,6 +98,7 @@ useEffect(() => {
   // social links
   useEffect(() => {
     if (!isLoading) {
+      if (isMobile) return;
       const tl = gsap.timeline({ delay: 1, ease: "power3.out" });
 
       tl.from(".social-link", {

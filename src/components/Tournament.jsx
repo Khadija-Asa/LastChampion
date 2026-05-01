@@ -137,7 +137,7 @@ const Tournament = ({ title, data }) => {
 
     const tween = gsap.fromTo(
       winnerCardRef.current,
-      { y: -window.innerHeight * 1.5, scale: 1.2, opacity: 0, rotation: 0 },
+      { y: -1200, scale: 1.2, opacity: 0, rotation: 0 },
       {
         y: 0, scale: 1, opacity: 1, rotation: 0,
         duration: 0.6,
@@ -150,10 +150,8 @@ const Tournament = ({ title, data }) => {
             .to(winnerCardRef.current, { scaleX: 0.97, scaleY: 1.05, duration: 0.1, ease: "none" })
             .to(winnerCardRef.current, { scaleX: 1, scaleY: 1, duration: 0.15, ease: "power2.out" })
             .add(() => {
-              gsap.to(winnerCardRef.current, {
-                y: -12, rotation: 1.5, duration: 2.2,
-                ease: "sine.inOut", yoyo: true, repeat: -1,
-              });
+              gsap.set(winnerCardRef.current, { clearProps: "transform" });
+              winnerCardRef.current.classList.add("winner_float");
             });
         }
       }
@@ -226,10 +224,8 @@ const Tournament = ({ title, data }) => {
     )
     .to(finalTitleRef.current, { x: 14, duration: 0.04, yoyo: true, repeat: 11, ease: "none" }, "-=0.05")
     .add(() => {
-      gsap.to(finalTitleRef.current, {
-        x: 10, rotation: 0.5,
-        duration: 3, yoyo: true, repeat: -1, ease: "sine.inOut"
-      });
+      gsap.set(finalTitleRef.current, { clearProps: "transform" });
+      finalTitleRef.current.classList.add("final_title_float");
     });
     return () => tl.kill();
   }, [isFinal]);
@@ -237,12 +233,13 @@ const Tournament = ({ title, data }) => {
   // final cards entry
   useEffect(() => {
     if (!isFinal || !leftDuelRef.current || !rightDuelRef.current) return;
+    const vw = document.documentElement.clientWidth;
     gsap.fromTo(leftDuelRef.current,
-      { x: -window.innerWidth, rotation: -20, opacity: 0 },
+      { x: -vw, rotation: -20, opacity: 0 },
       { x: 0, rotation: 0, opacity: 1, duration: 0.9, ease: "power4.out", delay: 0.4 }
     );
     gsap.fromTo(rightDuelRef.current,
-      { x: window.innerWidth, rotation: 20, opacity: 0 },
+      { x: vw, rotation: 20, opacity: 0 },
       { x: 0, rotation: 0, opacity: 1, duration: 0.9, ease: "power4.out", delay: 0.4 }
     );
   }, [isFinal]);
@@ -263,21 +260,23 @@ const Tournament = ({ title, data }) => {
     const winnerEl = side === "left" ? leftDuelRef.current : rightDuelRef.current;
     const loserEl  = side === "left" ? rightDuelRef.current : leftDuelRef.current;
     const dir = side === "left" ? 1 : -1;
+    const vw = document.documentElement.clientWidth;
+    const vh = document.documentElement.clientHeight;
 
     if (audioRef.current) gsap.to(audioRef.current, { volume: 0, duration: 0.8 });
 
     gsap.timeline()
       .to(".battle_wrapper", { x: dir * 22, duration: 0.04, yoyo: true, repeat: 9, ease: "none" })
       .to(winnerEl, { scale: 1.25, duration: 0.2, ease: "power2.out" }, "<")
-      .to(loserEl, { x: dir * window.innerWidth * 1.3, rotation: dir * 35, scale: 0.4, opacity: 0, duration: 0.55, ease: "power4.in", onStart: () => setFinalWinner(winner) }, "+=0.05")
+      .to(loserEl, { x: dir * vw * 1.3, rotation: dir * 35, scale: 0.4, opacity: 0, duration: 0.55, ease: "power4.in", onStart: () => setFinalWinner(winner) }, "+=0.05")
       .to([".final_title", ".vs_text"], { opacity: 0, duration: 0.3 })
       .add(() => {
         winnerEl.style.zIndex = "20";
         const rect = winnerEl.getBoundingClientRect();
         const currentX = gsap.getProperty(winnerEl, "x") || 0;
         const currentY = gsap.getProperty(winnerEl, "y") || 0;
-        const dx = window.innerWidth / 2 - (rect.left + rect.width / 2);
-        const dy = window.innerHeight / 2 - (rect.top + rect.height / 2);
+        const dx = vw / 2 - (rect.left + rect.width / 2);
+        const dy = vh / 2 - (rect.top + rect.height / 2);
         gsap.to(winnerEl, {
           x: currentX + dx,
           y: currentY + dy,
@@ -298,7 +297,8 @@ const Tournament = ({ title, data }) => {
                   scale: 1, y: 0, filter: "brightness(1) blur(0px)",
                   duration: 0.9, ease: "back.out(1.4)",
                   onComplete: () => {
-                    gsap.to(newWinnerCardRef.current, { y: "-=12", rotation: 1.5, duration: 2.2, ease: "sine.inOut", yoyo: true, repeat: -1 });
+                    gsap.set(newWinnerCardRef.current, { clearProps: "transform" });
+                    newWinnerCardRef.current.classList.add("winner_float");
                   }
                 }
               );
