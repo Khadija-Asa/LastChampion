@@ -373,7 +373,7 @@ const Tournament = ({ data }) => {
             <div className="share_networks">
               <a
                 className="share_network_btn"
-                href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(`🏆 Mon dernier champion est ${shareTarget} ! Qui sera le tien ? ${siteUrl}`)}`}
+                href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(`Mon champion est ${shareTarget} ! Quel sera le tien ? ${siteUrl}`)}`}
                 target="_blank" rel="noopener noreferrer"
                 onClick={() => setShowShare(false)}
               >
@@ -381,7 +381,7 @@ const Tournament = ({ data }) => {
               </a>
               <a
                 className="share_network_btn"
-                href={`https://wa.me/?text=${encodeURIComponent(`🏆 Mon dernier champion est ${shareTarget} ! Qui sera le tien ? ${siteUrl}`)}`}
+                href={`https://wa.me/?text=${encodeURIComponent(`Mon champion est ${shareTarget} ! Quel sera le tien ? ${siteUrl}`)}`}
                 target="_blank" rel="noopener noreferrer"
                 onClick={() => setShowShare(false)}
               >

@@ -29,6 +29,7 @@ const Series        = lazy(() => import('./components/Series'));
 const Football      = lazy(() => import('./components/Football'));
 const Fortnite      = lazy(() => import('./components/Fortnite'));
 const Legal         = lazy(() => import('./components/LegalMentions'));
+const NotFound      = lazy(() => import('./components/NotFound'));
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
@@ -61,6 +62,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
           <Route path="/football-players"    element={<Football />} />
           <Route path="/fortnite-skins"      element={<Fortnite />} />
           <Route path="/mentions-legales"    element={<Legal />} />
+          <Route path="*"                    element={<NotFound />} />
         </Routes>
       </Suspense>
     </HashRouter>
