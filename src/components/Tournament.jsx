@@ -5,7 +5,8 @@ import TiltCard from "./TiltCard";
 import "./../styles/Themes.css";
 import ChampionMessage from "./ChampionMessage";
 import DuelMessage from "./DuelMessage";
-import { FaLongArrowAltLeft, FaVolumeUp, FaVolumeMute } from "react-icons/fa";
+import { FaLongArrowAltLeft, FaVolumeUp, FaVolumeMute, FaWhatsapp, FaSnapchatGhost } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
 
 import vs from "../assets/versus_white.svg";
 import gsap from "gsap";
@@ -17,7 +18,7 @@ const shuffleArray = (array) => {
 // public img path
 const basePath = import.meta.env.BASE_URL;
 
-const Tournament = ({ title, data }) => {
+const Tournament = ({ data }) => {
   const navigate = useNavigate();
   const [step, setStep] = useState("selection");
   const [selected, setSelected] = useState([]);
@@ -49,6 +50,17 @@ const Tournament = ({ title, data }) => {
   const newWinnerCardRef = useRef(null);
   const [finalAnimating, setFinalAnimating] = useState(false);
   const [finalWinner, setFinalWinner] = useState(null);
+  const [showShare, setShowShare] = useState(false);
+  const [shareTarget, setShareTarget] = useState(null);
+
+  const siteUrl = "https://khadija-asa.github.io/LastChampion/";
+
+  const handleShare = (name) => {
+    setShareTarget(name);
+    setShowShare(true);
+  };
+
+  const isMobileDevice = /Mobi|Android|iPhone|iPad/i.test(navigator.userAgent);
 
   // toggle mute
   const toggleMute = () => {
@@ -352,6 +364,42 @@ const Tournament = ({ title, data }) => {
   return (
     <section className="tournament_wrapper">
 
+      {/* share modal */}
+      {showShare && shareTarget && (
+        <div className="share_overlay" onClick={() => setShowShare(false)}>
+          <div className="share_modal" onClick={e => e.stopPropagation()}>
+            <button className="share_modal_close" onClick={() => setShowShare(false)}>✕</button>
+            <p className="share_modal_title">Partager</p>
+            <div className="share_networks">
+              <a
+                className="share_network_btn"
+                href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(`🏆 Mon dernier champion est ${shareTarget} ! Qui sera le tien ? ${siteUrl}`)}`}
+                target="_blank" rel="noopener noreferrer"
+                onClick={() => setShowShare(false)}
+              >
+                <FaXTwitter size={24} /> X
+              </a>
+              <a
+                className="share_network_btn"
+                href={`https://wa.me/?text=${encodeURIComponent(`🏆 Mon dernier champion est ${shareTarget} ! Qui sera le tien ? ${siteUrl}`)}`}
+                target="_blank" rel="noopener noreferrer"
+                onClick={() => setShowShare(false)}
+              >
+                <FaWhatsapp size={24} /> WhatsApp
+              </a>
+              <a
+                className="share_network_btn"
+                href={isMobileDevice ? "snapchat://" : "https://www.snapchat.com"}
+                target="_blank" rel="noopener noreferrer"
+                onClick={() => setShowShare(false)}
+              >
+                <FaSnapchatGhost size={24} /> Snapchat
+              </a>
+            </div>
+          </div>
+        </div>
+      )}
+
       {/* mute button */}
       <button className="mute_button" onClick={toggleMute}>
         {isMuted ? <FaVolumeMute /> : <FaVolumeUp />}
@@ -427,6 +475,13 @@ const Tournament = ({ title, data }) => {
               {finalWinner ? "PLAY AGAIN" : "MENU"}
             </Link>
           </button>
+
+          {/* share button */}
+          {finalWinner && (
+            <button className="share_button" style={{ zIndex: 20 }} onClick={() => handleShare(finalWinner.name)}>
+              <FaXTwitter size={12} /> PARTAGER
+            </button>
+          )}
 
           {/* duel message / final title */}
           {isFinal
@@ -577,6 +632,11 @@ const Tournament = ({ title, data }) => {
             <Link to='/'>
               <span className="blink"><FaLongArrowAltLeft /></span>PLAY AGAIN
             </Link>
+          </button>
+
+          {/* share */}
+          <button className="share_button" onClick={() => handleShare(winner.name)}>
+            <FaXTwitter size={12} /> PARTAGER
           </button>
         </div>
       )}

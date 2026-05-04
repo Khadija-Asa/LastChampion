@@ -1103,6 +1103,110 @@
   pointer-events: none;
 }
 
+/* share modal */
+.share_overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.share_modal {
+  background: var(--Black);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 2rem 2.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  position: relative;
+}
+
+.share_modal_close {
+  position: absolute;
+  top: 0.6rem;
+  right: 0.8rem;
+  background: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.35);
+  font-size: 0.8rem;
+  cursor: pointer;
+  font-family: 'VCR';
+  transition: color 0.2s ease;
+}
+
+.share_modal_close:hover {
+  color: var(--White);
+}
+
+.share_modal_title {
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.share_networks {
+  display: flex;
+  gap: 1rem;
+}
+
+.share_network_btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 1.2rem;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: var(--White);
+  font-family: 'VCR';
+  font-size: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  cursor: pointer;
+  text-decoration: none;
+  min-width: 5rem;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.share_network_btn:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.35);
+}
+
+/* share button */
+.share_button {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 5;
+  padding: 5px 14px;
+  font-family: 'VCR';
+  font-size: clamp(0.6rem, 0.5rem + 0.8vw, 0.85rem);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--Black);
+  background: var(--White);
+  border: 1px solid var(--White);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  white-space: nowrap;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.share_button:hover {
+  background: transparent;
+  color: var(--White);
+  border-color: var(--White);
+}
+
 /* mute button */
 .mute_button {
   position: fixed;
