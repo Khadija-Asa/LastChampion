@@ -135,6 +135,11 @@ const Header = () => {
               </ul>
             </li>
           ))}
+          <li className="menu_legal">
+            <Link to="/mentions-legales" className="legal_link" onClick={closeMenu}>
+              Mentions légales
+            </Link>
+          </li>
         </ul>
       </nav>
     </header>

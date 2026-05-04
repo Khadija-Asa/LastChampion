@@ -265,9 +265,9 @@
 .choose_btn {
   margin-top: 1rem;
   padding: 0.6rem 1.8rem;
-  background: transparent;
-  border: 1px solid rgba(255, 255, 255, 0.4);
-  color: var(--White);
+  background: var(--White);
+  border: 1px solid var(--White);
+  color: var(--Black);
   font-family: 'VCR';
   font-size: clamp(0.5rem, 0.35rem + 0.7vw, 0.75rem);
   text-transform: uppercase;
@@ -280,8 +280,8 @@
 }
 
 .choose_btn:hover {
-  background: var(--White);
-  color: var(--Black);
+  background: transparent;
+  color: var(--White);
   border-color: var(--White);
 }
 
