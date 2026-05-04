@@ -53,6 +53,7 @@ const Tournament = ({ data }) => {
   const [showShare, setShowShare] = useState(false);
   const [shareTarget, setShareTarget] = useState(null);
   const [copied, setCopied] = useState(false);
+  const [shareVisible, setShareVisible] = useState(false);
 
   const siteUrl = "https://khadija-asa.github.io/LastChampion/";
 
@@ -160,6 +161,7 @@ const Tournament = ({ data }) => {
   // winner card animation
   useEffect(() => {
     if (step !== "winner" || !winnerCardRef.current) return;
+    setShareVisible(false);
 
     const tween = gsap.fromTo(
       winnerCardRef.current,
@@ -178,6 +180,7 @@ const Tournament = ({ data }) => {
             .add(() => {
               gsap.set(winnerCardRef.current, { clearProps: "transform" });
               winnerCardRef.current.classList.add("winner_float");
+              setShareVisible(true);
             });
         }
       }
@@ -283,6 +286,7 @@ const Tournament = ({ data }) => {
   const handleFinalVote = (winner, side) => {
     if (finalAnimating) return;
     setFinalAnimating(true);
+    setShareVisible(false);
     const winnerEl = side === "left" ? leftDuelRef.current : rightDuelRef.current;
     const loserEl  = side === "left" ? rightDuelRef.current : leftDuelRef.current;
     const dir = side === "left" ? 1 : -1;
@@ -325,6 +329,7 @@ const Tournament = ({ data }) => {
                   onComplete: () => {
                     gsap.set(newWinnerCardRef.current, { clearProps: "transform" });
                     newWinnerCardRef.current.classList.add("winner_float");
+                    setShareVisible(true);
                   }
                 }
               );
@@ -489,7 +494,7 @@ const Tournament = ({ data }) => {
           </button>
 
           {/* share button */}
-          {finalWinner && (
+          {finalWinner && shareVisible && (
             <button className="share_button" style={{ zIndex: 20 }} onClick={() => handleShare(finalWinner.name)}>
               <FaXTwitter size={12} /> PARTAGER
             </button>
@@ -647,9 +652,11 @@ const Tournament = ({ data }) => {
           </button>
 
           {/* share */}
-          <button className="share_button" onClick={() => handleShare(winner.name)}>
-            <FaXTwitter size={12} /> PARTAGER
-          </button>
+          {shareVisible && (
+            <button className="share_button" onClick={() => handleShare(winner.name)}>
+              <FaXTwitter size={12} /> PARTAGER
+            </button>
+          )}
         </div>
       )}
 
