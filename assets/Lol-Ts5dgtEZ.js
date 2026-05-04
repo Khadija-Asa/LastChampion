@@ -1,1 +1,0 @@
-import{j as o,l as t}from"./index-C5pOU7FB.js";import{T as r}from"./Tournament-uobij79R.js";import"./vendor-react-DekamgWB.js";import"./vendor-gsap-CH_iu5NA.js";import"./vendor-icons-BAH7bg4a.js";const l=()=>o.jsx("div",{className:"theme theme_lol",children:o.jsx(r,{title:"Choose your 8 favorites Lol Champions",data:t})});export{l as default};
