@@ -52,12 +52,26 @@ const Tournament = ({ data }) => {
   const [finalWinner, setFinalWinner] = useState(null);
   const [showShare, setShowShare] = useState(false);
   const [shareTarget, setShareTarget] = useState(null);
+  const [copied, setCopied] = useState(false);
 
   const siteUrl = "https://khadija-asa.github.io/LastChampion/";
 
   const handleShare = (name) => {
     setShareTarget(name);
     setShowShare(true);
+    setCopied(false);
+  };
+
+  const handleSnapchat = () => {
+    const text = `Mon champion est ${shareTarget} ! Quel sera le tien ? ${siteUrl}`;
+    navigator.clipboard.writeText(text).then(() => {
+      setCopied(true);
+      setTimeout(() => {
+        window.open(isMobileDevice ? "snapchat://" : "https://www.snapchat.com", "_blank");
+        setShowShare(false);
+        setCopied(false);
+      }, 800);
+    });
   };
 
   const isMobileDevice = /Mobi|Android|iPhone|iPad/i.test(navigator.userAgent);
@@ -387,14 +401,12 @@ const Tournament = ({ data }) => {
               >
                 <FaWhatsapp size={24} /> WhatsApp
               </a>
-              <a
+              <button
                 className="share_network_btn"
-                href={isMobileDevice ? "snapchat://" : "https://www.snapchat.com"}
-                target="_blank" rel="noopener noreferrer"
-                onClick={() => setShowShare(false)}
+                onClick={handleSnapchat}
               >
-                <FaSnapchatGhost size={24} /> Snapchat
-              </a>
+                <FaSnapchatGhost size={24} /> {copied ? "Copié !" : "Snapchat"}
+              </button>
             </div>
           </div>
         </div>
