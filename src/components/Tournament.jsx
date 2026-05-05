@@ -347,7 +347,7 @@ const Tournament = ({ data }) => {
     snd.pause(); snd.currentTime = 0; snd.playbackRate = 1.5; snd.volume = 0.1;
     snd.play();
     if (finalOverlayRef.current) {
-      gsap.set(finalOverlayRef.current, { opacity: 1 });
+      gsap.set(finalOverlayRef.current, { opacity: 1, pointerEvents: "auto" });
     }
   }, [finalWinner]);
 

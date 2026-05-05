@@ -196,6 +196,7 @@
   /* duel */
   .duel_area {
     padding: 0.5rem 0;
+    margin-top: 1.2rem;
   }
 
   .duel_wrapper {
@@ -207,17 +208,12 @@
     padding: 0;
   }
 
-  .duel_card_side {
-    flex: none;
-    width: auto;
-  }
-
   .card_duel {
     width: auto;
   }
 
   .card_duel img {
-    height: clamp(11rem, 38vw, 18rem);
+    height: clamp(6rem, 22vw, 10rem);
     aspect-ratio: 6 / 7;
   }
 
@@ -845,11 +841,12 @@
 
 /* image card */
 .card_duel img {
-  height: clamp(15rem, 10.7143rem + 21.4286vw, 30rem);
+  height: clamp(13rem, 8.1429rem + 24.2857vw, 30rem);
   object-fit: cover;
   border-radius: .8rem;
   aspect-ratio: 6 / 7;
   display: block;
+  cursor: pointer;
 }
 
 /* name overlay */
@@ -930,9 +927,9 @@
 .winner_card_wrapper {
   position: relative;
   z-index: 4;
-  /* border-radius: .8rem; */
   overflow: hidden;
   isolation: isolate;
+  cursor: default !important;
   border: 1px solid rgba(255, 255, 255, 0.18);
   box-shadow:
     0 0 50px rgba(255, 255, 255, 0.12),
@@ -959,7 +956,6 @@
   aspect-ratio: 2 / 3;
   object-fit: cover;
   object-position: top;
-  cursor: default;
 }
 
 /* name on card */
