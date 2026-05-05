@@ -6,7 +6,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-family: 'VCR';
+  font-family: "VCR";
   color: var(--White);
   gap: 1rem;
   text-align: center;
@@ -14,7 +14,7 @@
 }
 
 .notfound_code {
-  font-family: 'Coolvetica';
+  font-family: "Coolvetica";
   font-size: clamp(6rem, 4rem + 10vw, 14rem);
   line-height: 1;
   color: rgba(255, 255, 255, 0.06);
@@ -23,7 +23,7 @@
 }
 
 .notfound_title {
-  font-family: 'Coolvetica';
+  font-family: "Coolvetica";
   font-size: clamp(1.5rem, 1rem + 2vw, 3rem);
   text-transform: uppercase;
   letter-spacing: 0.05em;
@@ -46,7 +46,9 @@
   font-size: clamp(0.5rem, 0.4rem + 0.5vw, 0.7rem);
   text-transform: uppercase;
   letter-spacing: 0.2em;
-  transition: background 0.2s ease, color 0.2s ease;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
 }
 
 .notfound_btn:hover {

@@ -6,7 +6,7 @@ const Manga = () => {
     <div className="theme theme_manga">
       <Tournament title="Choose your 8 favorites Manga" data={mangaList} />
     </div>
-  ) 
+  );
 };
 
 export default Manga;

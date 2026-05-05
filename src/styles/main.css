@@ -1,27 +1,27 @@
 /* Colors */
 :root {
-  --White: #F2F9FE;
+  --White: #f2f9fe;
   --Black: #080808;
   --Gray: #353839;
-  --Red: #7F001E;
+  --Red: #7f001e;
 }
 
 /* font */
 @font-face {
-  font-family: 'VCR';
-  src: url(../fonts/vcr/SUPER-VCR_MONO.ttf) format('truetype');
+  font-family: "VCR";
+  src: url(../fonts/vcr/SUPER-VCR_MONO.ttf) format("truetype");
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Gameboy';
-  src: url(../fonts/Gameboy/GameBoy.ttf) format('truetype');
+  font-family: "Gameboy";
+  src: url(../fonts/Gameboy/GameBoy.ttf) format("truetype");
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Coolvetica';
-  src: url(../fonts/Coolvetica/Coolvetica.otf) format('truetype');
+  font-family: "Coolvetica";
+  src: url(../fonts/Coolvetica/Coolvetica.otf) format("truetype");
   font-display: swap;
 }
 
@@ -36,9 +36,11 @@
 }
 
 /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
-ul[role='list'],
-ol[role='list'],
-a, li, ul {
+ul[role="list"],
+ol[role="list"],
+a,
+li,
+ul {
   list-style: none;
   text-decoration: none;
   margin: 0;
@@ -52,7 +54,7 @@ html:focus-within {
 
 /* Set core body defaults */
 body {
-  font-family: 'VCR';
+  font-family: "VCR";
   background-color: var(--Black);
 }
 
@@ -68,7 +70,7 @@ select {
 /* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
 @media (prefers-reduced-motion: reduce) {
   html:focus-within {
-   scroll-behavior: smooth;
+    scroll-behavior: smooth;
   }
 
   *,
@@ -87,7 +89,9 @@ select {
 }
 
 /* Enable select */
-body, html, * {
+body,
+html,
+* {
   user-select: none;
 }
 
@@ -96,15 +100,15 @@ body, html, * {
   animation: blink 1s infinite;
 }
 
-@keyframes blink { 
-  0% { 
-    opacity:0; 
+@keyframes blink {
+  0% {
+    opacity: 0;
   }
-  50% { 
-    opacity:1; 
-  } 
-  100% { 
-    opacity:0; 
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
   }
 }
 

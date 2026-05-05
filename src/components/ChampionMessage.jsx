@@ -28,11 +28,7 @@ const ChampionMessage = ({ remaining }) => {
 
   if (!visible) return null;
 
-  return (
-    <div className="champion_message">
-      {message}
-    </div>
-  );
+  return <div className="champion_message">{message}</div>;
 };
 
 export default ChampionMessage;

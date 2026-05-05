@@ -1,59 +1,219 @@
 export const animeList = [
-  { id: 1, name: "Naruto", image: "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx155348-4ipji8SvTjyh.jpg" },
-  { id: 2, name: "One Piece", image: "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx21-ELSYx3yMPcKM.jpg" },
-  { id: 3, name: "Dragon Ball Z", image: "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx21175-EH06qlfF8TnB.jpg",
-  winnerName: "DragonBZ" },
-  { id: 4, name: "Attack on Titan", image: "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/nx100465-ivKS0RqXg5dI.png",
-  winnerName: "SNK" },
-  { id: 5, name: "Demon Slayer", image: "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx101922-WBsBl0ClmgYL.jpg",
-  winnerName: "Slayer" },
-  { id: 6, name: "My Hero Academia", image: "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx21459-nYh85uj2Fuwr.jpg",
-  winnerName: "Hero_A" },
-  { id: 7, name: "FullMetal Alchemist", image: "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx9135-nPvbvO7QCx7L.jpg",
-  winnerName: "FullMetal" },
-  { id: 8, name: "Tokyo Ghoul", image: "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/b20605-k665mVkSug8D.jpg",
-  winnerName: "T_Ghoul" },
-  { id: 9, name: "Bleach", image: "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx269-d2GmRkJbMopq.png" },
-  { id: 10, name: "One Punch Man", image: "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx21087-B5DHjqZ3kW4b.jpg",
-  winnerName: "O_Punch" },
-  { id: 11, name: "Death Note", image: "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx1535-kUgkcrfOrkUM.jpg",
-  winnerName: "D_Note" },
-  { id: 12, name: "Sword Art Online", image: "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx11757-SxYDUzdr9rh2.jpg",
-  winnerName: "SAO" },
-  { id: 13, name: "Cowboy Bebop", image: "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx1-GCsPm7waJ4kS.png",
-  winnerName: "C_Bebop" },
-  { id: 14, name: "NG Evangelion", image: "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx30-AI1zr74Dh4ye.jpg",
-  winnerName: "NGEvang" },
-  { id: 15, name: "Fairy Tail", image: "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx12049-FIx0K2s81SPa.png",
-  winnerName: "Fairy_T" },
-  { id: 16, name: "Hunter x Hunter", image: "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx13271-jBxQFqHCpb2K.png",
-  winnerName: "Hunter" },
-  { id: 17, name: "Black Clover", image: "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx131680-gjs8mMQPmkOQ.png",
-  winnerName: "Clover" },
-  { id: 18, name: "Meitantei Conan", image: "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx156841-eCdzTqfaqNb7.png",
-  winnerName: "Conan" },
-  { id: 19, name: "Tokyo Revengers", image: "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx142853-nxEZDE9oDRLG.png",
-  winnerName: "T_Rev" },
-  { id: 20, name: "JoJo's Bizarre Adventure", image: "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx20799-S1eyqBDlx51E.jpg",
-  winnerName: "Jojo's" },
-  { id: 21, name: "Vinland Saga", image: "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx101348-2fhDFPCuMNiz.jpg",
-  winnerName: "Vinland" },
-  { id: 22, name: "Erased", image: "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx21234-XmqW39aQ9o7O.jpg" },
-  { id: 23, name: "Jujutsu Kaisen", image: "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx113415-LHBAeoZDIsnF.jpg",
-  winnerName: "Jujutsu" },
-  { id: 24, name: "Black Butler", image: "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx6793-WJHPwa0ofanb.png",
-  winnerName: "B_Butler" },
-  { id: 25, name: "Promised Neverland", image: "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx101759-8UR7r9MNVpz2.jpg",
-  winnerName: "Neverland" },
-  { id: 26, name: "Berserk", image: "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx21560-6iifjdssfebJ.jpg" },
-  { id: 27, name: "Solo Leveling", image: "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx151807-it355ZgzquUd.png",
-  winnerName: "Solo_L" },
-  { id: 28, name: "Baki", image: "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx97888-tdZ1r7qN1DRs.jpg" },
-  { id: 29, name: "Dr.Stone", image: "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx142876-izO35hPP2DZ9.jpg",
-  winnerName: "DrStone" },
-  { id: 30, name: "Blue Lock", image: "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx137822-U8naszP96vzC.png", 
-  winnerName: "Blue_L" },
-  { id: 31, name: "Saint Seiya", image: "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/1254.jpg",
-  winnerName: "Seiya" },
-  { id: 32, name: "Parasyte", image: "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx20623-dUARfggnNDOe.jpg" },
+  {
+    id: 1,
+    name: "Naruto",
+    image:
+      "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx155348-4ipji8SvTjyh.jpg",
+  },
+  {
+    id: 2,
+    name: "One Piece",
+    image:
+      "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx21-ELSYx3yMPcKM.jpg",
+  },
+  {
+    id: 3,
+    name: "Dragon Ball Z",
+    image:
+      "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx21175-EH06qlfF8TnB.jpg",
+    winnerName: "DragonBZ",
+  },
+  {
+    id: 4,
+    name: "Attack on Titan",
+    image:
+      "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/nx100465-ivKS0RqXg5dI.png",
+    winnerName: "SNK",
+  },
+  {
+    id: 5,
+    name: "Demon Slayer",
+    image:
+      "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx101922-WBsBl0ClmgYL.jpg",
+    winnerName: "Slayer",
+  },
+  {
+    id: 6,
+    name: "My Hero Academia",
+    image:
+      "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx21459-nYh85uj2Fuwr.jpg",
+    winnerName: "Hero_A",
+  },
+  {
+    id: 7,
+    name: "FullMetal Alchemist",
+    image:
+      "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx9135-nPvbvO7QCx7L.jpg",
+    winnerName: "FullMetal",
+  },
+  {
+    id: 8,
+    name: "Tokyo Ghoul",
+    image:
+      "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/b20605-k665mVkSug8D.jpg",
+    winnerName: "T_Ghoul",
+  },
+  {
+    id: 9,
+    name: "Bleach",
+    image:
+      "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx269-d2GmRkJbMopq.png",
+  },
+  {
+    id: 10,
+    name: "One Punch Man",
+    image:
+      "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx21087-B5DHjqZ3kW4b.jpg",
+    winnerName: "O_Punch",
+  },
+  {
+    id: 11,
+    name: "Death Note",
+    image:
+      "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx1535-kUgkcrfOrkUM.jpg",
+    winnerName: "D_Note",
+  },
+  {
+    id: 12,
+    name: "Sword Art Online",
+    image:
+      "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx11757-SxYDUzdr9rh2.jpg",
+    winnerName: "SAO",
+  },
+  {
+    id: 13,
+    name: "Cowboy Bebop",
+    image:
+      "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx1-GCsPm7waJ4kS.png",
+    winnerName: "C_Bebop",
+  },
+  {
+    id: 14,
+    name: "NG Evangelion",
+    image:
+      "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx30-AI1zr74Dh4ye.jpg",
+    winnerName: "NGEvang",
+  },
+  {
+    id: 15,
+    name: "Fairy Tail",
+    image:
+      "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx12049-FIx0K2s81SPa.png",
+    winnerName: "Fairy_T",
+  },
+  {
+    id: 16,
+    name: "Hunter x Hunter",
+    image:
+      "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx13271-jBxQFqHCpb2K.png",
+    winnerName: "Hunter",
+  },
+  {
+    id: 17,
+    name: "Black Clover",
+    image:
+      "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx131680-gjs8mMQPmkOQ.png",
+    winnerName: "Clover",
+  },
+  {
+    id: 18,
+    name: "Meitantei Conan",
+    image:
+      "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx156841-eCdzTqfaqNb7.png",
+    winnerName: "Conan",
+  },
+  {
+    id: 19,
+    name: "Tokyo Revengers",
+    image:
+      "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx142853-nxEZDE9oDRLG.png",
+    winnerName: "T_Rev",
+  },
+  {
+    id: 20,
+    name: "JoJo's Bizarre Adventure",
+    image:
+      "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx20799-S1eyqBDlx51E.jpg",
+    winnerName: "Jojo's",
+  },
+  {
+    id: 21,
+    name: "Vinland Saga",
+    image:
+      "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx101348-2fhDFPCuMNiz.jpg",
+    winnerName: "Vinland",
+  },
+  {
+    id: 22,
+    name: "Erased",
+    image:
+      "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx21234-XmqW39aQ9o7O.jpg",
+  },
+  {
+    id: 23,
+    name: "Jujutsu Kaisen",
+    image:
+      "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx113415-LHBAeoZDIsnF.jpg",
+    winnerName: "Jujutsu",
+  },
+  {
+    id: 24,
+    name: "Black Butler",
+    image:
+      "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx6793-WJHPwa0ofanb.png",
+    winnerName: "B_Butler",
+  },
+  {
+    id: 25,
+    name: "Promised Neverland",
+    image:
+      "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx101759-8UR7r9MNVpz2.jpg",
+    winnerName: "Neverland",
+  },
+  {
+    id: 26,
+    name: "Berserk",
+    image:
+      "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx21560-6iifjdssfebJ.jpg",
+  },
+  {
+    id: 27,
+    name: "Solo Leveling",
+    image:
+      "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx151807-it355ZgzquUd.png",
+    winnerName: "Solo_L",
+  },
+  {
+    id: 28,
+    name: "Baki",
+    image:
+      "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx97888-tdZ1r7qN1DRs.jpg",
+  },
+  {
+    id: 29,
+    name: "Dr.Stone",
+    image:
+      "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx142876-izO35hPP2DZ9.jpg",
+    winnerName: "DrStone",
+  },
+  {
+    id: 30,
+    name: "Blue Lock",
+    image:
+      "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx137822-U8naszP96vzC.png",
+    winnerName: "Blue_L",
+  },
+  {
+    id: 31,
+    name: "Saint Seiya",
+    image:
+      "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/1254.jpg",
+    winnerName: "Seiya",
+  },
+  {
+    id: 32,
+    name: "Parasyte",
+    image:
+      "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx20623-dUARfggnNDOe.jpg",
+  },
 ];

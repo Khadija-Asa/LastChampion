@@ -2,7 +2,7 @@
   min-height: 100vh;
   background: var(--Black);
   color: var(--White);
-  font-family: 'VCR';
+  font-family: "VCR";
   display: flex;
   align-items: flex-start;
   justify-content: center;
@@ -30,7 +30,7 @@
 }
 
 .legal_content h1 {
-  font-family: 'Coolvetica';
+  font-family: "Coolvetica";
   font-size: clamp(2rem, 1rem + 4vw, 3.5rem);
   text-transform: uppercase;
   letter-spacing: 0.04em;

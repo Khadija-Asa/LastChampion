@@ -8,13 +8,16 @@ const TiltCard = ({ children, options, className = "", ...props }) => {
 
   useEffect(() => {
     if (isTouch || !tiltRef.current) return;
-    VanillaTilt.init(tiltRef.current, options || {
-      max: 20,
-      speed: 500,
-      glare: true,
-      transition: true,
-      "max-glare": 0.1,
-    });
+    VanillaTilt.init(
+      tiltRef.current,
+      options || {
+        max: 20,
+        speed: 500,
+        glare: true,
+        transition: true,
+        "max-glare": 0.1,
+      },
+    );
     return () => tiltRef.current?.vanillaTilt?.destroy();
   }, [options]);
 
