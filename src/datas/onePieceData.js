@@ -161,7 +161,7 @@ export const onepieceList = [
     id: 31,
     name: "Foxy",
     image:
-      "https://lh4.googleusercontent.com/LvspAMA_YpDNnpNt5Q7GDhT6-pXnlOJCEbGB_oSNnrPXN17ZsZSdPqUYsYGcXVN19YfgwXlfksxCPZiP1LnkpQIsK_DiTHk92BQlHT7EemwKPsvnvXIWYb4L8grtNkC_eW4EVkWTRyqUDfcGDyl3soU",
+      "https://static.wikia.nocookie.net/onepiece/images/4/46/Foxy_Anime_Pre_Ellipse_Infobox.png/revision/latest?cb=20170719113246&path-prefix=fr",
   },
   {
     id: 32,

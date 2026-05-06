@@ -3,7 +3,7 @@ export const esportList = [
     id: 1,
     name: "Fnatic",
     image:
-      "https://upload.wikimedia.org/wikipedia/fr/thumb/f/f4/Fnatic-Logo-2020.svg/1200px-Fnatic-Logo-2020.svg.png",
+      "https://upload.wikimedia.org/wikipedia/fr/thumb/f/f4/Fnatic-Logo-2020.svg/1280px-Fnatic-Logo-2020.svg.png",
   },
   {
     id: 2,
@@ -37,7 +37,7 @@ export const esportList = [
     id: 7,
     name: "T1",
     image:
-      "https://upload.wikimedia.org/wikipedia/fr/thumb/f/f9/T1_logo.svg/300px-T1_logo.svg.png?20220705132346",
+      "https://upload.wikimedia.org/wikipedia/fr/thumb/f/f9/T1_logo.svg/1280px-T1_logo.svg.png",
   },
   {
     id: 8,
@@ -66,7 +66,7 @@ export const esportList = [
     id: 12,
     name: "MAD Lions",
     image:
-      "https://upload.wikimedia.org/wikipedia/fr/thumb/8/84/MAD_Lions_logo.svg/640px-MAD_Lions_logo.svg.png",
+      "https://upload.wikimedia.org/wikipedia/fr/8/84/MAD_Lions_logo.svg",
   },
   {
     id: 13,
@@ -84,13 +84,13 @@ export const esportList = [
     id: 15,
     name: "Astralis",
     image:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Astralis.svg/800px-Astralis.svg.png",
+      "https://upload.wikimedia.org/wikipedia/commons/4/44/Astralis.svg",
   },
   {
     id: 16,
     name: "SK Gaming",
     image:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/SK_Gaming_Logo_2022.svg/768px-SK_Gaming_Logo_2022.svg.png",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/SK_Gaming_Logo_2022.svg/1280px-SK_Gaming_Logo_2022.svg.png",
   },
   {
     id: 17,
@@ -107,25 +107,25 @@ export const esportList = [
     id: 19,
     name: "M8",
     image:
-      "https://upload.wikimedia.org/wikipedia/commons/b/be/Gentle_Mates_2025.png",
+      "https://actustream.fr/img/clubs/esport/gentle-mates.png",
   },
   {
     id: 20,
-    name: "Dignitas",
+    name: "Hanwha Life",
     image:
-      "https://upload.wikimedia.org/wikipedia/en/thumb/c/c3/Dignitas_logo.svg/1200px-Dignitas_logo.svg.png",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Hanwha_Life_Esports_logo.svg/langfr-250px-Hanwha_Life_Esports_logo.svg.png",
   },
   {
     id: 21,
     name: "Furia",
     image:
-      "https://upload.wikimedia.org/wikipedia/en/thumb/a/ad/FURIA_Esports_logo.svg/1200px-FURIA_Esports_logo.svg.png",
+      "https://upload.wikimedia.org/wikipedia/en/a/ad/FURIA_Esports_logo.svg",
   },
   {
     id: 22,
     name: "Gen.G",
     image:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Gen.G_Logo.svg/1200px-Gen.G_Logo.svg.png",
+      "https://upload.wikimedia.org/wikipedia/commons/7/77/Gen.G_Logo.svg",
   },
   {
     id: 23,
@@ -147,7 +147,7 @@ export const esportList = [
   {
     id: 26,
     name: "KT Rolster",
-    image: "https://upload.wikimedia.org/wikipedia/en/6/61/KT_Rolster_logo.png",
+    image: "https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/5/5c/KT_Rolsterlogo_profile.png/revision/latest?cb=20260123152940",
   },
   {
     id: 27,
@@ -164,13 +164,13 @@ export const esportList = [
     id: 29,
     name: "Team Heretics",
     image:
-      "https://upload.wikimedia.org/wikipedia/fr/thumb/6/69/Team_Heretics.png/1200px-Team_Heretics.png",
+      "https://upload.wikimedia.org/wikipedia/fr/6/69/Team_Heretics.png",
   },
   {
     id: 30,
     name: "ENCE",
     image:
-      "https://upload.wikimedia.org/wikipedia/fr/thumb/5/5e/ENCE.svg/1200px-ENCE.svg.png",
+      "https://upload.wikimedia.org/wikipedia/fr/thumb/5/5e/ENCE.svg/langfr-330px-ENCE.svg.png",
   },
   {
     id: 31,

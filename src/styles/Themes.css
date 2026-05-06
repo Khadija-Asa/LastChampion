@@ -99,10 +99,13 @@
 }
 .theme_esport .card img,
 .theme_esport .card_duel img,
-.theme_esport .winner_wrapper .duel_zoom {
+.theme_esport .winner_wrapper .duel_zoom,
+.theme_esport .winner_img {
   object-position: center;
   filter: drop-shadow(0 0 1px white) drop-shadow(0 0 1px white);
+  aspect-ratio: 2 / 3;
 }
+
 
 /* ESPORT PLAYERS */
 .theme_players .image_wrapper {
@@ -177,9 +180,11 @@
 }
 .theme_fifa .card img,
 .theme_fifa .card_duel img,
-.theme_fifa .winner_wrapper .duel_zoom {
+.theme_fifa .winner_wrapper .duel_zoom,
+.theme_fifa .winner_img {
   object-position: center;
   filter: drop-shadow(0 0 1px white) drop-shadow(0 0 1px white);
+  aspect-ratio: 2 / 3;
 }
 
 /* ONE PIECE */

@@ -123,7 +123,7 @@ export const fifaList = [
     id: 21,
     name: "FC Barcelona",
     image:
-      "https://upload.wikimedia.org/wikipedia/fr/thumb/1/1d/Logo_FC_Barcelone.svg/1186px-Logo_FC_Barcelone.svg.png",
+      "https://upload.wikimedia.org/wikipedia/fr/thumb/1/1d/Logo_FC_Barcelone.svg/langfr-250px-Logo_FC_Barcelone.svg.png",
   },
   {
     id: 22,
@@ -177,7 +177,7 @@ export const fifaList = [
     id: 30,
     name: "Olympique de Marseille",
     image:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Olympique_Marseille_logo.svg/200px-Olympique_Marseille_logo.svg.png",
+      "https://upload.wikimedia.org/wikipedia/fr/thumb/0/0d/Logo_Olympique_Marseille_-_2026.svg/langfr-250px-Logo_Olympique_Marseille_-_2026.svg.png",
   },
   {
     id: 31,

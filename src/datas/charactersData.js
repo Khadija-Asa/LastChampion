@@ -37,7 +37,7 @@ export const charactersList = [
     id: 7,
     name: "Yoda",
     image:
-      "https://hitek.fr/img/up_o/2164577758/aba41_dansstarwarsnousnavonsvuque3individusdelespecedeyodavoicipourquoi.jpg",
+      "https://static.wikia.nocookie.net/frstarwars/images/c/cf/TPM-CGYoda.jpg/revision/latest?cb=20161119083039",
   },
   {
     id: 8,

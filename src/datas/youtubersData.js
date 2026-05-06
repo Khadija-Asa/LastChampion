@@ -56,7 +56,7 @@ export const youtubersList = [
     id: 10,
     name: "LeBouseuh",
     image:
-      "https://yt3.googleusercontent.com/-ddkoZcrriwdAFiRPEBCTBqnU6p8w6fP5WdsG-k2MTo2DM0q_CmpZYKeIVgz4MQcaQ37Vn6S-ek=s900-c-k-c0x00ffffff-no-rj",
+      "https://veryimportantpeople.fr/var/plain_site/storage/images/people/le-vrai-bouseuh/8260680-1-fre-FR/Le-Vrai-Bouseuh_fiche.jpg",
   },
   {
     id: 11,
@@ -68,7 +68,7 @@ export const youtubersList = [
     id: 12,
     name: "Papesan",
     image:
-      "https://yt3.googleusercontent.com/ytc/AIdro_naOsJSXiKPX8AItqGcRSJ0sHd8aoK4Sc4JZDwFQJO8fOY=s900-c-k-c0x00ffffff-no-rj",
+      "https://upload.wikimedia.org/wikipedia/commons/3/34/Pape_San_en_2025.png",
   },
   {
     id: 13,

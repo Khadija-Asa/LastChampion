@@ -56,7 +56,7 @@ export const tournamentsList = [
   {
     id: 10,
     name: "Rocket League Championship Series",
-    image: "https://esportreporter.com/wp-content/uploads/2024/11/rlcs25.jpg",
+    image: "https://cms-assets.unrealengine.com/cmkr1i7c9047e07n0es5291ez/LCntpcKSRcOOnPvUXvWU",
   },
   {
     id: 11,
@@ -173,7 +173,7 @@ export const tournamentsList = [
     id: 30,
     name: "Clash Royale League",
     image:
-      "https://d36qemgtmze279.cloudfront.net/images/cbw7s1mh/production/6e93a60c39dd599ce547c1f262d13750f5e2e071-1920x1080.png?rect=187,0,1547,1080&w=768&h=536&q=90&auto=format",
+      "https://pbs.twimg.com/media/HDNb1DmXwAAJ56_.jpg",
   },
   {
     id: 31,
