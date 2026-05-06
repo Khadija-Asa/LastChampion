@@ -382,7 +382,7 @@ header {
 }
 
 /* media queries */
-@media (min-width: 768px) {
+@media (min-width: 1025px) {
   .links_menu {
     flex-direction: row;
     padding-top: 0;
@@ -404,7 +404,7 @@ header {
 }
 
 /* accordion mobile */
-@media (max-width: 767px) {
+@media (max-width: 1024px) {
   .menu_section {
     padding: 3rem 0 2rem 0;
     gap: 1rem;
