@@ -1,1 +1,0 @@
-import{j as i,v as t}from"./index-Db8aV0lE.js";import{T as s}from"./Tournament-V1cYePRv.js";import"./vendor-react-DekamgWB.js";import"./vendor-gsap-CH_iu5NA.js";import"./vendor-icons-BAH7bg4a.js";const m=()=>i.jsx("div",{className:" theme theme_villains",children:i.jsx(s,{title:"Choose your 8 favorites villains",data:t})});export{m as default};
