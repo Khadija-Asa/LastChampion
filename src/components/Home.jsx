@@ -75,6 +75,7 @@ export default function Home() {
           duration: 0.19,
           ease: "power3.in",
           stagger: 0.015,
+          delay: 0.7,
         })
         .to(
           ".preloader",
