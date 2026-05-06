@@ -4,40 +4,34 @@ export const charactersList = [
     name: "Walter White",
     image:
       "https://upload.wikimedia.org/wikipedia/en/0/03/Walter_White_S5B.png",
-    winnerName: "Walter",
   },
   {
     id: 2,
     name: "Tyrion Lannister",
     image:
       "https://upload.wikimedia.org/wikipedia/tr/5/50/Tyrion_Lannister-Peter_Dinklage.jpg",
-    winnerName: "Tyrion",
   },
   {
     id: 3,
     name: "Michael Scott",
     image: "https://leganerd.com/wp-content/uploads/2020/06/the-office.jpg",
-    winnerName: "Michael",
   },
   {
     id: 4,
     name: "Tony Soprano",
     image:
       "https://data2.nssmag.com/images/galleries/36028/Nuovo-progetto-93.jpg",
-    winnerName: "Soprano",
   },
   {
     id: 5,
     name: "Lightning McQueen",
     image:
       "https://i-mom.unimedias.fr/2024-01/flash_mcqueen_personnages-cars.jpg?auto=format,compress&cs=tinysrgb&w=1200",
-    winnerName: "McQueen",
   },
   {
     id: 6,
     name: "Mammy Two Shoes",
     image: "https://2f.ru/wp-content/uploads/2013/03/Mammytwoshoes.jpg",
-    winnerName: "Mammy",
   },
   {
     id: 7,
@@ -49,21 +43,18 @@ export const charactersList = [
     id: 8,
     name: "Regan MacNeil",
     image: "https://designyoutrust.com/wp-content/uploads/2022/11/1-2.jpg",
-    winnerName: "Regan",
   },
   {
     id: 9,
     name: "Wednesday Addams",
     image:
       "https://i.pinimg.com/736x/23/96/e8/2396e845aac2131b54d9e8978b045e75.jpg",
-    winnerName: "Wednesday",
   },
   {
     id: 10,
     name: "Meredith Grey",
     image:
       "https://static.blog4ever.com/2014/09/784000/big_artfichier_784000_4134685_20140927445671.jpg",
-    winnerName: "Meredith",
   },
   {
     id: 11,
@@ -76,7 +67,6 @@ export const charactersList = [
     name: "Phoebe Buffay",
     image:
       "https://i.pinimg.com/474x/14/51/ed/1451edef2e656d89bf87f2037f1a7921.jpg",
-    winnerName: "Phoebe",
   },
   {
     id: 13,
@@ -95,7 +85,6 @@ export const charactersList = [
     name: "Homer Simpson",
     image:
       "https://m.media-amazon.com/images/I/51NoADt9NmL._UF894,1000_QL80_.jpg",
-    winnerName: "Homer_S",
   },
   {
     id: 16,
@@ -108,7 +97,6 @@ export const charactersList = [
     name: "Cookie Lyon",
     image:
       "https://upload.wikimedia.org/wikipedia/en/e/ee/Taraji_P._Henson_as_Cookie_Lyon.png",
-    winnerName: "Cookie_L",
   },
   {
     id: 18,
@@ -126,21 +114,18 @@ export const charactersList = [
     id: 20,
     name: "Daryl Dixon",
     image: "https://sinetopya.com/content/images/2024/07/twd--daryl-dixon.jpg",
-    winnerName: "Daryl_D",
   },
   {
     id: 21,
     name: "Door (Titanic)",
     image:
       "https://m1.quebecormedia.com/emp/emp/TUILE_4x3_titanicb60fd828-645a-4eef-9d31-521ba5cc6c85_ORIGINAL.jpg?impolicy=crop-resize&x=0&y=0&w=0&h=0&width=960",
-    winnerName: "Door",
   },
   {
     id: 22,
     name: "Saul Goodman",
     image:
       "https://cdn.prod.website-files.com/62e01680efc11a6f4989a029/65aa4808809a02781fdb857d_Better-Call-Saul-S6-Still-Jimmy-McGill-Publicity-H-2022.webp",
-    winnerName: "Saul_G",
   },
   {
     id: 23,
@@ -153,27 +138,23 @@ export const charactersList = [
     name: "Dwight Schrute",
     image:
       "https://static1.srcdn.com/wordpress/wp-content/uploads/2020/01/dwight-schrute-office-featured.jpg",
-    winnerName: "Dwight",
   },
   {
     id: 25,
     name: "Bree Van De Kamp",
     image: "https://doucessaveurs.com/wp-content/uploads/2017/01/img_0102.jpg",
-    winnerName: "Bree VDK",
   },
   {
     id: 26,
     name: "Thomas Shelby",
     image:
       "https://cdn.webshopapp.com/shops/268192/files/433182622/tommy-shelby.jpg",
-    winnerName: "T_Shelby",
   },
   {
     id: 27,
     name: "Rocky Balboa",
     image:
       "https://resize.programme-television.org/original/var/premiere/storage/images/news/cinema/coulisses-tournage/rocky-6ter-le-cachet-derisoire-de-sylvester-stallone-pour-le-premier-volet-de-la-saga-4738567/103108807-1-fre-FR/Rocky-6Ter-Le-cachet-derisoire-de-Sylvester-Stallone-pour-le-premier-volet-de-la-saga.jpg",
-    winnerName: "Rocky_B",
   },
   {
     id: 28,
@@ -204,6 +185,5 @@ export const charactersList = [
     name: "Jack Sparrow",
     image:
       "https://www.tomsguide.fr/content/uploads/sites/2/2022/04/pirates-caraibes-johnny-depp.jpg",
-    winnerName: "Jack_S",
   },
 ];

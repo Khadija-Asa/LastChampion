@@ -28,7 +28,6 @@ export const seriesList = [
     name: "Alice in Borderland",
     image:
       "https://serializd-tmdb-images.b-cdn.net/t/p/w500/Ac8ruycRXzgcsndTZFK6ouGA0FA.jpg",
-    winnerName: "Alice in B_",
   },
   {
     id: 6,
@@ -41,7 +40,6 @@ export const seriesList = [
     name: "Malcolm in the Middle",
     image:
       "https://serializd-tmdb-images.b-cdn.net/t/p/w500/ckLLIsNy3Z0Go1PYHA2PHzVymUA.jpg",
-    winnerName: "Malcolm",
   },
   {
     id: 8,
@@ -84,7 +82,6 @@ export const seriesList = [
     name: "Desperate Housewives",
     image:
       "https://serializd-tmdb-images.b-cdn.net/t/p/w500/4qeI51jDzH81PpUUNaJCBrfm7f6.jpg",
-    winnerName: "D_Housewives",
   },
   {
     id: 15,
@@ -103,14 +100,12 @@ export const seriesList = [
     name: "How to Get Away with Murder",
     image:
       "https://serializd-tmdb-images.b-cdn.net/t/p/w500/bJs8Y6T88NcgksxA8UaVl4YX8p8.jpg",
-    winnerName: "...Murder",
   },
   {
     id: 18,
     name: "How I met your Mother",
     image:
       "https://serializd-tmdb-images.b-cdn.net/t/p/w500/b34jPzmB0wZy7EjUZoleXOl2RRI.jpg",
-    winnerName: "...Mother",
   },
   {
     id: 19,

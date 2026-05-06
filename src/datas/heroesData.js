@@ -6,25 +6,21 @@ export const heroesList = [
     id: 2,
     name: "Wonder Woman",
     image: `${basePath}images/heroes/wonder_woman.webp`,
-    winnerName: "W_Woman",
   },
   {
     id: 3,
     name: "Captain America",
     image: `${basePath}images/heroes/captain_america.webp`,
-    winnerName: "C_America",
   },
   {
     id: 4,
     name: "Black Panther",
     image: `${basePath}images/heroes/black_panther.webp`,
-    winnerName: "B_Panther",
   },
   {
     id: 5,
     name: "The Flash",
     image: `${basePath}images/heroes/the_flash.jpg`,
-    winnerName: "Flash",
   },
   {
     id: 6,
@@ -38,13 +34,11 @@ export const heroesList = [
     name: "Doctor Strange",
     image:
       "https://www.marvel-cineverse.fr/medias/images/doctorstrange-dsmom-imgprofil-1.jpg",
-    winnerName: "Strange",
   },
   {
     id: 9,
     name: "Scarlet Witch",
     image: `${basePath}images/heroes/scarlet_witch.webp`,
-    winnerName: "Scarlet",
   },
   {
     id: 10,
@@ -56,7 +50,6 @@ export const heroesList = [
     id: 12,
     name: "Green Lantern",
     image: `${basePath}images/heroes/green_lantern.jpg`,
-    winnerName: "G_Lantern",
   },
   { id: 13, name: "Aquaman", image: `${basePath}images/heroes/aquaman.webp` },
   { id: 14, name: "Superman", image: `${basePath}images/heroes/superman.jpg` },
@@ -65,14 +58,12 @@ export const heroesList = [
     id: 16,
     name: "Star-Lord",
     image: `${basePath}images/heroes/star_lord.jpg`,
-    winnerName: "StarLord",
   },
   { id: 17, name: "Gamora", image: `${basePath}images/heroes/gamora.webp` },
   {
     id: 18,
     name: "Rocket Raccoon",
     image: `${basePath}images/heroes/rocket_racoon.jpg`,
-    winnerName: "Raccoon",
   },
   {
     id: 19,
@@ -84,7 +75,6 @@ export const heroesList = [
     name: "Silver Surfer",
     image:
       "https://cdn.britannica.com/16/182816-050-21F98A9B/Fantastic-Four-Rise-of-the-Silver-Surfer.jpg",
-    winnerName: "S_Surfer",
   },
   { id: 21, name: "Vision", image: `${basePath}images/heroes/vision.jpg` },
   {
@@ -106,19 +96,16 @@ export const heroesList = [
     name: "Black Widow",
     image:
       "https://www.nme.com/wp-content/uploads/2018/02/Black-Widow-Avengers.jpg",
-    winnerName: "B_Widow",
   },
   {
     id: 28,
     name: "Spider-Man",
     image: `${basePath}images/heroes/spiderman.png`,
-    winnerName: "SpiderMan",
   },
   {
     id: 29,
     name: "Green Arrow",
     image: `${basePath}images/heroes/green_arrow.webp`,
-    winnerName: "G_Arrow",
   },
   { id: 30, name: "Shazam", image: `${basePath}images/heroes/shazam.webp` },
   { id: 31, name: "Hawkeye", image: `${basePath}images/heroes/hawkeye.webp` },

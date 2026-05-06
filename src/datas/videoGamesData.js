@@ -4,28 +4,24 @@ export const videoGamesList = [
     name: "The Legend of Zelda",
     image:
       "https://cdn.hobbyconsolas.com/sites/navi.axelspringer.es/public/media/image/2025/06/todos-juegos-legend-zelda-peor-mejor-orden-recomendado-jugar-toda-saga-4339372.jpg?tf=3840x",
-    winnerName: "Zelda",
   },
   {
     id: 2,
     name: "Minecraft",
     image:
       "https://play-lh.googleusercontent.com/27O5tpaYE82W6m30rJ_MX3-UvshlDM6O8oXDxb6GseYW2T7P8UNT19727MGmz-0q3w",
-    winnerName: "M_Craft",
   },
   {
     id: 3,
     name: "Rocket League",
     image:
       "https://leclaireur.fnac.com/wp-content/uploads/import/news-labo/default/rocket-league-le-jeu-cross-platform-autorise-sur-playstation-4.jpg",
-    winnerName: "R_LEAGUE",
   },
   {
     id: 4,
     name: "The Witcher 3: Wild Hunt",
     image:
       "https://image.api.playstation.com/vulcan/ap/rnd/202211/0711/qezXTVn1ExqBjVjR5Ipm97IK.png",
-    winnerName: "Witcher",
   },
   {
     id: 5,
@@ -38,42 +34,36 @@ export const videoGamesList = [
     name: "Final Fantasy",
     image:
       "https://sm.ign.com/ign_fr/news/f/final-fant/final-fantasy-vii-remake-intergrade-director-would-like-nint_h1x3.jpg",
-    winnerName: "F_Fantasy",
   },
   {
     id: 7,
     name: "League of Legends",
     image:
       "https://onelife-media.fr/wp-content/uploads/2024/10/league-of-legends-wild-rift-500-million.jpeg",
-    winnerName: "L.O.L",
   },
   {
     id: 8,
     name: "Counter-Strike",
     image:
       "https://fr.egw.news/_next/image?url=https%3A%2F%2Fegw.news%2Fuploads%2Fnews%2F1%2F17%2F1743500085719_1743500085719.webp&w=1920&q=75",
-    winnerName: "C_Strike",
   },
   {
     id: 9,
     name: "God Of War",
     image:
       "https://worldofgeek.fr/wp-content/uploads/2025/09/god-of-war-serie-amazon-1200x675.jpg",
-    winnerName: "G_War",
   },
   {
     id: 10,
     name: "Clair Obscur: Expedition 33",
     image:
       "https://image.api.playstation.com/vulcan/ap/rnd/202501/2217/15dd9f9368aa87c9b2dcaf58e1856e8cca01b6e595331858.jpg",
-    winnerName: "Exped_33",
   },
   {
     id: 11,
     name: "Call of Duty",
     image:
       "https://preview.redd.it/all-of-the-bo-games-key-arts-which-one-is-your-favorite-v0-o0lrsg8rkx5f1.jpeg?width=1080&crop=smart&auto=webp&s=25db29ebe96f6d76e6497ea1408100c404beb7b3",
-    winnerName: "C_O_D",
   },
   {
     id: 12,
@@ -92,109 +82,93 @@ export const videoGamesList = [
     name: "GTA V",
     image:
       "https://fotografias-neox.atresmedia.com/clipping/cmsimages02/2018/03/22/214242C7-0A58-4B9D-AA24-7E92E1C31C94/98.jpg?crop=1920,1080,x0,y0&width=1900&height=1069&optimize=high&format=webply",
-    winnerName: "GTA_V",
   },
   {
     id: 15,
     name: "Overwatch",
     image:
       "https://storage.googleapis.com/zing-cz/media/images/nttxr32htg52yzt6655ed6b29f28442340132.jpeg",
-    winnerName: "O_watch",
   },
   {
     id: 16,
     name: "Super Smash Bros. Ultimate",
     image:
       "https://www.nintendo.com/eu/media/images/10_share_images/games_15/nintendo_switch_4/H2x1_NSwitch_SuperSmashBrosUltimate_02_image1280w.jpg",
-    winnerName: "S_Smash",
   },
   {
     id: 17,
     name: "Resident Evil 4",
     image: "https://i.ebayimg.com/images/g/t2EAAOSw49Jjquf1/s-l1200.jpg",
-    winnerName: "R_Evil",
   },
   {
     id: 18,
     name: "Metal Gear Solid",
     image:
       "https://www.leparisien.fr/resizer/oRyxuVxYUZMG8Xgj6l6EjE7NH1k=/932x582/cloudfront-eu-central-1.images.arcpublishing.com/lpguideshopping/LXQSTVINYFH2LNWSQDZLSBNMI4.jpg",
-    winnerName: "M_Gear",
   },
   {
     id: 19,
     name: "Street Fighter",
     image: "https://eloutput.com/wp-content/uploads/2022/05/street-fighter.jpg",
-    winnerName: "S_Fight",
   },
   {
     id: 20,
     name: "Animal Crossing: New Horizons",
     image:
       "https://www.lacremedugaming.fr/wp-content/uploads/creme-gaming/2025/08/telechargements-gratuits-animal-crossing-depechez-vous-vous-navez-plus-que-quelques-jours.png",
-    winnerName: "Animal_C",
   },
   {
     id: 21,
     name: "Mario Kart",
     image:
       "https://www.showmetech.com.br/wp-content/uploads//2017/04/mario_kart_8_deluxe-mario-bowser-and-peach-1072-jpg-webp-1920x1024.webp",
-    winnerName: "M_Kart",
   },
   {
     id: 22,
     name: "Dark Souls",
     image:
       "https://static.bandainamcoent.eu/high/dark-souls/dark-souls-3/00-page-setup/ds3_game-thumbnail.jpg",
-    winnerName: "D_Souls",
   },
   {
     id: 23,
     name: "Ghost Recon: Breakpoint",
     image:
       "https://image.api.playstation.com/vulcan/img/rnd/202109/0713/yde6GT9WPbcAUL1QyqjumHs9.png",
-    winnerName: "G_Recon",
   },
   {
     id: 24,
     name: "World of Warcraft",
     image:
       "https://media.steelseriescdn.com/thumbs/filer_public/62/64/6264f4b0-429b-4da0-ae6a-230834dbcb32/wow_key_art_m_tile.png__540x540_crop-scale_optimize_subsampling-2.png",
-    winnerName: "W_O_W",
   },
   {
     id: 25,
     name: "The Last of Us",
     image:
       "https://media.wired.com/photos/6348589a04d20e5d7c550aa8/191:100/w_1280,c_limit/The-Last-of-Us-Makes-Players-Feel-Really-Bad.-That%E2%80%99s-Great-Games-Culture.jpg?mbid=social_retweet",
-    winnerName: "LastOfUs",
   },
   {
     id: 26,
     name: "Mortal Kombat",
     image:
       "https://www.exobaston.com/wp-content/uploads/2022/06/mortal_kombat_logo.jpeg",
-    winnerName: "M_Kombat",
   },
   {
     id: 27,
     name: "Monster Hunter",
     image:
       "https://gamewave.fr/static/images/news/headers/8e497-monster-hunter-wilds-feuille-de-route-une.jpg",
-    winnerName: "M_Hunter",
   },
   {
     id: 28,
     name: "Red Dead Redemption",
     image: "https://printler.com/media/photo/148332-1.jpg",
-    winnerName: "Red Dead",
   },
   {
     id: 29,
     name: "Super Mario Bros",
     image:
       "https://static1.dualshockersimages.com/wordpress/wp-content/uploads/wm/2023/11/best-super-mario-characters.jpg",
-    winnerName: "S_Mario",
   },
   {
     id: 30,
@@ -213,6 +187,5 @@ export const videoGamesList = [
     name: "Ghost Of Tsushima",
     image:
       "https://image.jeuxvideo.com/medias-sm/171018/1710175367-5672-jaquette-avant.jpg",
-    winnerName: "GhostOf_T",
   },
 ];

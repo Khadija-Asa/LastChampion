@@ -39,7 +39,6 @@ export const youtubersList = [
     name: "Antoine Daniel",
     image:
       "https://intrld.com/wp-content/uploads/2022/12/antoine-daniel-1-1000x600.png",
-    winnerName: "Antoine_D",
   },
   {
     id: 8,
@@ -76,7 +75,6 @@ export const youtubersList = [
     name: "Tibo Inshape",
     image:
       "https://i.la-croix.com/1400x933/smart/2024/05/27/1464190-tibo-inshape-et-devenu-le-youtubeur-le-plus-suivi-.jpg",
-    winnerName: "T_Inshape",
   },
   {
     id: 14,
@@ -89,7 +87,6 @@ export const youtubersList = [
     name: "Léna Situations",
     image:
       "https://img.20mn.fr/dmVM2HIAS9u_rreaZVJa-yk/1444x920_comme-lena-situations-certains-influenceurs-sont-accuses-d-etre-remuneres-par-des-partis-politiques-pour-influencer-les-jeunes-electeurs",
-    winnerName: "Léna_S",
   },
   {
     id: 16,
@@ -108,7 +105,6 @@ export const youtubersList = [
     name: "Mcfly & Carlito",
     image:
       "https://www.bleucitron.net/media/cache/front_slide_artist/images/aad304b6177235c3872e46b9aa887f270cc11d6c.jpg",
-    winnerName: "McF&Carl",
   },
   {
     id: 19,
@@ -133,7 +129,6 @@ export const youtubersList = [
     name: "Le Rire Jaune",
     image:
       "https://static.fnac-static.com/multimedia/Images/FD/Comete/76445/CCP_IMG_ORIGINAL/953065.jpg",
-    winnerName: "Rire Jaune",
   },
   {
     id: 23,
@@ -186,7 +181,6 @@ export const youtubersList = [
     name: "Maxime Biaggi",
     image:
       "https://www.arte-mare.corsica/wp-content/uploads/2024/08/Maxime-Biaggi.jpg",
-    winnerName: "M_Biaggi",
   },
   {
     id: 32,

@@ -19,14 +19,12 @@ export const mangaList = [
     name: "Dragon Ball",
     image:
       "https://media.senscritique.com/media/000019266699/300/dragon_ball.png",
-    winnerName: "Dragon_B",
   },
   {
     id: 5,
     name: "Fullmetal Alchemist",
     image:
       "https://media.senscritique.com/media/000019266535/300/fullmetal_alchemist.jpg",
-    winnerName: "FullMetal",
   },
   {
     id: 6,
@@ -38,21 +36,18 @@ export const mangaList = [
     name: "Hunter x Hunter",
     image:
       "https://media.senscritique.com/media/000015537294/300/hunter_x_hunter.jpg",
-    winnerName: "Hunter",
   },
   {
     id: 8,
     name: "Black Butler",
     image:
       "https://media.senscritique.com/media/000020516337/300/black_butler.jpg",
-    winnerName: "B_Butler",
   },
   {
     id: 9,
     name: "20TH Century Boys",
     image:
       "https://media.senscritique.com/media/000020329437/300/20th_century_boys.png",
-    winnerName: "20th_Boys",
   },
   {
     id: 10,
@@ -65,14 +60,12 @@ export const mangaList = [
     name: "Vinland Saga",
     image:
       "https://media.senscritique.com/media/000018989944/300/vinland_saga.jpg",
-    winnerName: "Vinland_S",
   },
   {
     id: 12,
     name: "Demon Slayer",
     image:
       "https://media.senscritique.com/media/000019864764/300/demon_slayer.jpg",
-    winnerName: "D_Slayer",
   },
   {
     id: 13,
@@ -96,7 +89,6 @@ export const mangaList = [
     name: "Promised Neverland",
     image:
       "https://media.senscritique.com/media/000017375067/300/the_promised_neverland.jpg",
-    winnerName: "Neverland",
   },
   {
     id: 17,
@@ -119,14 +111,12 @@ export const mangaList = [
     name: "Jojo's Bizarre Adventure",
     image:
       "https://media.senscritique.com/media/000014687966/300/jojo_s_bizarre_adventure.jpg",
-    winnerName: "Jojo's",
   },
   {
     id: 21,
     name: "Detective Conan",
     image:
       "https://media.senscritique.com/media/000015642582/300/detective_conan.jpg",
-    winnerName: "Conan",
   },
   {
     id: 22,
@@ -170,7 +160,6 @@ export const mangaList = [
     name: "Jujutsu Kaisen",
     image:
       "https://media.senscritique.com/media/000018902881/300/jujutsu_kaisen.jpg",
-    winnerName: "Jujutsu",
   },
   {
     id: 30,

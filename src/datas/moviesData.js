@@ -40,7 +40,6 @@ export const moviesList = [
     name: "Requiem for a Dream",
     image:
       "https://a.ltrbxd.com/resized/sm/upload/lv/4b/f2/zj/muym4jTjdLx7E6as09d1wlC3sOB-0-1000-0-1500-crop.jpg?v=b4d5a4aa37",
-    winnerName: "Requiem",
   },
   {
     id: 8,
@@ -53,21 +52,18 @@ export const moviesList = [
     name: "The Truman Show",
     image:
       "https://a.ltrbxd.com/resized/sm/upload/xx/io/jp/45/the-truman-show-0-1000-0-1500-crop.jpg?v=704ba393f7",
-    winnerName: "Truman Show",
   },
   {
     id: 10,
     name: "Django Unchained",
     image:
       "https://a.ltrbxd.com/resized/film-poster/5/2/5/1/6/52516-django-unchained-0-1000-0-1500-crop.jpg?v=f02aed63a3",
-    winnerName: "Django",
   },
   {
     id: 11,
     name: "Dead Poets Society",
     image:
       "https://a.ltrbxd.com/resized/film-poster/5/1/8/4/6/51846-dead-poets-society-0-1000-0-1500-crop.jpg?v=9273e8acf7",
-    winnerName: "Dead Poets",
   },
   {
     id: 12,
@@ -86,7 +82,6 @@ export const moviesList = [
     name: "Ocean’s Eleven",
     image:
       "https://a.ltrbxd.com/resized/sm/upload/cq/zv/tn/d6/5ZfdSZeP4ZDJwA3Q17SpxV6wBjF-0-1000-0-1500-crop.jpg?v=f958fb5718",
-    winnerName: "Ocean's 11",
   },
   {
     id: 15,
@@ -99,7 +94,6 @@ export const moviesList = [
     name: "Avengers: Infinity War",
     image:
       "https://a.ltrbxd.com/resized/film-poster/2/2/6/6/6/1/226661-avengers-infinity-war-0-1000-0-1500-crop.jpg?v=8b35f60c0c",
-    winnerName: "Infinity War",
   },
   {
     id: 17,
@@ -130,7 +124,6 @@ export const moviesList = [
     name: "Howl’s Moving Castle",
     image:
       "https://a.ltrbxd.com/resized/film-poster/4/9/0/6/2/49062-howl-s-moving-castle-0-1000-0-1500-crop.jpg?v=fde81bda52",
-    winnerName: "Moving Castle",
   },
   {
     id: 22,
@@ -149,14 +142,12 @@ export const moviesList = [
     name: "KPop Demon Hunters",
     image:
       "https://a.ltrbxd.com/resized/film-poster/7/2/0/9/5/3/720953-kpop-demon-hunters-0-1000-0-1500-crop.jpg?v=10b7464274",
-    winnerName: "Demon Hunters",
   },
   {
     id: 25,
     name: "The Amazing Spider-Man",
     image:
       "https://a.ltrbxd.com/resized/film-poster/5/0/6/7/7/50677-the-amazing-spider-man-0-1000-0-1500-crop.jpg?v=2e109aabed",
-    winnerName: "Spider-Man",
   },
   {
     id: 26,
@@ -169,7 +160,6 @@ export const moviesList = [
     name: "The Silence of the Lambs",
     image:
       "https://a.ltrbxd.com/resized/film-poster/5/1/7/8/2/51782-the-silence-of-the-lambs-0-1000-0-1500-crop.jpg?v=18d88bdff4",
-    winnerName: " ",
   },
   {
     id: 28,

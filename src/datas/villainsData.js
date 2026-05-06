@@ -4,7 +4,6 @@ export const villainsList = [
     name: "Darth Vader",
     image:
       "https://sabrelaser-france.fr/cdn/shop/articles/dark-vador-sabre-laser-735172.jpg?v=1745845366",
-    winnerName: "Darth_V",
   },
   {
     id: 2,
@@ -53,7 +52,6 @@ export const villainsList = [
     id: 10,
     name: "Green Goblin",
     image: "https://i.redd.it/9y6fmb9m9i4b1.jpg",
-    winnerName: "G_Goblin",
   },
   {
     id: 11,
@@ -72,7 +70,6 @@ export const villainsList = [
     name: "Doctor Doom",
     image:
       "https://www.fredzone.org/wp-content/uploads/2025/04/Dr.-Doom-scaled-optimized.webp",
-    winnerName: "Dr_Doom",
   },
   {
     id: 14,
@@ -115,7 +112,6 @@ export const villainsList = [
     name: "Harley Quinn",
     image:
       "https://i.redd.it/the-joker-vs-harley-quinn-v0-6ez7chbkphff1.jpg?width=736&format=pjpg&auto=webp&s=93350caa5849cf43aa787cffe77cfa70295476d6",
-    winnerName: "H_Quinn",
   },
   {
     id: 21,
@@ -162,13 +158,11 @@ export const villainsList = [
     name: "Orochimaru",
     image:
       "https://static1.cbrimages.com/wordpress/wp-content/uploads/2017/07/Naruto-Orochimaru.jpg",
-    winnerName: "Orochima",
   },
   {
     id: 29,
     name: "Freddy Krueger",
     image: "https://elopinadero.com.co/wp-content/uploads/2024/12/fredy.jpg",
-    winnerName: "Freddy_K",
   },
   {
     id: 30,
@@ -187,6 +181,5 @@ export const villainsList = [
     name: "Hannibal Lecter",
     image:
       "https://static.wikia.nocookie.net/the-dead-meat/images/e/e8/Hannibal_Lecter.webp",
-    winnerName: "Hannibal",
   },
 ];

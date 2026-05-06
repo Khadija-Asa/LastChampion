@@ -4,14 +4,12 @@ export const retroList = [
     name: "Super Mario Bros",
     image:
       "https://media.senscritique.com/media/000018785288/300/super_mario_bros.png",
-    winnerName: "S_Mario",
   },
   {
     id: 2,
     name: "The Legend of Zelda",
     image:
       "https://media.senscritique.com/media/000017817342/300/the_legend_of_zelda_a_link_to_the_past.png",
-    winnerName: "Zelda",
   },
   {
     id: 3,
@@ -29,21 +27,18 @@ export const retroList = [
     name: "Donkey Kong",
     image:
       "https://media.senscritique.com/media/000017817300/300/donkey_kong_country.png",
-    winnerName: "Donkey_K",
   },
   {
     id: 6,
     name: "Street Fighter II",
     image:
       "https://media.senscritique.com/media/000007579795/300/street_fighter_ii.png",
-    winnerName: "S_Fighter",
   },
   {
     id: 7,
     name: "Sonic the Hedgehog",
     image:
       "https://media.senscritique.com/media/000016438939/300/sonic_the_hedgehog_2.jpg",
-    winnerName: "Sonic",
   },
   {
     id: 8,
@@ -56,14 +51,12 @@ export const retroList = [
     name: "Mega Man 2",
     image:
       "https://media.senscritique.com/media/000019942625/300/mega_man_dos.jpg",
-    winnerName: "Mega Man",
   },
   {
     id: 10,
     name: "Final Fantasy VI",
     image:
       "https://m.media-amazon.com/images/M/MV5BNjY1NzY1N2ItZjczMy00YjM1LTk0ZDMtODFiOTMyMzczNTIyXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
-    winnerName: "F_Fantasy",
   },
   {
     id: 11,
@@ -75,34 +68,29 @@ export const retroList = [
     name: "Castlevania",
     image:
       "https://upload.wikimedia.org/wikipedia/en/5/51/Castlevania_1_cover.png",
-    winnerName: "Castle_V",
   },
   {
     id: 13,
     name: "Wario Land 3",
     image: "https://howlongtobeat.com/games/11063_Wario_Land_3.png",
-    winnerName: "Wario Land",
   },
   {
     id: 14,
     name: "Chrono Trigger",
     image:
       "https://m.media-amazon.com/images/M/MV5BMGNlNzNjMjEtZGJkNi00MzVkLThjN2UtOGVjMjk1Y2UxMDZhXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
-    winnerName: "C_Trigger",
   },
   {
     id: 15,
     name: "EarthBound",
     image:
       "https://media.senscritique.com/media/000022203476/300/earthbound_beginnings.png",
-    winnerName: "Earth_B",
   },
   {
     id: 16,
     name: "Super Mario 64",
     image:
       "https://m.media-amazon.com/images/M/MV5BNjhmNzg4ZTMtNWVhMy00NjgwLThhZjUtZjY4ZmU2YTVhYjUwXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
-    winnerName: "S_Mario 64",
   },
   {
     id: 17,
@@ -126,42 +114,36 @@ export const retroList = [
     name: "Resident Evil",
     image:
       "https://i.etsystatic.com/15717345/r/il/868279/5154736634/il_fullxfull.5154736634_grej.jpg",
-    winnerName: "Resid_Evil",
   },
   {
     id: 21,
     name: "Dragon Quest III",
     image:
       "https://media.senscritique.com/media/000007258160/300/dragon_quest_iii_the_seeds_of_salvation.png",
-    winnerName: "Dragon_Q",
   },
   {
     id: 22,
     name: "Mortal Kombat II",
     image:
       "https://media.senscritique.com/media/000006920923/0/mortal_kombat_ii.jpg",
-    winnerName: "M_Kombat",
   },
   {
     id: 23,
     name: "Super Mario World",
     image:
       "https://media.senscritique.com/media/000017818099/300/super_mario_world.png",
-    winnerName: "S_Mario",
   },
   {
     id: 24,
     name: "NBA Jam T.E. ",
     image:
       "https://media.senscritique.com/media/000017718237/0/nba_jam_t_e.jpg",
-    winnerName: "NBA_Jam",
   },
   {
     id: 25,
     name: "Punch-Out!!",
     image:
       "https://media.senscritique.com/media/000008292356/300/super_punch_out.png",
-    winnerName: "Punch-out",
   },
   {
     id: 26,
@@ -185,13 +167,11 @@ export const retroList = [
     name: "Kirby's Adventure",
     image:
       "https://media.senscritique.com/media/000016224073/300/kirby_s_adventure.jpg",
-    winnerName: "Kirby",
   },
   {
     id: 30,
     name: "Gunstar Heroes",
     image: "https://upload.wikimedia.org/wikipedia/en/8/80/Gunstar_Heroes.jpg",
-    winnerName: "Gunstar_H",
   },
   {
     id: 31,
@@ -204,6 +184,5 @@ export const retroList = [
     name: "Teenage Mutant Ninja Turtles",
     image:
       "https://media.senscritique.com/media/000006915931/300/teenage_mutant_hero_turtles.jpg",
-    winnerName: "N_Turtles",
   },
 ];
