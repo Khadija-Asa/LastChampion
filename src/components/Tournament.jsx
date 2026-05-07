@@ -57,6 +57,15 @@ const Tournament = ({ data }) => {
   const finalOverlayRef = useRef(null);
   const newWinnerCardRef = useRef(null);
   const [finalAnimating, setFinalAnimating] = useState(false);
+  const [isExiting, setIsExiting] = useState(false);
+
+  const transitionTo = (fn, delay = 400) => {
+    setIsExiting(true);
+    setTimeout(() => {
+      fn();
+      setIsExiting(false);
+    }, delay);
+  };
   const [finalWinner, setFinalWinner] = useState(null);
   const [showShare, setShowShare] = useState(false);
   const [shareTarget, setShareTarget] = useState(null);
@@ -245,9 +254,11 @@ const Tournament = ({ data }) => {
     for (let i = 0; i < shuffled.length; i += 2) {
       initialDuels.push([shuffled[i], shuffled[i + 1]]);
     }
-    setRound(initialDuels);
-    setStep("battle");
-    setDuelIndex(0);
+    transitionTo(() => {
+      setRound(initialDuels);
+      setStep("battle");
+      setDuelIndex(0);
+    });
   };
 
   // handle votes
@@ -256,23 +267,29 @@ const Tournament = ({ data }) => {
 
     if (round.length === 1) {
       if (updatedNextRound.length === 1) {
-        setWinner(updatedNextRound[0]);
-        setStep("winner");
+        transitionTo(() => {
+          setWinner(updatedNextRound[0]);
+          setStep("winner");
+        });
       } else {
-        const duels = [];
-        for (let i = 0; i < updatedNextRound.length; i += 2) {
-          duels.push([updatedNextRound[i], updatedNextRound[i + 1]]);
-        }
-        setRound(duels);
-        setNextRound([]);
-        setDuelIndex(0);
+        transitionTo(() => {
+          const duels = [];
+          for (let i = 0; i < updatedNextRound.length; i += 2) {
+            duels.push([updatedNextRound[i], updatedNextRound[i + 1]]);
+          }
+          setRound(duels);
+          setNextRound([]);
+          setDuelIndex(0);
+        });
       }
     } else {
-      const remaining = [...round];
-      remaining.shift();
-      setRound(remaining);
-      setNextRound(updatedNextRound);
-      setDuelIndex((prev) => prev + 1);
+      transitionTo(() => {
+        const remaining = [...round];
+        remaining.shift();
+        setRound(remaining);
+        setNextRound(updatedNextRound);
+        setDuelIndex((prev) => prev + 1);
+      });
     }
   };
 
@@ -500,7 +517,7 @@ const Tournament = ({ data }) => {
   };
 
   return (
-    <section className="tournament_wrapper">
+    <section className={`tournament_wrapper${isExiting ? " screen_exit" : ""}`}>
       {/* share modal */}
       {showShare && shareTarget && (
         <div className="share_overlay" onClick={() => setShowShare(false)}>
