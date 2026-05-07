@@ -1219,6 +1219,23 @@
   align-items: center;
   gap: 1.5rem;
   position: relative;
+  width: min(90vw, 360px);
+}
+
+@media (max-width: 480px) {
+  .share_modal {
+    padding: 1.8rem 1.2rem;
+  }
+
+  .share_networks {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .share_network_btn {
+    min-width: 4rem;
+    padding: 0.8rem 0.8rem;
+  }
 }
 
 .share_modal_close {
@@ -1243,6 +1260,54 @@
   text-transform: uppercase;
   letter-spacing: 0.25em;
   color: rgba(255, 255, 255, 0.4);
+}
+
+.confirm_text {
+  font-size: 0.55rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: rgba(255, 255, 255, 0.3);
+  margin-top: 0.4rem;
+}
+
+.confirm_actions {
+  display: flex;
+  gap: 0.8rem;
+  margin-top: 1.2rem;
+}
+
+.confirm_btn {
+  flex: 1;
+  padding: 0.5rem 1rem;
+  font-family: 'VCR';
+  font-size: 0.55rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  cursor: pointer;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.confirm_cancel {
+  background: transparent;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.confirm_quit {
+  background: var(--White);
+  color: var(--Black);
+  border-color: var(--White);
+}
+
+@media (hover: hover) {
+  .confirm_cancel:hover {
+    background: rgba(255, 255, 255, 0.08);
+    color: var(--White);
+  }
+  .confirm_quit:hover {
+    background: transparent;
+    color: var(--White);
+  }
 }
 
 .share_networks {

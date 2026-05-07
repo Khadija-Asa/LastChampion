@@ -59,12 +59,14 @@ const Tournament = ({ data }) => {
   const newWinnerCardRef = useRef(null);
   const [finalAnimating, setFinalAnimating] = useState(false);
   const [isExiting, setIsExiting] = useState(false);
+  const [showConfirm, setShowConfirm] = useState(false);
 
   const transitionTo = (fn, delay = 400) => {
     setIsExiting(true);
     setTimeout(() => {
       fn();
       setIsExiting(false);
+      window.scrollTo({ top: 0, behavior: "instant" });
     }, delay);
   };
   const [finalWinner, setFinalWinner] = useState(null);
@@ -74,6 +76,11 @@ const Tournament = ({ data }) => {
   const [shareVisible, setShareVisible] = useState(false);
 
   const siteUrl = "https://khadija-asa.github.io/LastChampion/";
+
+  useEffect(() => {
+    document.body.style.overflow = (showShare || showConfirm) ? "hidden" : "";
+    return () => { document.body.style.overflow = ""; };
+  }, [showShare, showConfirm]);
 
   const handleShare = (name) => {
     setShareTarget(name);
@@ -563,6 +570,24 @@ const Tournament = ({ data }) => {
         </div>
       )}
 
+      {/* confirm quit modal */}
+      {showConfirm && (
+        <div className="share_overlay" onClick={() => setShowConfirm(false)}>
+          <div className="share_modal" onClick={(e) => e.stopPropagation()}>
+            <p className="share_modal_title">Quitter le tournoi ?</p>
+            <p className="confirm_text">Ta progression sera perdue.</p>
+            <div className="confirm_actions">
+              <button className="confirm_btn confirm_cancel" onClick={() => setShowConfirm(false)}>
+                Continuer
+              </button>
+              <button className="confirm_btn confirm_quit" onClick={() => navigate("/")}>
+                Quitter
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
       {/* mute button */}
       <button className="mute_button" onClick={toggleMute}>
         {isMuted ? <FaVolumeMute /> : <FaVolumeUp />}
@@ -651,17 +676,17 @@ const Tournament = ({ data }) => {
           className={`battle_wrapper ${themeClass} ${isFinal ? "final_battle" : ""}`}
         >
           {/* back button */}
-          <button
-            className={`back_button ${finalWinner ? "back_button_final" : ""}`}
-            style={finalWinner ? { zIndex: 20 } : {}}
-          >
-            <Link to="/">
-              <span className="blink">
-                <FaLongArrowAltLeft />
-              </span>
-              {finalWinner ? "PLAY AGAIN" : "MENU"}
-            </Link>
-          </button>
+          {finalWinner ? (
+            <button className="back_button back_button_final" style={{ zIndex: 20 }}>
+              <Link to="/">
+                <span className="blink"><FaLongArrowAltLeft /></span>PLAY AGAIN
+              </Link>
+            </button>
+          ) : (
+            <button className="back_button" onClick={() => setShowConfirm(true)}>
+              <span className="blink"><FaLongArrowAltLeft /></span>MENU
+            </button>
+          )}
 
           {/* share button */}
           {finalWinner && shareVisible && (
