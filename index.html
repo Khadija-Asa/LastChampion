@@ -49,29 +49,15 @@
 
     <link rel="icon" href="/src/assets/versus.svg" type="image/svg+xml" />
 
-    <!-- Preload critical fonts to break CSS → font chain -->
-    <link
-      rel="preload"
-      href="/src/fonts/Coolvetica/Coolvetica.otf"
-      as="font"
-      type="font/otf"
-      crossorigin
-    />
-    <link
-      rel="preload"
-      href="/src/fonts/vcr/SUPER-VCR_MONO.ttf"
-      as="font"
-      type="font/ttf"
-      crossorigin
-    />
-
-    <!-- Preload LCP background image -->
-    <link
-      rel="preload"
-      href="/src/assets/arena_bg.avif"
-      as="image"
-      type="image/avif"
-    />
+    <!-- DNS prefetch for external image CDNs -->
+    <link rel="dns-prefetch" href="https://cdn.nba.com" />
+    <link rel="dns-prefetch" href="https://upload.wikimedia.org" />
+    <link rel="dns-prefetch" href="https://static.wikia.nocookie.net" />
+    <link rel="dns-prefetch" href="https://images.alphacoders.com" />
+    <link rel="dns-prefetch" href="https://www.smitefire.com" />
+    <link rel="preconnect" href="https://cdn.nba.com" crossorigin />
+    <link rel="preconnect" href="https://upload.wikimedia.org" crossorigin />
+    <link rel="preconnect" href="https://images.alphacoders.com" crossorigin />
 
     <title>LastChampion - Who's gonna win ?</title>
   </head>
