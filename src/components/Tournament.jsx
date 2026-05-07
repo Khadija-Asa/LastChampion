@@ -83,6 +83,14 @@ const Tournament = ({ data }) => {
   }, [showShare, showConfirm]);
 
   const handleShare = (name) => {
+    if (isMobileDevice && navigator.share) {
+      navigator.share({
+        title: "Last Champion",
+        text: `Mon champion est ${name} ! Quel sera le tien ?`,
+        url: siteUrl,
+      }).catch(() => {});
+      return;
+    }
     setShareTarget(name);
     setShowShare(true);
     setCopied(false);
@@ -301,6 +309,10 @@ const Tournament = ({ data }) => {
   // selection cards entrance
   useEffect(() => {
     if (step !== "selection") return;
+    if (isMobileDevice) {
+      gsap.set(".card_wrapper", { opacity: 1 });
+      return;
+    }
     const tween = gsap.fromTo(
       ".card_wrapper",
       { y: 50, opacity: 0, scale: 0.85 },
@@ -637,9 +649,16 @@ const Tournament = ({ data }) => {
                 style={{ width: `${(selected.length / 8) * 100}%` }}
               />
             </div>
-            <button className="random_pick_btn" onClick={handleRandomSelect}>
-              Random
-            </button>
+            <div className="selection_actions">
+              <button className="random_pick_btn" onClick={handleRandomSelect}>
+                Random
+              </button>
+              {selected.length > 0 && (
+                <button className="reset_pick_btn" onClick={() => setSelected([])}>
+                  Reset
+                </button>
+              )}
+            </div>
           </div>
 
           {/* grid */}

@@ -433,7 +433,6 @@
 }
 
 .random_pick_btn {
-  margin-top: 1rem;
   padding: 0.4rem 1.2rem;
   background: transparent;
   border: 1px solid rgba(255, 255, 255, 0.25);
@@ -449,10 +448,40 @@
   animation-delay: 0.6s;
 }
 
+.selection_actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  margin-top: 1rem;
+}
+
+.random_pick_btn {
+  margin-top: 0;
+}
+
+.reset_pick_btn {
+  padding: 0.4rem 1.2rem;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: rgba(255, 255, 255, 0.35);
+  font-family: 'VCR';
+  font-size: clamp(0.5rem, 0.4rem + 0.4vw, 0.65rem);
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  cursor: pointer;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
 @media (hover: hover) {
   .random_pick_btn:hover {
     border-color: rgba(255, 255, 255, 0.6);
     color: var(--White);
+  }
+
+  .reset_pick_btn:hover {
+    border-color: rgba(255, 255, 255, 0.4);
+    color: rgba(255, 255, 255, 0.7);
   }
 }
 

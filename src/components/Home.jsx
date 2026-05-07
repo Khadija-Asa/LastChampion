@@ -108,6 +108,7 @@ export default function Home() {
   useEffect(() => {
     if (!isLoading) {
       if (isMobile) return;
+      const randomBtn = document.querySelector(".random-btn-container");
       const tl = gsap.timeline({ delay: 1, ease: "power3.out" });
 
       tl.from(".social-link", {
@@ -116,15 +117,22 @@ export default function Home() {
         scale: 0.5,
         stagger: 0.2,
         duration: 0.8,
-      }).to(
-        ".social-link",
-        {
-          rotation: 360,
-          duration: 1,
-          ease: "back.out(1.7)",
-        },
-        "-=0.5",
-      );
+      })
+        .fromTo(
+          randomBtn,
+          { opacity: 0, y: 12 },
+          { opacity: 1, y: 0, duration: 0.8, ease: "power3.out" },
+          "<",
+        )
+        .to(
+          ".social-link",
+          {
+            rotation: 360,
+            duration: 1,
+            ease: "back.out(1.7)",
+          },
+          "-=0.5",
+        );
     }
   }, [isLoading]);
 
@@ -302,6 +310,7 @@ export default function Home() {
       "/movies",
       "/football-players",
       "/fifa26-clubs",
+      "/basketball-players",
     ];
 
     const randomTheme = themes[Math.floor(Math.random() * themes.length)];
