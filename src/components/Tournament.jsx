@@ -290,6 +290,11 @@ const Tournament = ({ data }) => {
     }
   }, [selected]);
 
+  const handleRandomSelect = () => {
+    const shuffled = shuffleArray(data);
+    setSelected(shuffled.slice(0, 8));
+  };
+
   const isFinal =
     step === "battle" && round.length > 0 && round.length + duelIndex === 1;
 
@@ -564,6 +569,9 @@ const Tournament = ({ data }) => {
                 style={{ width: `${(selected.length / 8) * 100}%` }}
               />
             </div>
+            <button className="random_pick_btn" onClick={handleRandomSelect}>
+              Random
+            </button>
           </div>
 
           {/* grid */}
