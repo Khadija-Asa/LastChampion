@@ -9,19 +9,19 @@ export const fifaList = [
     id: 2,
     name: "Ajax Amsterdam",
     image:
-      "https://upload.wikimedia.org/wikipedia/en/thumb/0/01/AFC_Ajax_crest.svg/250px-AFC_Ajax_crest.svg.png",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Logo_AFC_Ajax_%281928-1991%2C_2025-%29.png/250px-Logo_AFC_Ajax_%281928-1991%2C_2025-%29.png",
   },
   {
     id: 3,
     name: "Manchester City",
     image:
-      "https://upload.wikimedia.org/wikipedia/en/thumb/e/eb/Manchester_City_FC_badge.svg/1200px-Manchester_City_FC_badge.svg.png",
+      "https://upload.wikimedia.org/wikipedia/fr/thumb/b/ba/Logo_Manchester_City_2016.svg/langfr-250px-Logo_Manchester_City_2016.svg.png",
   },
   {
     id: 4,
     name: "Liverpool FC",
     image:
-      "https://upload.wikimedia.org/wikipedia/fr/thumb/e/ef/Logo_Liverpool_FC_2012.svg/625px-Logo_Liverpool_FC_2012.svg.png",
+      "https://upload.wikimedia.org/wikipedia/fr/thumb/e/ef/Logo_Liverpool_FC_2012.svg/langfr-120px-Logo_Liverpool_FC_2012.svg.png",
   },
   {
     id: 5,
@@ -33,7 +33,7 @@ export const fifaList = [
     id: 6,
     name: "Chelsea FC",
     image:
-      "https://upload.wikimedia.org/wikipedia/en/thumb/c/cc/Chelsea_FC.svg/1200px-Chelsea_FC.svg.png",
+      "https://upload.wikimedia.org/wikipedia/fr/thumb/5/51/Logo_Chelsea.svg/langfr-250px-Logo_Chelsea.svg.png",
   },
   {
     id: 7,
@@ -45,7 +45,7 @@ export const fifaList = [
     id: 8,
     name: "Tottenham Hotspur",
     image:
-      "https://upload.wikimedia.org/wikipedia/en/thumb/b/b4/Tottenham_Hotspur.svg/130px-Tottenham_Hotspur.svg.png",
+      "https://upload.wikimedia.org/wikipedia/en/thumb/b/b4/Tottenham_Hotspur.svg/960px-Tottenham_Hotspur.svg.png",
   },
   {
     id: 9,
@@ -81,13 +81,13 @@ export const fifaList = [
     id: 14,
     name: "Real Madrid",
     image:
-      "https://upload.wikimedia.org/wikipedia/en/thumb/5/56/Real_Madrid_CF.svg/893px-Real_Madrid_CF.svg.png",
+      "https://upload.wikimedia.org/wikipedia/en/thumb/5/56/Real_Madrid_CF.svg/250px-Real_Madrid_CF.svg.png",
   },
   {
     id: 15,
     name: "Juventus",
     image:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/Juventus_FC_-_logo_black_%28Italy%2C_2020%29.svg/130px-Juventus_FC_-_logo_black_%28Italy%2C_2020%29.svg.png",
+      "https://upload.wikimedia.org/wikipedia/commons/e/ed/Juventus_FC_-_logo_black_%28Italy%2C_2020%29.svg",
   },
   {
     id: 16,
@@ -111,13 +111,13 @@ export const fifaList = [
     id: 19,
     name: "Sevilla FC",
     image:
-      "https://upload.wikimedia.org/wikipedia/en/thumb/3/3b/Sevilla_FC_logo.svg/170px-Sevilla_FC_logo.svg.png",
+      "https://upload.wikimedia.org/wikipedia/fr/thumb/8/8d/Logo_S%C3%A9ville_FC.svg/1280px-Logo_S%C3%A9ville_FC.svg.png",
   },
   {
     id: 20,
     name: "Real Sociedad",
     image:
-      "https://upload.wikimedia.org/wikipedia/en/thumb/f/f1/Real_Sociedad_logo.svg/185px-Real_Sociedad_logo.svg.png",
+      "https://upload.wikimedia.org/wikipedia/en/thumb/f/f1/Real_Sociedad_logo.svg/1280px-Real_Sociedad_logo.svg.png",
   },
   {
     id: 21,
@@ -189,6 +189,6 @@ export const fifaList = [
     id: 32,
     name: "Manchester United",
     image:
-      "https://upload.wikimedia.org/wikipedia/fr/thumb/5/5b/Logo_Manchester_United_FC.svg/1184px-Logo_Manchester_United_FC.svg.png",
+      "https://upload.wikimedia.org/wikipedia/fr/thumb/5/5b/Logo_Manchester_United_FC.svg/langfr-250px-Logo_Manchester_United_FC.svg.png",
   },
 ];

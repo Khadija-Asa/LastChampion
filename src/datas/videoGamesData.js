@@ -3,7 +3,7 @@ export const videoGamesList = [
     id: 1,
     name: "The Legend of Zelda",
     image:
-      "https://cdn.hobbyconsolas.com/sites/navi.axelspringer.es/public/media/image/2025/06/todos-juegos-legend-zelda-peor-mejor-orden-recomendado-jugar-toda-saga-4339372.jpg?tf=3840x",
+      "https://www.reference-gaming.com/assets/media/other/63ebb810bcc9f.webp?format=others",
   },
   {
     id: 2,
@@ -75,7 +75,7 @@ export const videoGamesList = [
     id: 13,
     name: "Skyrim",
     image:
-      "https://3238leblogdemarvelll-1278.kxcdn.com/wp-content/uploads/2011/12/The-Elder-Scrolls-V-Skyrim-banniere.jpg",
+      "https://static.actugaming.net/media/2016/03/the-elder-scrolls-skyrim-game-cover.jpg",
   },
   {
     id: 14,
@@ -113,9 +113,9 @@ export const videoGamesList = [
   },
   {
     id: 20,
-    name: "Animal Crossing: New Horizons",
+    name: "Uncharted",
     image:
-      "https://www.lacremedugaming.fr/wp-content/uploads/creme-gaming/2025/08/telechargements-gratuits-animal-crossing-depechez-vous-vous-navez-plus-que-quelques-jours.png",
+      "https://gmedia.playstation.com/is/image/SIEPDC/uncharted-hub-listing-thumb-en-16aug21?$facebook$",
   },
   {
     id: 21,

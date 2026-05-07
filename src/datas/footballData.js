@@ -129,7 +129,7 @@ export const footballList = [
     id: 22,
     name: "Neymar Jr",
     image:
-      "https://s.yimg.com/ny/api/res/1.2/Mm.oBHTlte8f47h8RUUSrg--/YXBwaWQ9aGlnaGxhbmRlcjt3PTEyNDI7aD02OTk7Y2Y9d2VicA--/https://media.zenfs.com/fr/goal_fr_797/dc67e50f362cfea48f1b4c45c29dd50c",
+      "https://medias.lequipe.fr/img-photo-jpg/neymar/1500000001474576/0:100,2350:1665-3150-2363-75/5bc21.jpg",
   },
   {
     id: 23,

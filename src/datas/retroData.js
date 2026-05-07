@@ -107,7 +107,7 @@ export const retroList = [
     id: 19,
     name: "Pokemon",
     image:
-      "https://dbknews.s3.amazonaws.com/uploads/2019/05/2014-05-ef3aaaeb0923b3d5cf74766e8d63d39f-2.png",
+      "https://www.cdiscount.com/pdt2/7/2/3/1/400x400/nin0045496460723/rw/pokemon-rouge-game-boy.jpg",
   },
   {
     id: 20,

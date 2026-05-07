@@ -27,9 +27,17 @@ const Onepiece = lazy(() => import("./components/Onepiece"));
 const Movies = lazy(() => import("./components/Movies"));
 const Series = lazy(() => import("./components/Series"));
 const Football = lazy(() => import("./components/Football"));
+const Basketball = lazy(() => import("./components/Basketball"));
 const Fortnite = lazy(() => import("./components/Fortnite"));
 const Legal = lazy(() => import("./components/LegalMentions"));
 const NotFound = lazy(() => import("./components/NotFound"));
+
+const noImageSrc = `${import.meta.env.BASE_URL}no-image.svg`;
+document.addEventListener('error', (e) => {
+  if (e.target.tagName === 'IMG' && e.target.src !== noImageSrc) {
+    e.target.src = noImageSrc;
+  }
+}, true);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
@@ -60,6 +68,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
           <Route path="/movies" element={<Movies />} />
           <Route path="/series" element={<Series />} />
           <Route path="/football-players" element={<Football />} />
+          <Route path="/basketball-players" element={<Basketball />} />
           <Route path="/fortnite-skins" element={<Fortnite />} />
           <Route path="/mentions-legales" element={<Legal />} />
           <Route path="*" element={<NotFound />} />

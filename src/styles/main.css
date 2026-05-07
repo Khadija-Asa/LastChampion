@@ -118,3 +118,8 @@ html,
     transform: translateY(0);
   }
 }
+
+img[src*="no-image"] {
+  object-fit: contain !important;
+  background: #111;
+}

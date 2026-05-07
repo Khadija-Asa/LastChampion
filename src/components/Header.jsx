@@ -56,6 +56,7 @@ const Header = () => {
         { to: "/animes", label: "Anime", word: "anime" },
         { to: "/manga", label: "Manga", word: "manga" },
         { to: "/movies", label: "Movies", word: "movies" },
+        { to: "/pokemons", label: "Pokemon", word: "pokemon" },
         { to: "/series", label: "Series", word: "series" },
         {
           to: "/youtubers-streamers",
@@ -67,6 +68,11 @@ const Header = () => {
     {
       label: "Sports & E-Sport",
       items: [
+        {
+          to: "/basketball-players",
+          label: "Basketball Players",
+          word: "basketball players",
+        },
         {
           to: "/esport-players",
           label: "Esport Players",
@@ -95,7 +101,6 @@ const Header = () => {
           word: "OG fortnite skins",
         },
         { to: "/game-consoles", label: "Game Consoles", word: "game consoles" },
-        { to: "/pokemons", label: "Pokemon", word: "pokemon" },
         { to: "/retro-games", label: "Retro Games", word: "retro games" },
         { to: "/streetfighter", label: "StreetFighter", word: "streetfighter" },
         {
