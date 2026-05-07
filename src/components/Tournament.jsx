@@ -298,6 +298,25 @@ const Tournament = ({ data }) => {
     }
   };
 
+  // selection cards entrance
+  useEffect(() => {
+    if (step !== "selection") return;
+    const tween = gsap.fromTo(
+      ".card_wrapper",
+      { y: 50, opacity: 0, scale: 0.85 },
+      {
+        y: 0,
+        opacity: 1,
+        scale: 1,
+        duration: 0.5,
+        ease: "back.out(1.4)",
+        stagger: { amount: 1.0, grid: "auto", from: "start" },
+        delay: 0.25,
+      },
+    );
+    return () => tween.kill();
+  }, [step]);
+
   useEffect(() => {
     if (selected.length === 8 && startButtonRef.current) {
       startButtonRef.current.scrollIntoView({ behavior: "smooth" });
@@ -629,7 +648,6 @@ const Tournament = ({ data }) => {
               <div
                 key={item.id}
                 className="card_wrapper"
-                style={{ animationDelay: `${Math.min(index * 40, 500)}ms` }}
               >
                 <TiltCard
                   className={`card card_glass ${selected.includes(item) ? "selected" : ""} ${selected.length === 8 && !selected.includes(item) ? "card_disabled" : ""}`}

@@ -513,10 +513,6 @@
 
 .card_wrapper {
   opacity: 0;
-  animation-name: slideUp;
-  animation-fill-mode: forwards;
-  animation-duration: 0.5s;
-  animation-timing-function: ease-out;
 }
 
 .card_glass {
