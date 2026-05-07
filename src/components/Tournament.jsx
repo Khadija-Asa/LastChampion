@@ -11,6 +11,7 @@ import {
   FaVolumeMute,
   FaWhatsapp,
   FaSnapchatGhost,
+  FaInstagram,
 } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 
@@ -80,15 +81,12 @@ const Tournament = ({ data }) => {
     setCopied(false);
   };
 
-  const handleSnapchat = () => {
+  const handleClipboardOpen = (url) => {
     const text = `Mon champion est ${shareTarget} ! Quel sera le tien ? ${siteUrl}`;
     navigator.clipboard.writeText(text).then(() => {
-      setCopied(true);
+      setCopied(url);
       setTimeout(() => {
-        window.open(
-          isMobileDevice ? "snapchat://" : "https://www.snapchat.com",
-          "_blank",
-        );
+        window.open(url, "_blank");
         setShowShare(false);
         setCopied(false);
       }, 800);
@@ -548,8 +546,17 @@ const Tournament = ({ data }) => {
               >
                 <FaWhatsapp size={24} /> WhatsApp
               </a>
-              <button className="share_network_btn" onClick={handleSnapchat}>
-                <FaSnapchatGhost size={24} /> {copied ? "Copié !" : "Snapchat"}
+              <button
+                className="share_network_btn"
+                onClick={() => handleClipboardOpen(isMobileDevice ? "snapchat://" : "https://www.snapchat.com")}
+              >
+                <FaSnapchatGhost size={24} /> {copied === (isMobileDevice ? "snapchat://" : "https://www.snapchat.com") ? "Copié !" : "Snapchat"}
+              </button>
+              <button
+                className="share_network_btn"
+                onClick={() => handleClipboardOpen(isMobileDevice ? "instagram://" : "https://www.instagram.com")}
+              >
+                <FaInstagram size={24} /> {copied === (isMobileDevice ? "instagram://" : "https://www.instagram.com") ? "Copié !" : "Instagram"}
               </button>
             </div>
           </div>
