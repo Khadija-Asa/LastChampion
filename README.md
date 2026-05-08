@@ -4,7 +4,7 @@
 
 LastChampion est une application de tournoi en élimination directe. Choisis 8 personnages parmi un thème, fais-les s'affronter en 1v1 et découvre qui sera le dernier champion.
 
-🔗 [lastchampion.live](https://khadija-asa.github.io/LastChampion/)
+🔗 [lastchampion.fr](https://lastchampion.fr)
 
 ---
 

@@ -75,7 +75,7 @@ const Tournament = ({ data }) => {
   const [copied, setCopied] = useState(false);
   const [shareVisible, setShareVisible] = useState(false);
 
-  const siteUrl = "https://khadija-asa.github.io/LastChampion/";
+  const siteUrl = "https://lastchampion.fr";
 
   useEffect(() => {
     document.body.style.overflow = (showShare || showConfirm) ? "hidden" : "";
