@@ -85,3 +85,7 @@ public/
 
 **Khadidja Aït Si Ali**  
 [LinkedIn](https://www.linkedin.com/in/khadidja-ait-si-ali/) · [Portfolio](https://khadidja-dev.fr)
+
+---
+
+> Fan project — non-commercial. All images belong to their respective owners.

@@ -2,170 +2,161 @@ export const onepieceList = [
   {
     id: 1,
     name: "Kaido",
-    image: "https://images.alphacoders.com/932/thumb-1920-932950.jpg",
+    image: "https://static.wikia.nocookie.net/onepiece/images/2/2d/Kaidou_Anime_Infobox.png/revision/latest/scale-to-width-down/400?cb=20231102015517",
   },
   {
     id: 2,
     name: "Roronoa Zoro",
-    image:
-      "https://w0.peakpx.com/wallpaper/507/506/HD-wallpaper-one-piece-roronoa-zoro.jpg",
+    image: "https://static.wikia.nocookie.net/onepiece/images/5/52/Roronoa_Zoro_Anime_Post_Timeskip_Infobox.png/revision/latest/scale-to-width-down/400?cb=20241029161719",
   },
   {
     id: 3,
     name: "Nami",
-    image: "https://images5.alphacoders.com/136/thumb-1920-1364786.png",
+    image: "https://static.wikia.nocookie.net/onepiece/images/6/68/Nami_Anime_Post_Timeskip_Infobox.png/revision/latest/scale-to-width-down/400?cb=20260315214841",
   },
   {
     id: 4,
     name: "Sanji",
-    image: "https://fond-ecran-anime.fr/image/sanji-anime-wallpaper-34-HD.jpg",
+    image: "https://static.wikia.nocookie.net/onepiece/images/b/b6/Sanji_Anime_Post_Timeskip_Infobox.png/revision/latest/scale-to-width-down/400?cb=20240122012744",
   },
   {
     id: 5,
     name: "Nico Robin",
-    image: "https://images3.alphacoders.com/135/thumb-1920-1355322.jpeg",
+    image: "https://static.wikia.nocookie.net/onepiece/images/b/bc/Nico_Robin_Anime_Post_Timeskip_Infobox.png/revision/latest/scale-to-width-down/400?cb=20190202051257",
   },
   {
     id: 6,
     name: "D. Ace",
-    image: "https://images.alphacoders.com/139/thumb-1920-1394713.png",
+    image: "https://static.wikia.nocookie.net/onepiece/images/4/4f/Portgas_D._Ace_Anime_Infobox.png/revision/latest/scale-to-width-down/400?cb=20240629132600",
   },
   {
     id: 7,
     name: "Trafalgar Law",
-    image:
-      "https://media.printler.com/media/photo/188893.jpg?rmode=crop&width=725&height=1024",
+    image: "https://static.wikia.nocookie.net/onepiece/images/4/4d/Trafalgar_D._Water_Law_Anime_Post_Timeskip_Infobox.png/revision/latest/scale-to-width-down/400?cb=20230124163510",
   },
   {
     id: 8,
     name: "Boa Hancock",
-    image: "https://images6.alphacoders.com/139/1398023.png",
+    image: "https://static.wikia.nocookie.net/onepiece/images/f/f0/Boa_Hancock_Anime_Infobox.png/revision/latest/scale-to-width-down/400?cb=20230126022456",
   },
   {
     id: 9,
     name: "Shanks le Roux",
-    image:
-      "https://w0.peakpx.com/wallpaper/653/884/HD-wallpaper-one-piece-film-red-reveals-power-of-shanks-his-crew-shanks-bounty.jpg",
+    image: "https://static.wikia.nocookie.net/onepiece/images/6/66/Shanks_Anime_Infobox.png/revision/latest/scale-to-width-down/400?cb=20240829145447",
   },
   {
     id: 10,
     name: "Brook",
-    image: "https://images.alphacoders.com/138/thumb-1920-1381546.png",
+    image: "https://static.wikia.nocookie.net/onepiece/images/4/41/Brook_Anime_Post_Timeskip_Infobox.png/revision/latest/scale-to-width-down/400?cb=20161016160925",
   },
   {
     id: 11,
     name: "Franky",
-    image: "https://images2.alphacoders.com/790/790631.png",
+    image: "https://static.wikia.nocookie.net/onepiece/images/8/8c/Franky_Anime_Post_Timeskip_Infobox.png/revision/latest/scale-to-width-down/400?cb=20241110020715",
   },
   {
     id: 12,
     name: "Chopper",
-    image: "https://images4.alphacoders.com/138/1381544.png",
+    image: "https://static.wikia.nocookie.net/onepiece/images/a/af/Tony_Tony_Chopper_Anime_Post_Timeskip_Infobox.png/revision/latest/scale-to-width-down/400?cb=20240720150824",
   },
   {
     id: 13,
     name: "Jinbe",
-    image: "https://images5.alphacoders.com/122/1225549.jpg",
+    image: "https://static.wikia.nocookie.net/onepiece/images/8/81/Jinbe_Anime_Infobox.png/revision/latest/scale-to-width-down/400?cb=20170521201349",
   },
   {
     id: 14,
     name: "Dracule Mihawk",
-    image: "https://images5.alphacoders.com/104/1042192.jpg",
+    image: "https://static.wikia.nocookie.net/onepiece/images/b/bf/Dracule_Mihawk_Anime_Infobox.png/revision/latest/scale-to-width-down/400?cb=20151222105910",
   },
   {
     id: 15,
     name: "Sabo",
-    image: "https://images6.alphacoders.com/606/thumb-1920-606298.jpg",
+    image: "https://static.wikia.nocookie.net/onepiece/images/c/c2/Sabo_Anime_Infobox.png/revision/latest/scale-to-width-down/400?cb=20230804035141",
   },
   {
     id: 16,
     name: "Doflamingo",
-    image: "https://images2.alphacoders.com/120/1207340.jpg",
+    image: "https://static.wikia.nocookie.net/onepiece/images/7/7e/Donquixote_Doflamingo_Anime_Infobox.png/revision/latest/scale-to-width-down/400?cb=20231017082245",
   },
   {
     id: 17,
     name: "Eustass Kid",
-    image: "https://images5.alphacoders.com/959/959134.png",
+    image: "https://static.wikia.nocookie.net/onepiece/images/4/47/Eustass_Kid_Anime_Post_Timeskip_Infobox.png/revision/latest/scale-to-width-down/400?cb=20240505021859",
   },
   {
     id: 18,
     name: "Monkey D. Luffy",
-    image: "https://images4.alphacoders.com/135/1352902.jpeg",
+    image: "https://static.wikia.nocookie.net/onepiece/images/6/6d/Monkey_D._Luffy_Anime_Post_Timeskip_Infobox.png/revision/latest/scale-to-width-down/400?cb=20240306200817",
   },
   {
     id: 19,
     name: "Big Mom",
-    image:
-      "https://wallpapers.com/images/hd/big-mom-1280-x-720-wallpaper-ycogzez7fd3yzlp5.jpg",
+    image: "https://static.wikia.nocookie.net/onepiece/images/d/d8/Charlotte_Linlin_Anime_Infobox.png/revision/latest/scale-to-width-down/400?cb=20180423150804",
   },
   {
     id: 20,
     name: "Gol D. Roger",
-    image: "https://images6.alphacoders.com/127/1276438.jpg",
+    image: "https://static.wikia.nocookie.net/onepiece/images/2/24/Gol_D._Roger_Anime_Infobox.png/revision/latest/scale-to-width-down/400?cb=20230612100153",
   },
   {
     id: 21,
     name: "Edward Newgate",
-    image: "https://images.alphacoders.com/790/thumb-1920-790574.png",
+    image: "https://static.wikia.nocookie.net/onepiece/images/b/b7/Edward_Newgate_Anime_Infobox.png/revision/latest/scale-to-width-down/400?cb=20220926165737",
   },
   {
     id: 22,
     name: "Koby",
-    image: "https://images6.alphacoders.com/137/thumb-1920-1379464.png",
+    image: "https://static.wikia.nocookie.net/onepiece/images/b/b8/Koby_Anime_Post_Timeskip_Infobox.png/revision/latest/scale-to-width-down/400?cb=20241114130518",
   },
   {
     id: 23,
     name: "Smoker",
-    image: "https://images6.alphacoders.com/932/thumb-1920-932962.jpg",
+    image: "https://static.wikia.nocookie.net/onepiece/images/c/c4/Smoker_Anime_Post_Timeskip_Infobox.png/revision/latest/scale-to-width-down/400?cb=20221101011905",
   },
   {
     id: 24,
     name: "Katakuri",
-    image: "https://images4.alphacoders.com/134/1345285.jpeg",
+    image: "https://static.wikia.nocookie.net/onepiece/images/2/2e/Charlotte_Katakuri_Anime_Infobox.png/revision/latest/scale-to-width-down/400?cb=20230204155539",
   },
   {
     id: 25,
     name: "Vinsmoke Reiju",
-    image:
-      "https://wallpapers-clan.com/wp-content/uploads/2024/06/one-piece-vinsmoke-reiju-heroic-pose-desktop-wallpaper-preview.jpg",
+    image: "https://static.wikia.nocookie.net/onepiece/images/a/a3/Vinsmoke_Reiju_Anime_Infobox.png/revision/latest/scale-to-width-down/400?cb=20231211104854",
   },
   {
     id: 26,
     name: "Enel",
-    image:
-      "https://wallpapers.com/images/hd/one-piece-enel-1200-x-1199-wallpaper-wq57wtlnp7cpyxjw.jpg",
+    image: "https://static.wikia.nocookie.net/onepiece/images/a/ad/Enel_Anime_Infobox.png/revision/latest/scale-to-width-down/400?cb=20230520213625",
   },
   {
     id: 27,
     name: "Crocodile",
-    image:
-      "https://www.baltana.com/files/wallpapers-8/Crocodile-One-Piece-Wallpaper-24241.jpg",
+    image: "https://static.wikia.nocookie.net/onepiece/images/f/fd/Crocodile_Anime_Infobox.png/revision/latest/scale-to-width-down/400?cb=20230125235528",
   },
   {
     id: 28,
     name: "Rob Lucci",
-    image: "https://images8.alphacoders.com/136/thumb-1920-1363366.png",
+    image: "https://static.wikia.nocookie.net/onepiece/images/d/d7/Rob_Lucci_Anime_Post_Timeskip_Infobox.png/revision/latest/scale-to-width-down/400?cb=20230102052113",
   },
   {
     id: 29,
     name: "Monkey D. Garp",
-    image: "https://images6.alphacoders.com/137/thumb-1920-1370869.png",
+    image: "https://static.wikia.nocookie.net/onepiece/images/e/e1/Monkey_D._Garp_Anime_Infobox.png/revision/latest/scale-to-width-down/400?cb=20230207160645",
   },
   {
     id: 30,
     name: "Bellamy",
-    image:
-      "https://www.manga-city.fr/wp-content/uploads/2024/03/c7bc8-17075257527193-1920.jpg",
+    image: "https://static.wikia.nocookie.net/onepiece/images/2/27/Bellamy_Anime_Post_Timeskip_Infobox.png/revision/latest/scale-to-width-down/400?cb=20230116235201",
   },
   {
     id: 31,
     name: "Foxy",
-    image:
-      "https://static.wikia.nocookie.net/onepiece/images/4/46/Foxy_Anime_Pre_Ellipse_Infobox.png/revision/latest?cb=20170719113246&path-prefix=fr",
+    image: "https://static.wikia.nocookie.net/onepiece/images/7/7d/Foxy_Anime_Post_Timeskip_Infobox.png/revision/latest/scale-to-width-down/400?cb=20251102162706",
   },
   {
     id: 32,
     name: "Perona",
-    image: "https://images4.alphacoders.com/122/1223883.jpg",
+    image: "https://static.wikia.nocookie.net/onepiece/images/4/4a/Perona_Anime_Post_Timeskip_Infobox.png/revision/latest/scale-to-width-down/400?cb=20221124200121",
   },
 ];
