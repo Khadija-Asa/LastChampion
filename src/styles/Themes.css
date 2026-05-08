@@ -191,6 +191,9 @@
 .theme_onepiece .image_wrapper {
   aspect-ratio: 3 / 4;
 }
+.theme_onepiece .card_duel img {
+  object-position: top;
+}
 
 /* MOVIES */
 .theme_movies .image_wrapper {
