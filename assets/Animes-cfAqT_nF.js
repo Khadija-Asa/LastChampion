@@ -1,0 +1,1 @@
+import{j as e,a as t}from"./index-BQL6Z6jt.js";import{T as s}from"./Tournament-CA9cMsKn.js";import"./vendor-react-DekamgWB.js";import"./vendor-gsap-CH_iu5NA.js";const r=()=>e.jsx("div",{className:"theme theme_animes",children:e.jsx(s,{title:"Choose your 8 favorites anime",data:t})});export{r as default};
