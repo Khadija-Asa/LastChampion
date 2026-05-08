@@ -1,0 +1,1 @@
+import{j as e,h as r}from"./index-Db35Mgzo.js";import{T as o}from"./Tournament-Bw9MPj1G.js";import"./vendor-react-DekamgWB.js";import"./vendor-gsap-CH_iu5NA.js";const i=()=>e.jsx("div",{className:"theme theme_heroes",children:e.jsx(o,{title:"Choose your 8 favorites Super-heroes",data:r})});export{i as default};
