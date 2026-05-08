@@ -12,7 +12,8 @@ const Header = () => {
   const closeMenu = () => setIsMenuOpen(false);
 
   useEffect(() => {
-    if (location.state?.openMenu) {
+    const isReload = performance.getEntriesByType("navigation")[0]?.type === "reload";
+    if (location.state?.openMenu && !isReload) {
       setIsMenuOpen(true);
     }
   }, []);
@@ -47,6 +48,7 @@ const Header = () => {
         { to: "/lol", label: "LoL Champions", word: "lol champions" },
         { to: "/one-piece", label: "One Piece", word: "one piece" },
         { to: "/super-heroes", label: "Superheroes", word: "superheroes" },
+        { to: "/villains", label: "Villains", word: "villains" },
         { to: "/yu-gi-oh", label: "Yu-Gi-Oh", word: "yu-gi-oh" },
       ],
     },

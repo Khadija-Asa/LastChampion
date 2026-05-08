@@ -27,7 +27,7 @@ export const villainsList = [
     id: 5,
     name: "Voldemort",
     image:
-      "https://laboxsurdemande.com/cdn/shop/articles/fb_voldemort-1.jpg?v=1649757462",
+      "https://s.13.cl/sites/default/files/styles/manualcrop_1600x800/public/programas/articulos/field-imagen/2024-05/222722_41644_0.jpg.jpeg?itok=gCczRDor",
   },
   {
     id: 6,
@@ -162,7 +162,7 @@ export const villainsList = [
   {
     id: 29,
     name: "Freddy Krueger",
-    image: "https://elopinadero.com.co/wp-content/uploads/2024/12/fredy.jpg",
+    image: "https://static.wikia.nocookie.net/villains-fr/images/3/3d/Title-1576680650.jpg/revision/latest?cb=20201124150836&path-prefix=fr",
   },
   {
     id: 30,

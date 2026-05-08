@@ -17,7 +17,8 @@ const isMobile = window.matchMedia("(max-width: 768px)").matches;
 
 export default function Home() {
   const location = useLocation();
-  const [isLoading, setIsLoading] = useState(!location.state?.openMenu);
+  const isReload = performance.getEntriesByType("navigation")[0]?.type === "reload";
+  const [isLoading, setIsLoading] = useState(!location.state?.openMenu || isReload);
 
   const lastRef = useRef(null);
   const championRef = useRef(null);

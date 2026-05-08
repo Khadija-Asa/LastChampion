@@ -588,6 +588,12 @@
   opacity: 0;
 }
 
+@media (min-width: 769px) {
+  .random-btn-container {
+    display: none;
+  }
+}
+
 @media (min-width: 500px) {
   .random-btn-container {
     position: absolute;
