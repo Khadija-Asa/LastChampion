@@ -630,7 +630,7 @@ const Tournament = ({ data }) => {
           {/* back button */}
           <button
             className="back_button"
-            onClick={() => navigate("/", { state: { openMenu: true } })}
+            onClick={() => { sessionStorage.setItem("openMenu", "1"); navigate("/"); }}
           >
             <span className="blink">
               <FaLongArrowAltLeft />

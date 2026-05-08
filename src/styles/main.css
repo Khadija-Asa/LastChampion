@@ -25,6 +25,12 @@
   font-display: swap;
 }
 
+/* Hide Axeptio widget on all pages except home */
+body:not(.page-home) [id^="axeptio"],
+body:not(.page-home) [class*="axeptio"] {
+  display: none !important;
+}
+
 /* Box sizing rules */
 *,
 *::before,

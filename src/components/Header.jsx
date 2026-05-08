@@ -12,8 +12,8 @@ const Header = () => {
   const closeMenu = () => setIsMenuOpen(false);
 
   useEffect(() => {
-    const isReload = performance.getEntriesByType("navigation")[0]?.type === "reload";
-    if (location.state?.openMenu && !isReload) {
+    if (sessionStorage.getItem("openMenu") === "1") {
+      sessionStorage.removeItem("openMenu");
       setIsMenuOpen(true);
     }
   }, []);

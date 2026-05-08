@@ -17,8 +17,8 @@ const isMobile = window.matchMedia("(max-width: 768px)").matches;
 
 export default function Home() {
   const location = useLocation();
-  const isReload = performance.getEntriesByType("navigation")[0]?.type === "reload";
-  const [isLoading, setIsLoading] = useState(!location.state?.openMenu || isReload);
+  const shouldOpenMenu = sessionStorage.getItem("openMenu") === "1";
+  const [isLoading, setIsLoading] = useState(!shouldOpenMenu);
 
   const lastRef = useRef(null);
   const championRef = useRef(null);
@@ -285,6 +285,33 @@ export default function Home() {
         });
     }
   }, [isLoading]);
+
+  // axeptio
+  useEffect(() => {
+    document.body.classList.add("page-home");
+
+    if (!document.querySelector('script[src*="axept.io"]')) {
+      window.axeptioSettings = {
+        clientId: "69fdb373841879ad49d044e0",
+        cookiesVersion: "a867c6eb-45a2-4c1d-aa8d-9b02eecbf1d5",
+        googleConsentMode: {
+          default: {
+            analytics_storage: "denied",
+            ad_storage: "denied",
+            ad_user_data: "denied",
+            ad_personalization: "denied",
+            wait_for_update: 500,
+          },
+        },
+      };
+      const script = document.createElement("script");
+      script.async = true;
+      script.src = "//static.axept.io/sdk.js";
+      document.body.appendChild(script);
+    }
+
+    return () => document.body.classList.remove("page-home");
+  }, []);
 
   // random theme
   const navigate = useNavigate();
